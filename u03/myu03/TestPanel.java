@@ -1,3 +1,5 @@
+package myu03;
+
 import javax.swing.*;        
 
 import java.awt.*;

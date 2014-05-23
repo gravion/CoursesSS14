@@ -44,6 +44,7 @@ class TestPanel extends JPanel implements MouseListener {
       Dimension d=getSize();  // loesche die Anzeige
       g.fillRect(0,0,d.width,d.height);
       g.setColor(Color.white);
+      mypaint(eins, zwei,g);
       g.fillRect(eins.x,eins.y,4,4);
       g.fillRect(zwei.x, zwei.y, 4, 4);
     }
@@ -56,10 +57,20 @@ class TestPanel extends JPanel implements MouseListener {
 ///////////////////////////
 
     
-    public void mypaint() {
-        if (eins.x > zwei.x) {
-
+    public void mypaint(Point p1, Point p2,Graphics g) {
+        
+        int x_start,x_end,y_start,y_end;
+        
+        
+        
+        
+        for (int i = x_start; i < x_end ; i+=4) {
+            int y;
+            y = y_start + Math.round(i*(p2.y-p1.y)/(p2.x - p1.x));
+            g.fillRect(i, y_start + y,4,4);
+            
         }
+        
     }
     
 
@@ -85,7 +96,7 @@ class TestPanel extends JPanel implements MouseListener {
         }
 //        System.out.println("Punkt Eins = "+eins.x+" "+eins.y);
 //        System.out.println("Punkt Zwei = "+zwei.x+" "+zwei.y);
-        mypaint();
+//        mypaint();
         repaint();
     }
 
