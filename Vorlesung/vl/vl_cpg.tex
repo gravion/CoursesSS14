@@ -1,0 +1,689 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{color,graphicx,framed}
+\usepackage{amsmath,amsfonts,amssymb,MnSymbol}
+\usepackage{listings}
+\usepackage[section]{placeins}
+\usepackage{pstricks,pst-tree,pst-node}
+\usepackage{dsfont}
+\usepackage{ulem}
+
+\usepackage{program}
+
+\title{Computergraphik\\Vorlesung}
+\author{Björn Rathjen}
+\date{SS14}
+\begin{document}
+\maketitle
+\newpage\tableofcontents
+
+\section{Vorlesung 23.04.14}
+\subsection{Die projektive Ebene}
+\subsection{homogene Koordinaten}
+\begin{figure}[!hb]
+\begin{minipage}[c]{8cm}
+$$ 
+\begin{pmatrix}
+x \\ y \\ z \\
+\end{pmatrix},
+\begin{pmatrix}
+2 \\ 4 \\ 6
+\end{pmatrix},
+\begin{pmatrix}
+6 \\ 12 \\ 18 
+\end{pmatrix},
+\begin{pmatrix}
+-1 \\ -2 \\ -3 
+\end{pmatrix} =
+\begin{pmatrix}
+\frac{1}{3}\\ \frac{2}{3} \\ 1 \\
+\end{pmatrix}
+$$
+\end{minipage}
+\begin{minipage}[c]{6cm}
+stellen den selben Punkt in homogenen Koordinaten dar.
+\end{minipage}
+\end{figure}
+vergleiche Geradengleichung :
+\begin{figure}[!hb]
+\begin{minipage}[c]{6cm}
+\begin{eqnarray*}
+ax + by + c & = & 0 \\
+3x + 4y + 5 & = & 0 \\
+6x + 8y 	b 10 & = & 0 \\
+\end{eqnarray*}
+\end{minipage}
+\begin{minipage}[c]{6cm}
+\begin{minipage}[r]{3cm}
+\[
+\left.
+\begin{array}{c}
+\left( 3,4,5 \right) \\
+\left( 6,8,10 \right) \\
+\end{array}
+\right\rbrace
+\]
+\end{minipage}\hfill
+\begin{minipage}[r]{3cm}
+stellen die selben Geradengleichung dar
+\end{minipage}
+\end{minipage}
+\end{figure}
+Die Punkte in der projektiven Ebene sind die Äquivalenzklassen von Vektoren $ \begin{pmatrix}
+x \\ y \\ w
+\end{pmatrix} \ in \mathbb{R}^3 $mit $\begin{pmatrix}
+x \\ y \\ w 
+\end{pmatrix} \neq \begin{pmatrix}
+0 \\ 0 \\ 0 \\
+\end{pmatrix}$ wobei $\vec{a}$ und $\vec{b}$ als äquivalent betrachtet werden, wenn : $\exists \lambda \neq 0 : \vec{a} = \lambda \vec{b}$ 
+\subsection{das räumliche Modell der projektiven Ebene}
+Die Punkte sind Geraden durch den Ursprung in $\mathbb{R}^3$ (Äquivalenzklassen, bis auf den Ursprung $\begin{pmatrix}
+0 \\ 0 \\ 0 \\
+\end{pmatrix}$
+{\color{red} Zeichnung Koordinatandsystem Ebene}
+%\caption{•}
+Die Punkte mit $w = 0$ heißen \underline{Fernpunkte}. Ihnen entsprechen kein Punkt mit karthesischen Koordinaten.
+\newline
+\newline
+
+Die Punkte der \underline{euklidischen Ebene} sind alle Punkte außer den Fernpunkten.
+
+Geraden der projektiven Ebene bestehen aus allen Punkten $\begin{pmatrix}
+x \\ y \\ w 
+\end{pmatrix}$, die eine Geradengleichung 
+$$ ax + by + c = 0 $$
+mit den Koeffizienten $(a,b,c) \neq (0,0,0)$ \underline{erfüllen}.\\
+Für $w=1$ :
+$$ ax + by + c = 0 $$
+
+Geradengleichung : 
+$\begin{pmatrix}
+a \\ b \\ c
+\end{pmatrix}
+\cdot 
+\begin{pmatrix}
+x \\ y \\ w 
+\end{pmatrix}
+= 0 $
+
+In der projektiven Ebene
+\begin{enumerate}
+\item[a)] geht durch je zwei Punkte genau eine Gerade
+\item[b)] schneiden sich je zwei Geraden in genau einem Punkt
+\end{enumerate}
+
+Beweis zu b):
+$$ ax + by + c = 0$$
+$$ dx + ey + fw = 0$$
+homogenes Gleichungssystem in x, y, w \\
+Matrix $\begin{pmatrix}
+a & b & c \\
+d & e & f \\
+\end{pmatrix}$ rg = 0 ist ausgeschlossen\\
+Wenn der Rang = 1 wäre müsste $(a,b,c) = \lambda(d,e,f)$ sein, dann wären es zwei gleiche Geraden\\
+$\Rightarrow $ Rang = 2 $\Rightarrow $ die Lösung ist eine \underline{Gerade} durch den Ursprung. (ein projektiver Punkt)\\
+\newline
+
+Beweis zu a):
+$\begin{array}{cc}
+ax + by + cw &  = 0 \\ 
+au + bv + fz &= 0 \\ 
+\end{array} \text{ mit }
+\begin{pmatrix}
+x \\ y \\ w \\
+\end{pmatrix} \neq \lambda \begin{pmatrix}
+u \\ v \\ z 
+\end{pmatrix}
+\forall \lambda $
+Gleichungssystem in (a,b,c) $\begin{pmatrix}
+x & y & w \\
+u & v & z \\
+\end{pmatrix}$\\
+Berechnung geht am besten mit dem Kreuzprodukt :
+$$ \begin{pmatrix}
+x_1 \\ x_2 \\ x_3 \\
+\end{pmatrix}
+\times
+\begin{pmatrix}
+y_1 \\ y_2 \\ y_3 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+\begin{vmatrix}
+x_2 & y_2 \\
+x_3 & y_3 \\ 
+\end{vmatrix}\\
+\begin{vmatrix}
+x_3 & y_3 \\
+x_1 & y_1 \\ 
+\end{vmatrix}\\
+\begin{vmatrix}
+x_1 & y_1 \\
+x_2 & y_2 \\ 
+\end{vmatrix}
+\end{pmatrix} =
+\begin{pmatrix}
+x_2y_3 - x_3y_2 \\
+x_3y_1 - x_1y_3 \\
+x_1y_2 - x_2y_1 \\
+\end{pmatrix}
+$$
+liefert einen Vektor der senkrecht auf 
+$ \begin{pmatrix}
+x_1 \\ x_2 \\ x_3 \\
+\end{pmatrix}
+$ und $
+\begin{pmatrix}
+y_1 \\ y_2 \\ y_3 \\
+\end{pmatrix}$ steht.\\
+Punkt $\begin{pmatrix}
+x \\ y\\ w \\
+\end{pmatrix}$ liegt auf Gerade 
+$\begin{pmatrix}
+a \\ b\\ c \\
+\end{pmatrix}$ (Inzidenz)
+$$ \Leftrightarrow 
+\begin{pmatrix}
+x \\ y\\ w \\
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+a \\ b\\ c \\
+\end{pmatrix} \neq 0 \Leftrightarrow 
+\begin{pmatrix}
+x \\ y\\ w \\
+\end{pmatrix}
+\perp
+\begin{pmatrix}
+a \\ b\\ c \\
+\end{pmatrix}
+$$
+Konstruktion
+\begin{enumerate}
+\item[a)] Gerade durch zwei Punkte
+\item[b)] Punkt auf zwei Geraden
+\end{enumerate}
+gesucht ist ein Vektor, der auf zwei anderen senkrecht steht\\
+$\Rightarrow $ Kreuzprodukt (keine Dimension notwendig, Rechnung ohne Fallunterscheidung\\
+
+parallele Geraden schneiden sich in einem Fernpunkt.\\
+
+Ausser den Geraden der Euklidischen Ebene enthält die projektive Ebene noch eine zusätzliche Gerade:\\
+die Ferngerade, die alle Fernpunkte enthält.
+$$ ax + by + cw = 0 \text{ mit }w=0 \; \; \;
+\begin{pmatrix}
+a \\ b \\ c
+\end{pmatrix}
+=
+\begin{pmatrix}
+a \\ b \\ 0
+\end{pmatrix}
+$$
+\subsection{Kugelmodell}
+räumliches Modell mit der Einheitssphäre schneiden:
+\begin{figure}[!hb]
+\begin{minipage}[l]{6cm}
+\begin{tabular}{ccc}
+Punkte & $\equiv$ & Paare gegenüberliegender Geraden \\
+Geraden & $\equiv$ & Großkreise
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{8cm}
+{\color{red}Zeichnung der Kugel}
+\end{minipage}
+\end{figure}
+
+\begin{description}
+\item[Dualität] Punkte und Geraden werden in der projektiven Geometrie völlig gleich behandelt. Man kann jederzeit \underline{überall} Punkt durch eine Gerade ersetzen.
+\end{description}
+{\color{red}Zeichnung Satz von Pappus}
+Projektion : (im Raum)\\
+\begin{figure}[!hb]
+\begin{minipage}[l]{4cm}
+\begin{tabular}{cr}
+Projektionszentrum &  A \\
+Projektionsebene & $\pi$
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{8cm}
+{\color{red}Zeichnung punkt auf ebene projeziert}
+\end{minipage}
+\end{figure}
+
+Projektion ist eine Abbildung von $\mathbb{R}^3 - \text{(durch)}\{A\}\rightarrow \pi$
+
+\begin{enumerate}
+\item[1.)] konstruiere die Gerade durch A und $x \in \mathbb{R}^3 \notin \{A\}$
+\item[2.)] Schneide die Gerade mit $\pi$
+\end{enumerate}
+{\color{red}Zeichnung Baum}
+Spezialfall :\\
+\begin{figure}[!hb]
+\begin{minipage}[c]{5cm}
+{\color{red}Zeichnung Baum 2}
+\end{minipage}
+\hfill
+\begin{minipage}[l]{7cm}
+Beispiel: Schatten eines Baumes
+{\color{green}eventuell als caption}
+\end{minipage}
+\end{figure}
+\subsection{Der projektive Raum}
+analog nur mit einer Koordinate mehr
+$$
+\begin{pmatrix}
+x\\ y \\ z \\ w
+\end{pmatrix} \in \mathbb{R}^4 \text{ Punkte}
+$$
+Dualität zwischen Punkten und Ebenen
+\subsubsection{Projektionen in der Ebene}
+{\color{red}Zeichnung Projektionsgerade } A(1/0)\\
+Punkte $\begin{pmatrix}
+x \\ y \\ w
+\end{pmatrix}$ projezieren\\
+mit A verbinden $A = \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix}$
+$$
+\begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix}
+\times
+\begin{pmatrix} x \\ y \\ z \end{pmatrix}
+=
+\begin{pmatrix} -y \\ x-w \\ y \end{pmatrix}
+ \text{ $\leftarrow $ Verbindungsgerade} $$
+Schneiden mit der Geraden 
+$$ x-y = 0 \;\; 
+\begin{pmatrix} -y \\ x-w \\ y \end{pmatrix}
+\times
+\begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix}
+=
+\begin{pmatrix} y \\ y \\ y-x+w \end{pmatrix}
+$$
+\subsubsection{Projektionsabbildung}
+$$
+\begin{pmatrix} x \\ y \\ z \end{pmatrix}
+\rightmapsto
+\begin{pmatrix} y \\ y \\ y-x+w \end{pmatrix}
+=
+\underset{\begin{minipage}[c]{3cm}
+Abbildungsmatrix dieser projektiven Abbildung
+\end{minipage}}{\underbrace{\begin{pmatrix}
+0 & 1 & 0 \\
+0 & 1 & 0 \\
+1 & 1 & 1 \\
+\end{pmatrix}}}
+\begin{pmatrix} x \\ y \\ z \end{pmatrix}
+$$
+In karthesischen Koordinaten
+$$ 
+\begin{pmatrix}
+x \\ y
+\end{pmatrix}
+\mapsto
+\begin{pmatrix}
+\frac{y}{y-x+1} \\ \frac{y}{y-x+1}
+\end{pmatrix}
+\; \; \text{ Fernpunkt bei $y-x+1 = 0$}
+$$
+\section{Vorlesung 30.04.14}
+\subsection{Die klassische Rendering-Pipeline\\andere Organisationen sind möglich}
+{\color{red} Zeichnung der Stationen der Pipeline}
+\FloatBarrier
+\begin{figure}[!hb]
+\begin{minipage}[c]{5cm}
+{\color{red}Koordinatensystem und Augenkoordinatensystem} 
+\end{minipage}
+\hfill
+\begin{minipage}[r]{6cm}
+$\vec{n}$ gegeben \\
+in der Regel möchte man v ("oben")\\
+möglichst senkrecht\\
+\begin{eqnarray}
+\vec{u} &=& -\vec{n} \times \begin{pmatrix}
+0 \\ 0 \\ 1
+\end{pmatrix}\\
+\vec{v} = \vec{u} \times -\vec{n}\\
+\end{eqnarray}
+\end{minipage}
+\end{figure}
+{\color{red} Zeichnung Sichtbarkeitsstrumpf und Haltepunkt}
+\subsection{normalisierte Gerätekoordinaten (NDC)}
+
+\begin{figure}[!hb]
+\begin{minipage}[l]{5cm}
+{\color{red} Würfelzeichnung}
+\end{minipage}
+\hfill
+\begin{minipage}[l]{5cm}
+\begin{eqnarray*}
+\text{Strumpf} &\rightarrow & \text{"Einheitswürfel"}\\
+& & \left[-1,1\right] \times \left[-1,1\right] \times \left[-1,1\right]\\
+\text{Augpunkt} &\rightarrow & \text{Fernpunkt in z-Richtung}\\
+\end{eqnarray*}
+\end{minipage}
+\end{figure}
+Projektion durch ganz einfach Parallelprojektion durch weglassen dar z-Koordinaton\\
+Tiefeninformationen (Welches Opjekt liegt vor einem anderen ?) ist an der z-Koordinaten abzulesen (das Opjekt mit den kleinsten z-Koordinaten)
+\subsubsection{Spezialfall :}
+\begin{figure}[!hb]
+\begin{minipage}[l]{4cm}
+{\color{red} Zeichnung Öffnungswinkel}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{6.5cm}
+Transformation zum Spezialfall
+\begin{enumerate}
+\item[1)] Alles mit $\frac{1}{\text{nah}}$ skalieren 
+$\begin{pmatrix}
+\frac{1}{\text{nah}} & 0 & 0 & 0 \\
+0 & \frac{1}{\text{nah}} & 0 & 0 \\
+0 & 0 & \frac{1}{\text{nah}} & 0 \\
+0 & 0 & 0 & \frac{1}{\text{nah}} \\
+\end{pmatrix}$
+\item[2)] Bildrechteck auf $2y\times 2$-Rechteck skalieren
+$\begin{pmatrix}
+\frac{2}{\text{r' - l'}} & 0 & 0 & 0 \\
+0 & \frac{2}{\text{t' - b'}} & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{pmatrix}$
+\item[3)] Scherung in u und v-Richtung um das Rechteck zu zentrieren. Nun ist r" - l" = 2 und t" - b" = 2 $\rightarrow$ nach Schritt 1 und 2 \\
+\end{enumerate}
+\end{minipage}
+\end{figure}
+bezogen auf $*^1$ und wenn Zentrum nicht gleich $\begin{pmatrix}
+0 & 0 & 0 
+\end{pmatrix}$
+$$ \begin{pmatrix}
+x \\ y \\ n \\ 
+\end{pmatrix}
+\rightarrow
+\begin{pmatrix}
+x - \frac{\text{l" + r"}}{2}n \\
+y - \frac{\text{l" + r"}}{2}n \\
+n
+\end{pmatrix}$$
+\subsection{Scherungsmatrix}
+$$\begin{pmatrix}
+1 & 0 & \frac{\text{l" + r"}}{2} & 0 \\
+0 & 1 & \frac{\text{l" + r"}}{2} & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{pmatrix} $$
+\begin{figure}[!hb]
+\begin{minipage}[l]{5cm}
+{\color{red}Zeichnung u,v Koordinaten}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{6cm}
+\begin{eqnarray*}
+\text{nah} & & \\
+\begin{pmatrix}
+\pm 1 \\ \pm 1 \\ -1 
+\end{pmatrix}
+ \rightmapsto 
+\begin{pmatrix}
+\pm 1 \\ \pm 1 \\ -1 
+\end{pmatrix}
+& &
+M 
+\begin{pmatrix}
+\pm 1 \\ \pm 1 \\ -1 \\ 1 \\
+\end{pmatrix}
+= 
+\begin{pmatrix}
+\pm 1 \\ \pm 1 \\ -1 \\ 1 \\
+\end{pmatrix} \lambda * 1 \text{  } \,\, \lambda =1\\
+\text{fern} & & \text{wähle } \mu = f\\
+\begin{pmatrix}
+\pm f \\ \pm f \\ -f 
+\end{pmatrix}
+\rightmapsto 
+\begin{pmatrix}
+\pm 1 \\ \pm 1 \\ 1
+\end{pmatrix}
+& & 
+M \begin{pmatrix}
+\pm 1 \\ \pm 1 \\ 1 \\ 1 
+\end{pmatrix} \mu
+\end{eqnarray*}
+\end{minipage}
+\end{figure}
+\begin{eqnarray*}
+M \begin{pmatrix}
+\pm 1 \\ \pm 1 \\ -1 \\ 1 \\
+\end{pmatrix} =  \begin{pmatrix}
+\pm 1 \\ \pm 1 \\ -1 \\ 1 \\
+\end{pmatrix} & M = 
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & a & b \\
+0 & 0 & c & d \\
+\end{pmatrix}
+& \\
+M \begin{pmatrix}
+\pm f \\ \pm f \\ -f \\ 1 \\
+\end{pmatrix} =  \begin{pmatrix}
+\pm f \\ \pm f \\ f \\ f \\
+\end{pmatrix} & \begin{pmatrix}
+a & b \\ c & d \\
+\end{pmatrix}
+\begin{pmatrix}
+-1 \\ 1
+\end{pmatrix}
+=
+\begin{pmatrix}
+-1 \\ 1
+\end{pmatrix} & a = \frac{f+1}{f-1} \text{   } b = \frac{-2f}{f-1}\\
+& \begin{pmatrix}
+a & b \\ c & d \\
+\end{pmatrix}
+\begin{pmatrix}
+-f \\ 1
+\end{pmatrix}
+=
+\begin{pmatrix}
+f \\ f
+\end{pmatrix} & c = -1 \text{   } d = 0
+\end{eqnarray*}
+\subsubsection{allgemeiner Fall}
+\begin{equation*}
+M = \begin{pmatrix}
+\frac{2nah}{r-l} & 0 & \frac{r+l}{r-l} & 0 \\
+0 & \frac{2nah}{t - h} & \frac{t+b}{t-b} & 0 \\
+0 & 0 & \frac{-fern+nah}{fern-nah} & -\frac{2fern *nah}{fern - nah} \\
+0 & 0 & -1 & 0 \\
+\end{pmatrix} \text{    }
+M^{-1} = 
+\begin{pmatrix}
+\frac{r-l}{2nah} & 0 & 0 & \frac{r+l}{2nah} \\
+0 & \frac{t+b}{2nah} & 0 &  \frac{t+b}{2nah} \\
+0 & 0 & 0 & -1 \\
+0 & 0 & \frac{1}{2fern}-\frac{1}{2nah} & \frac{1}{2fern}+\frac{1}{2nah}\\
+\end{pmatrix}
+\end{equation*}
+\subsection{Tatsächliche Koordinaten und Rasterung}
+\begin{figure}[!hb]
+\begin{minipage}[c]{5cm}
+{\color{red} Zeichnung Raster}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{8cm}
+$res_n \times res_v$ Rechteck von Pixeln \\
+horizontale und vertikale Auflösung \\
+hängt von der Genauigkeit ab.
+$$ j= \lfloor (x+1)\frac{res_h}{2}\rfloor  = round\left(\frac{(x+1)res_n-1}{2}\right)$$
+$$ i = round\left(\frac{(1-y)res_v-1}{2}\right)$$
+\end{minipage}
+\end{figure}
+\section{Vorlenung 02.05.14}
+{\color{red}Zeichnung Lichtspectrum}\\
+\begin{figure}[!hb]
+\begin{minipage}[c]{7.5cm}
+Es gibt Licht in jeder beliebigen Wellenlänge \\
+\begin{minipage}[c]{2cm}
+\begin{tabular}{c}
+412 nm \\
+414 nm
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[r]{3cm}
+ stetiger Übergang
+\end{minipage}\\
+Wellenlänge bestimmt die Farbwahrnehmung
+\end{minipage}
+\hfill
+\begin{minipage}[c]{6.5cm}
+natürliches Licht besteht aus verschiedenen Wellenlängen\\
+{\color{red}Zeichnung  }
+Sonnenlicht besitzt alle Anteile gefiltert durch Atmossphäre\\
+{\color{red}  Zeichnug + monochromatisches Licht }
+\end{minipage}
+%\end{minipage}
+\end{figure}
+\begin{figure}[!hb]
+\begin{minipage}[c]{6.5cm}
+{\color{red}Prisma Zeichnung}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{7.5cm}
+Der Raum der wahrnehmbaren Farben ist dreidimensional. Wir können nicht alle verschiedenen Mischungen von Spektralfarben unterscheiden
+\end{minipage}
+\end{figure}
+Für das Farbsehen gibt es im Auge 3 verschiedene Arten von Zäpfchen, die unterschiedlich auf verschiedene Wellenlängen ansprechen \\
+{\color{red}Zeichnung Stäbchenspektrum}
+\subsection{Intensitätsverteilung I($\lambda$)}
+Empfindung der S-Zäpfchen wird gegeben 
+$$ \int\limits_{\lambda}\!S(\lambda) \cdot I(\lambda) \,\mathrm{d}\lambda $$
+analog für M und L-Zapfen.\\
+Diese drei Werde bestimmen den \underline{Farbeindruck}.
+\subsection{Prinzib der Additiven Farbmischung}
+\begin{figure}[!hb]
+\begin{minipage}[c]{6cm}
+{\color{red}Koordinatensystem}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{9cm}
+verschiedene Scheinwerfer leuchten übereinander\\
+\begin{minipage}[c]{4cm}
+{\color{red}Zeichnung Scheinwerfer}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{4.5cm}
+\vfill
+\begin{itemize}
+\item Bildschirm
+\item Projektor
+\end{itemize}
+\vfill
+\end{minipage}
+\end{minipage}
+\vfill
+\begin{minipage}[c]{14cm}
+\begin{minipage}[r]{7cm}
+\begin{tabular}{ccccc}
+R & + & G & = & Yellow \\
+R & + & B & = & Magenta \\
+B & + & G & = & Cyan \\
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{6.8cm}
+y lässt R+G durch\\
+absorbiert B
+\end{minipage}
+\end{minipage}
+\end{figure}
+\subsection{Prinzip der \underline{subtraktiven} Farbmischung}
+Jede durchlässige Folie lässt Licht verschiedener Wellenlängen in unterschiedlicher Intensität durch
+\begin{figure}
+\begin{minipage}[c]{7cm}
+\begin{minipage}[c]{7cm}
+{\color{red} Zeichnung graph}
+\end{minipage}
+\vfill
+\begin{minipage}[c]{7cm}
+Farbe von einer Oberfläche zurückgeworfen und genügt gleichen Gesetzen
+\end{minipage}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{7cm}
+\begin{minipage}[c]{7cm}
+$$ I^{aus}(\lambda) = I^{ein}(\lambda) \cdot C(\lambda)$$
+\end{minipage}
+\vfill
+\begin{minipage}[c]{7cm}
+{\color{red} Zeichnung Licht}
+\end{minipage}
+\end{minipage}
+\end{figure}
+Wenn man zwei unterschiedliche Lichtquellen A und A' mit dem selben Farbeindruck mit einer dritten Lichtquelle B additiv mischt, dann erzeugen A+B und A'+B den selben Farbeindruck.\\
+Wenn die Intensität proportional gesteigert wird, ändert sich nur die Helligkeit, nicht (der Farbton) die Farbe. Der Schnitt mit einer Ebene gibt schon alle Informationen über die möglichen Farbwahrnehmungen.
+{\color{red}Farbdreieck}
+\section{Vorlesung 14.05.14}
+\subsection{Rasterung, Zeichnungen von Geraden und Kreisen der \\Bresenham-Algorithmus}
+
+\begin{minipage}[c]{14cm}
+\begin{minipage}[c]{7cm}
+gegeben: zwei Endpunkte\\
+$A,B \in \mathbb{Z}^2$ (Gitterebene)\\
+welche Bildpunkte $(i,j) \in \mathbb{Z}^2$ soll\\ man zeichnen / einschalten?
+\end{minipage}
+\hfill
+\begin{minipage}[c]{7cm}
+\begin{minipage}[c]{7cm}
+{\color{red}Gitterzeichnung}
+\end{minipage}
+\vfill
+\begin{minipage}[c]{7cm}
+Grundoperation \\
+SetPixel(i,j,Farbe)\\
+Farbe konstant weil vorgegeben\\
+$\rightarrow$ weglassen
+\end{minipage}
+\end{minipage}
+\end{minipage}\\
+\begin{minipage}[c]{14cm}
+\begin{minipage}[c]{7cm}
+\begin{enumerate}
+\item[1.) Annahme:] A=(0,0) (Translation)\\
+B=(x,y)
+\item[2.) o.B.d.A] $x,y \geq 0 \Rightarrow$ B im ersten Quadranten
+\item[3.) o.B.d.A] $y \leq x \Rightarrow$ B im ersten Qktanten weil Vertauschung von x und y möglich
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{7cm}
+{\color{red}Halbkreiszeichnung}
+\end{minipage}
+\end{minipage}\\
+\begin{minipage}[c]{14cm}
+\begin{minipage}[r]{7cm}
+$$\text{Steigung } m=\frac{y}{x} \;\;\; 0\leq \frac{y}{x} \leq $$
+\end{minipage}
+\hfill
+\begin{minipage}[c]{7cm}
+{\color{red} gitterliniennetz}
+\end{minipage}
+\end{minipage}\\
+Festlegung : wir zeichnen für jede vertikale Gitterlinie $i=0,1,…,x$ genau ein Pixel(i,j)
+\begin{minipage}[c]{14cm}
+\begin{minipage}[c]{7cm}
+\begin{program}
+\FOR i=0,1,2,...,x
+	|SetPixel|(i,round \frac{y}{x})
+\end{program}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{7cm}
+Wie löscht man zweideutigkeiten beim Runden auf ?\\
+konsistente Regel\\
+z.B.: immer zum kleineren Koordinatenwort rund
+\end{minipage}
+\end{minipage}\\
+Nachteil: Multiplikation mit gebrochenen Zahlen
+\end{document}

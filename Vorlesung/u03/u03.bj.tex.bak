@@ -1,0 +1,44 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{color,graphicx,framed}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{listings}
+\usepackage[section]{placeins}
+\usepackage{pstricks,pst-tree,pst-node}
+\usepackage{dsfont}
+\usepackage{ulem}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning,calc}
+
+\title{Computergraphik SS14\\Übungsblatt 02}
+\author{Björn Rathjen}
+\date{zu 02.05.14}
+
+\begin{document}
+\maketitle
+\newpage
+
+\section*{10. Homogene Koordinaten (10 Punkte)}
+
+\section*{12. Koordinatensysteme (12 Punkte, zu bearbeiten bis Donnerstag 7. Mai 2014)}
+\begin{enumerate}
+\item[(a)] Eine Kamera steht im Punkt
+$\begin{pmatrix}
+4 \\
+5 \\
+3 \\
+\end{pmatrix}$
+und blickt in Richtung auf den Punkt
+$\begin{pmatrix}
+7 \\
+5 \\
+4 \\
+\end{pmatrix}$
+Bestimmen Sie das entsprechende rechtwinklige Augenkoordinatensystem so, dass
+die Kamera aufrecht steht.
+\item[(b)] Bestimmen Sie die $4 \times 4$ - Transformationsmatrix zur Umrechnung von Weltkoordinaten in Augenkoordinaten. Sie sollen in der Lage sein, die Aufgabe auch mit abgeänderten Zahlen zu lösen.
+\end{enumerate}
+
+\end{document}

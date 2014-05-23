@@ -1,0 +1,655 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{color,graphicx,framed}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{listings}
+\usepackage[section]{placeins}
+\usepackage{pstricks,pst-tree,pst-node}
+\usepackage{dsfont}
+\usepackage{ulem}
+
+
+\title{Computergrafik - Übungsblatt 01}
+\author{Björn Rathjen,\\Patrick Winterstein}
+\date{24.10.14}
+
+\begin{document}
+\maketitle
+\newpage
+\section{(0 Punkte)}
+\begin{enumerate}
+\item[(a)]Berechnen Sie eine Rotation
+$$ \text{R: } \begin{pmatrix}
+x \\ y \\ 1
+\end{pmatrix} \rightarrow \begin{pmatrix}
+m_{11} & m_{12} & m_{13} \\
+m_{21} & m_{22} & m_{23} \\
+0 & 0 & 1 \\
+\end{pmatrix} \begin{pmatrix}
+x \\ y \\ 1 \\
+\end{pmatrix}, $$
+die die beiden Punkte (mit karthesischen Koordinaten) (0,0) und (5,0) auf die Punkte (2,1) und (5,5) abbildet.\\
+Zur Berechnung der Rotation  
+\begin{eqnarray*}
+\begin{pmatrix}
+m_{11} & m_{12} & m_{13} \\
+m_{21} & m_{22} & m_{23} \\
+0 & 0 & 1 \\
+\end{pmatrix}
+\times
+\begin{pmatrix}
+0 \\ 0 \\ 1 \\
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+2 \\ 1 \\ 1 \\
+\end{pmatrix}
+\end{eqnarray*}
+resultierendes Gleichungssystem : \\
+1
+\begin{eqnarray*}
+m_{11} \cdot 0 + m_{12} \cdot 0 + m_{13} \cdot 1  &=& 2 \\
+m_{21} \cdot 0 + m_{22} \cdot 0 + m_{23} \cdot 1  &=& 1 \\
+0 \cdot 0 + 0 \cdot 0 + 1 \cdot 1 &=& 1 \\ 
+\end{eqnarray*}
+2
+\begin{eqnarray*}
+m_{13} &=& 2 \\
+m_{23} &=& 1 \\
+1 &=& 1 \\
+\end{eqnarray*}
+resultierende Matrix:\\
+3
+$$\begin{pmatrix}
+m_{11} & m_{12} & 2 \\
+m_{21} & m_{22} & 1 \\
+0 & 0 & 1 \\
+\end{pmatrix}$$
+4
+\begin{eqnarray*}
+\begin{pmatrix}
+m_{11} & m_{12} & 2 \\
+m_{21} & m_{22} & 1 \\
+0 & 0 & 1 \\
+\end{pmatrix}
+\times
+\begin{pmatrix}
+5 \\ 0 \\ 1 \\
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+5 \\ 5 \\ 1 \\
+\end{pmatrix}
+\end{eqnarray*}
+5
+\begin{eqnarray*}
+m_{11} \cdot 5 + m_{12} \cdot 0 + 2 \cdot 1  &=& 5 \\
+m_{21} \cdot 5 + m_{22} \cdot 0 + 1 \cdot 1 &=& 5 \\
+0 \cdot 0 + 0 \cdot 0 + 1 \cdot 1 &=& 1 \\ 
+\end{eqnarray*}
+6
+\begin{eqnarray*}
+m_{11} \cdot 5 &=& 3 \\
+m_{21} \cdot 5 &=& 4 \\
+1 &=& 1 \\ 
+\end{eqnarray*}
+7
+\begin{eqnarray*}
+m_{11} &=& \frac{3}{5} \\
+m_{21} &=& \frac{4}{5} \\
+\end{eqnarray*}
+8\\
+resultierende Matrix:
+$$\begin{pmatrix}
+\frac{3}{5} & m_{12} & 2 \\
+\frac{4}{5} & m_{22} & 1 \\
+0 & 0 & 1 \\
+\end{pmatrix}$$
+9\\
+da Rotation $\rightarrow $
+$$\begin{pmatrix}
+\frac{3}{5} & -\frac{4}{5} & 2 \\
+\frac{4}{5} & \frac{3}{5} & 1 \\
+0 & 0 & 1 \\
+\end{pmatrix}$$
+\item[(b)] Bestimmten Sie den Punkt $z$ der Ebene mit $z = R(z)$ (den Fixpunkt; den Punkt, um den gedreht wird).
+\begin{eqnarray*}
+\begin{pmatrix}
+\frac{3}{5} & -\frac{4}{5} & 2 \\
+\frac{4}{5} & \frac{3}{5} & 1 \\
+0 & 0 & 1 \\
+\end{pmatrix}
+\times 
+\begin{pmatrix}
+x \\ y \\ 1 \\
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+x \\ y \\ 1 \\
+\end{pmatrix} \\
+\end{eqnarray*}
+resultierendes Gleichungssystems
+\begin{eqnarray*}
+\frac{3}{5} \cdot x + -\frac{4}{5} \cdot y + 2 &=& x \\
+\frac{4}{5} \cdot x + \frac{3}{5} \cdot y + 1 &=& y \\ 
+\end{eqnarray*}
+\begin{eqnarray*}
+3 \cdot x - 4 \cdot y + 10 &=& 5 \cdot x \\
+4 \cdot x + 3 \cdot y + 5 &=& 5 \cdot y \\ 
+\end{eqnarray*}
+\begin{eqnarray*}
+2 \cdot x &=& - 4 \cdot y + 10\\
+4 \cdot x + 5 &=& 2 \cdot y \\ 
+\end{eqnarray*}
+2 - 2 * 1
+\begin{eqnarray*}
+5 &=& 10 \cdot y - 20\\
+25 &=& 10 \cdot y \\
+2,5 &=& y\\
+\\
+x &=& -2 \cdot 2,5 + 5\\
+x &=& 0 \\
+\end{eqnarray*}
+Punkt ist (0 / 2,5).
+\item[(c)] Um welchen Winkel wird die Ebene dabei gedreht? (in Uhrzeigersinn bzw. gegen den Uhrzeigersinn?)
+$$ \cos \alpha = \frac{3}{5} $$
+$$ \alpha = 53,13$$
+\end{enumerate}
+\section{Freiheitsgrade (0 Punkte)}
+Wieviele Paare von Urbildpunkten und Bildpunkten muss man im Allgemeinen festlegen (beliebig, fast beliebig, mit Einschränkungen), um die folgenden Abbildungsarten im $\mathbb{R^2}$ bzw. $ \mathbb{R}^3$ eindeutig zu charakterisieren? Geben Sie kurze Begründungen.
+\begin{enumerate}
+\item[(a)] Isometrie (starre Bewegung)
+\item[(b)] Affine Abbildung
+\end{enumerate}
+Anmerkung: Manche Information kann man auch über ein einzelnes Bit speichern, an-
+statt ein zusätzliches Punktepaar zu verwenden. Diese Fälle sollen erkannt werden.
+\section{(0 Punkte)} 
+Schreiben Sie die Transformationsmatrix M , die der Nacheinanderausführung der folgenden Transformationen (in dieser Reihenfolge) entspricht:
+\begin{enumerate}
+\item[(a)] Eine Rotation um den Ursprung um 90 Grad nach links.
+\item[(b)] Eine Streckung der x-Achse um den Faktor 2. (Die y-Achse bleibt unverändert.)
+\item[(c)] Eine Translation um den Vektor (2, 1).
+\item[(d)] Eine Rotation um den Ursprung um 90 Grad nach links.
+\end{enumerate}
+Auf welche Punkte werden die drei Punkte (4, 2), (3, 3), (3, 7) am Ende abgebildet?
+\section{(0 Punkte)}
+\begin{enumerate}
+\item[(a)] Welche geometrischen Transformation wird durch die Abbildung
+$$ \text{A: } x \rightarrow \begin{pmatrix}
+1&0\\ 
+0&-1\\
+\end{pmatrix}x$$
+beschrieben?\\
+Spiegelung an der x-Achse, weil :
+$$ \text{A: } x \rightarrow \begin{pmatrix}
+1&0\\ 
+0&-1\\
+\end{pmatrix}
+\times
+\begin{pmatrix}
+x \\ y \\
+\end{pmatrix} = \begin{pmatrix}
+x \\ -y\\
+\end{pmatrix} $$
+\item[(b)] Sei R eine Rotation um 90 Grad nach rechts um den Ursprung. Wenden Sie folgende drei Transformationen in der folgenden Reihenfolge an:
+$$R,A,R^{-1}$$
+Bestimmen Sie die Matrix M , welche der Verknüpfung der drei Abbildungen entspricht.\\
+$$
+R =
+\begin{pmatrix}
+\cos 90 & -\sin 90 \\
+\sin 90 & \cos 90 \\
+\end{pmatrix}\\
+$$
+$$ 
+\begin{pmatrix}
+\cos 90 & -\sin 90 \\
+\sin 90 & \cos 90 \\
+\end{pmatrix}
+\times
+\begin{pmatrix}
+1 & 0 \\
+0 & -1 \\
+\end{pmatrix}
+\times
+\begin{pmatrix}
+\cos -90 & -\sin -90 \\
+\sin -90 & \cos -90 \\
+\end{pmatrix}
+$$
+$$ 
+\begin{pmatrix}
+\cos 90 & -\sin 90 \\
+\sin 90 & \cos 90 \\
+\end{pmatrix}
+\times
+\begin{pmatrix}
+1 & 0 \\
+0 & -1 \\
+\end{pmatrix}
+\times
+\begin{pmatrix}
+\cos 90 & \sin 90 \\
+-\sin 90 & \cos 90 \\
+\end{pmatrix}
+$$
+$$ 
+\begin{pmatrix}
+0 & -1 \\
+1 & 0 \\
+\end{pmatrix}
+\times
+\begin{pmatrix}
+1 & 0 \\
+0 & -1 \\
+\end{pmatrix}
+\times
+\begin{pmatrix}
+0 & 1 \\
+-1 & 0 \\
+\end{pmatrix}
+$$
+$$
+\begin{pmatrix}
+0 & 1 \\
+1 & 0 \\
+\end{pmatrix}
+\times
+\begin{pmatrix}
+0 & 1 \\
+-1 & 0 \\
+\end{pmatrix}
+$$
+$$
+\begin{pmatrix}
+-1 & 0 \\
+0 & 1 \\
+\end{pmatrix}
+$$
+
+\item[(c)] Bestimmen Sie die Fixpunkte von M (die Punkte x mit $M x = x$).
+\begin{eqnarray*}
+\begin{pmatrix}
+-1 & 0 \\
+0 & 1 \\
+\end{pmatrix} 
+\times
+\begin{pmatrix}
+x \\ y
+\end{pmatrix}
+&=& 
+\begin{pmatrix}
+x \\ y
+\end{pmatrix}
+\\
+-x &=& x \\
+y &=& y \\
+\end{eqnarray*}
+\item[(d)] Welche geometrische Transformation wird durch M beschrieben?\\
+Spiegelung an der y-Achse.
+\end{enumerate}
+\section{(0 Punkte)}
+Wenden Sie die projektive Transformation $x \rightarrow Mx$ mit
+$$
+\begin{pmatrix}
+2 & 3 & 4\\
+-1 & 0 & 0 \\
+2 & 2 & 1 \\
+\end{pmatrix}
+$$
+auf die Quadrate eines Schachbrettmusters.\\
+$\{ (x, y) \; \in \; \mathbb{R}^{2} \;  \exists \; i, j \in \mathbb{Z}, 0 \leq i \leq x \leq i + 1 \leq 8, 0 \leq j \leq y \leq j + 1 \leq 8, i + j \text{ ungerade} \}$
+an und zeichnen Sie das Ergebnis.\\
+
+\begin{tabular}{ccccccccc}
+$
+\begin{pmatrix}
+4\\
+0\\
+1\\
+\end{pmatrix}
+$
+&
+$
+\begin{pmatrix}
+6\\
+0\\
+1\\
+\end{pmatrix}
+$
+\end{tabular}
+
+\section{(0 Punkte)}
+\begin{enumerate}
+\item[(a)] Berechnen Sie den Schnittpunkt P der beiden Geraden
+$$3x + 4y = 5$$
+$$4x + 5y = -6$$
+in \textit{homogenen} Koordinaten.
+\item[(b)] Bestimmen Sie die Gleichung der Geraden g durch P und den Punkt
+$$
+\begin{pmatrix}
+3 \\ 2 \\ 6\\
+\end{pmatrix}
+$$
+\item[(c)] Schneiden Sie $g$ mit der Ferngeraden.
+\end{enumerate}
+\section{Rotation um eine beliebige Achse (10 Punkte)}
+Bestimmen Sie die Transformationsmatrix für eine Rotation um die Gerade durch den
+Ursprung in Richtung des Vektors
+$$
+\begin{pmatrix}
+-4 \\ 2 \\ 3 \\
+\end{pmatrix}
+$$
+um einen Winkel von 30 Grad gegen den Uhrzeigersinn, wenn man vom Ursprung aus in
+Richtung von u schaut. Verwenden Sie dazu eine Methode Ihrer Wahl, z.B. die folgende:
+\begin{enumerate}
+\item[1.] Drehe den Vektor u in die yz-Ebene (z. B. um die z-Achse).
+$$
+\begin{pmatrix}
+3/ \sqrt{29} & -\sqrt{20}/\sqrt{29} & 0 \\
+\sqrt{20}/\sqrt{29} & 3/ \sqrt{29} & 0 \\
+0 & 0 & 1 \\
+\end{pmatrix}
+$$
+\item[2.] Drehe den Vektor weiter in die z-Achse (um die x-Achse).
+$$
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & \sqrt{20}/\sqrt{29} & -3/ \sqrt{29}\\
+0 & 3/ \sqrt{29} & \sqrt{20}/\sqrt{29} \\
+\end{pmatrix}
+$$
+\item[3.] Drehe um 30 Grad um die z-Achse.
+$$
+\begin{pmatrix}
+\cos 30 & -\sin 30 & 0 \\
+\sin 30 & \cos 30 & 0 \\
+0 & 0 & 1 \\
+\end{pmatrix}
+$$
+\item[4.] Führe die Transformationen aus Schritt 2 und 1 rückwärts aus. Kontrollieren Sie, dass der Punkt u auf sich selbst abgebildet wird.
+$$
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & \sqrt{20}/\sqrt{29} & 3/ \sqrt{29}\\
+0 & -3/ \sqrt{29} & \sqrt{20}/\sqrt{29} \\
+\end{pmatrix}
+$$
+
+\end{enumerate}
+gesamt : 
+$$
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & \sqrt{20}/\sqrt{29} & -3/ \sqrt{29}\\
+0 & 3/ \sqrt{29} & \sqrt{20}/\sqrt{29} \\
+\end{pmatrix}
+\times
+\begin{pmatrix}
+3/ \sqrt{29} & -\sqrt{20}/\sqrt{29} & 0 \\
+\sqrt{20}/\sqrt{29} & 3/ \sqrt{29} & 0 \\
+0 & 0 & 1 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+3/ \sqrt{29} & -\sqrt{20}/\sqrt{29} & 0 \\
+20 / 29 & 3 \cdot \sqrt{20}/29 & -3/ \sqrt{29} \\
+3 \cdot \sqrt{20}/29 & 9 /29 & \sqrt{20}/\sqrt{29} \\
+\end{pmatrix}
+$$
+$$
+\begin{pmatrix}
+3/ \sqrt{29} & -\sqrt{20}/\sqrt{29} & 0 \\
+20 / 29 & 3 \cdot \sqrt{20}/29 & -3/ \sqrt{29} \\
+3 \cdot \sqrt{20}/29 & 9 /29 & \sqrt{20}/\sqrt{29} \\
+\end{pmatrix}
+\times
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & \sqrt{20}/\sqrt{29} & -3/ \sqrt{29}\\
+0 & 3/ \sqrt{29} & \sqrt{20}/\sqrt{29} \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+ & & 
+\end{pmatrix}
+$$
+
+
+\section{Arithmetische Komplexität (10 Punkte)}
+Betrachten Sie das Verfahren der vorherigen Aufgabe für einen allgemeinen Vektor u und bestimmen Sie die Anzahl der arithmetischen Operationen (Addition und Subtraktion, Multiplikation, Division, Quadratwurzel).\\
+5 mal Multiplitkation von Vektor mit einer Matrix.\\
+das sind 5 mal 3 mal (3 mult 3 add)\\
+um matrix zu berechnen 4 mal (4 divisionen + 2 mal (2add 3mult sqrt) + 2 mal (udd 2mult sqrt)
+\begin{description}
+\item[Additionen / Subtraktionen] 45 + 24 = 69
+\item[Multiplikationen] 45 + 40
+\item[Divisionen]16
+\item[Quadratwurzeln] 16
+\end{description}
+\section{Projektives Bild einer Strecke (10 Punkte)}
+\begin{enumerate}
+\item[(a)] Zerlegen Sie die Strecke von (-1, 0) bis (0, 1) in 10 gleiche Teile und wenden Sie auf die Zwischenpunkte die projektive Transformation $x \rightarrow M x$ mit\\
+$
+\begin{pmatrix}
+2 & 3 &  4 \\
+-1 & 0 & 0 \\
+2 & 2 & 1 \\
+\end{pmatrix}
+$\\
+
+
+aus Aufgabe 5 an. Zeichnen Sie das Ergebnis. Was ist das Bild der ganzen Strecke
+unter dieser Transformation?
+\begin{eqnarray*}
+\begin{pmatrix}
+2 & 3 &  4 \\
+-1 & 0 & 0 \\
+2 & 2 & 1 \\
+\end{pmatrix}
+\times
+\begin{pmatrix}
+-1 \\ 0 \\ 1 \\
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+-2 + 4 \\
+1 \\
+-2 + 1 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+2 \\ 1 \\ -1 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+-2 \\ -1 \\ 1 \\
+\end{pmatrix}
+\\
+\begin{pmatrix}
+-0,9 \\ 0,1 \\ 1 \\
+\end{pmatrix}
+\rightarrow
+\begin{pmatrix}
+2,5 \\ 0,9 \\ -0,6 \\
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+-25/6 \\ -3/2 \\ 1 \\
+\end{pmatrix}
+= 
+\begin{pmatrix}
+-4,16 \\ -1,5 \\ 1
+\end{pmatrix}\\
+\begin{pmatrix}
+-0,8 \\ 0,2 \\ 1 \\
+\end{pmatrix}
+\rightarrow
+\begin{pmatrix}
+3 \\ 0,8 \\ -0,2 \\
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+-15 \\ -4 \\ 1 \\
+\end{pmatrix}\\
+\begin{pmatrix}
+-0,7 \\ 0,3 \\ 1 \\
+\end{pmatrix}
+\rightarrow
+\begin{pmatrix}
+3,5 \\ 0,7 \\ 0,2 \\
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+35/2 \\ 7/2 \\ 1 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+17,5 \\ 3,5 \\ 1
+\end{pmatrix}\\
+\begin{pmatrix}
+-0,6 \\ 0,4 \\ 1 \\
+\end{pmatrix}
+\rightarrow
+\begin{pmatrix}
+4 \\ 0,6 \\ 0,6 \\
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+20/3 \\ 1 \\ 1 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+6,66 \\ 1 \\ 1
+\end{pmatrix}\\
+\begin{pmatrix}
+-0,5 \\ 0,5 \\ 1 \\
+\end{pmatrix}
+\rightarrow
+\begin{pmatrix}
+4,5 \\ 0,5 \\ 1 \\
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+4,5 \\ 0,5 \\ 1 \\
+\end{pmatrix}\\\\
+\begin{pmatrix}
+-0,4 \\ 0,6 \\ 1 \\
+\end{pmatrix}
+\rightarrow
+\begin{pmatrix}
+5 \\ 0,4 \\ 1,4 \\
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+25/7 \\ 2/7 \\ 1 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+3,57 \\ 0,285 \\ 1 \\
+\end{pmatrix}
+\\
+\begin{pmatrix}
+-0,3 \\ 0,7 \\ 1 \\
+\end{pmatrix}
+\rightarrow
+\begin{pmatrix}
+5,5 \\ 0,3 \\ 1,8 \\
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+55/18 \\ 1/6 \\ 1 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+3,05 \\ 0,16 \\ 1 \\ 
+\end{pmatrix}
+\\
+\begin{pmatrix}
+-0,2 \\ 0,8 \\ 1 \\
+\end{pmatrix}
+\rightarrow
+\begin{pmatrix}
+6 \\ 0,2 \\ 2,2 \\
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+30/11 \\ 1/11 \\ 1 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+2,72 \\ 0,099 \\ 1
+\end{pmatrix}
+\\
+\begin{pmatrix}
+-0,1 \\ 0,9 \\ 1 \\
+\end{pmatrix}
+\rightarrow
+\begin{pmatrix}
+6,5 \\ 0,2 \\ 2,6 \\
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+\frac{65}{26} \\ \frac{1}{13} \\ 1 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+2,05 \\ 0,076 \\ 1
+\end{pmatrix}
+\\
+\begin{pmatrix}
+0 \\ 1 \\ 1 \\
+\end{pmatrix}
+\rightarrow
+\begin{pmatrix}
+7 \\ 0 \\ 3 \\
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+\frac{7}{5} \\ 0 \\ 1 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+1,4 \\ 0 \\ 1
+\end{pmatrix}\\
+\end{eqnarray*} 
+\item[(b)] Charakterisieren Sie diejenigen Strecken, deren Bild unter einer gegebenen projektiven Transformation wieder eine Strecke ist. (Also nicht ein unendlicher Strahl oder etwas anderes.)\\
+Es existiert keine Strecke zwischen den Punkten 3 und 4 sonst schon.
+$$
+\begin{pmatrix}
+2 & 3 &  4 \\
+-1 & 0 & 0 \\
+2 & 2 & 1 \\
+\end{pmatrix}
+\times
+\begin{pmatrix}
+x \\ y \\ z
+\end{pmatrix} 
+= 
+\begin{pmatrix}
+2 \cdot x + 3 \cdot y + 4 \\
+-x\\
+2 \cdot x + 2 \cdot y + 1 \\
+\end{pmatrix}
+$$
+Da y immer $x + 1 \Rightarrow $
+$$
+\begin{pmatrix}
+2 \cdot x + 2 \cdot (x + 1) + 4\\
+-x \\
+2 \cdot x + 2 \cdot (x + 1) + 1\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+4 \cdot x + 6 \\
+-x\\
+4 \cdot x + 3 \\
+\end{pmatrix}
+$$
+da das resultierende z nicht 0 werden darf, ist bei $x = -3/4$ ein Fernpunkt und Punktpaare, zwischen denen dieser Punkt liegt, sind nach der Transformation nicht miteinander verbunden.
+\end{enumerate}
+\end{document}
+

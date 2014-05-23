@@ -1,0 +1,377 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{color,graphicx,framed}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{listings}
+\usepackage[section]{placeins}
+\usepackage{pstricks,pst-tree,pst-node}
+\usepackage{dsfont}
+\usepackage{ulem}
+
+\usepackage{nicefrac}
+\usepackage{romannum}
+
+\title{Computergrafik\\Übungsblatt 4 + 5}
+\author{Björn Rathjen, Patrick Winterstein}
+\date{zu 22.05.14}
+
+\begin{document}
+\maketitle
+\newpage
+\section{Aufgabe 28. Farbräume (10 Punkte, eine ehemalige Klausuraufgabe)}
+Wandeln Sie folgende Farbangaben vom HSL-Modell in das RGB-Modell um. Die Werte sind dabei im Intervall [0, 1] normiert, nur der Farbton H (hue) liegt zwischen $0^\circ$ und $360^\circ$.
+\subsection{allgemeines Vorgehen}
+\subsubsection{in reine Farbe umwandeln}
+Durch lineare Näherung werden die ursprünglichen RGB-Werte bestimmt.\\
+$$ HSL \rightarrow r'g'b'$$
+\begin{figure}[!hb]
+\centering
+\begin{tabular}{cc}
+Intervall & resultierender RGB-Wert \\
+$ [0^\circ	,60^\circ]$ 		& $(1,\frac{H}{60^\circ},0)$ \\
+$ [60^\circ	,120^\circ]$ 	& $(1-\frac{H-60^\circ}{60^\circ},1,0)$ \\
+$ [120^\circ	,180^\circ]$ 	& $(0,1,\frac{H-120^\circ}{60^\circ})$ \\
+$ [180^\circ	,240^\circ]$ 	& $(0,1-\frac{H-180^\circ}{60^\circ},1)$ \\
+$ [240^\circ	,300^\circ]$		& $(\frac{H-240^\circ}{60^\circ},0,1)$ \\
+$ [300^\circ	,0^\circ]$ 		& $(1,0,1-\frac{H-300^\circ}{60^\circ})$ \\
+\end{tabular}
+\caption{Tabelle zur Umwandlung in Basis RGB}
+\end{figure}
+\subsubsection{Sättigung einberechnen}
+$$ (r",g",b") = s(r',g',b') + (1-s)(\nicefrac{1}{2},\nicefrac{1}{2},\nicefrac{1}{2})$$
+\subsubsection{lightness mit einbeziehen}
+$$
+(r,g,b) =
+\begin{cases}
+2l(r",g",b") & \mbox{if } 0 \leq l \leq \nicefrac{1}{2} \\
+2(l-1)(r",g",b")+ (2f-1)(1,1,1) & \mbox{if } \nicefrac{1}{2} < l \leq 1  \\
+\end{cases}
+$$
+\subsection{Aufgaben}
+\begin{enumerate}
+\item[(a)] H = $0^\circ$(rot), S = 0.7 (Sättigung), L = 0.5 (lightness).
+\begin{enumerate}
+\item reine Farbe \\
+$$H = 0^\circ \Rightarrow (1,0,0)$$ 
+\item Sättigung \\
+\begin{eqnarray*}
+(r",g",b") &=& 0.7 \cdot(1,0,0) + (1-0.7)\cdot(\nicefrac{1}{2},\nicefrac{1}{2},\nicefrac{1}{2}) \\
+&=& (0.7,0,0) + (\nicefrac{3}{20},\nicefrac{3}{20},\nicefrac{3}{20})\\
+&=& (0.95,0.15,0.15)
+\end{eqnarray*}
+\item lightness \\
+Aus $0 \leq 0.5 \leq \nicefrac{1}{2} \rightarrow$  Fall 1 : \\
+\begin{eqnarray*}
+(r,g,b) &=& 2 \cdot 0.5\cdot (0.95,0.15,0.15) \\
+&=& (0.95,0.15,0.15)\\
+\end{eqnarray*}
+\end{enumerate}
+\item[(b)] H = $120^\circ$ (grün), S = 0.5, L = 0.3.
+\begin{enumerate}
+\item reine Farbe \\
+$$H = 0^\circ \Rightarrow (0,1,0)$$ 
+\item Sättigung \\
+\begin{eqnarray*}
+(r",g",b") &=& 0.5 \cdot(0,1,0) + (1-0.5)\cdot(\nicefrac{1}{2},\nicefrac{1}{2},\nicefrac{1}{2}) \\
+&=& (0,0.5,0) + (\nicefrac{1}{4},\nicefrac{1}{4},\nicefrac{1}{4})\\
+&=& (0.25,0.75,0.25)
+\end{eqnarray*}
+\item lightness \\
+Aus $0 \leq 0.3 \leq \nicefrac{1}{2} \rightarrow$  Fall 1 : \\
+\begin{eqnarray*}
+(r,g,b) &=& 2 \cdot 0.3\cdot (0.25,0.75,0.25) \\
+&=& (0.15,0.45,0.15) \\
+\end{eqnarray*}
+\end{enumerate}
+\item[(c)] Wandeln Sie folgende RGB-Farbe in das HSL-Modell um:
+R = 0.4, G = 0.4, B = 0.3.
+\begin{enumerate}
+\item rgb min max \\
+\begin{eqnarray*}
+min(rgb) &=& 0.3 \\
+max(rgb) &=& 0.4 \\
+maxdiv(rgb) &=& 0.4 - 0.3 \\
+&=& 0.1 \\
+\end{eqnarray*}
+\item lightness \\
+\begin{eqnarray*}
+l &=& \frac{min(rgb) + max(rgb)}{2}\\
+&=& \nicefrac{0.7}{2} \\
+&=& \nicefrac{7}{20} \\
+&=& 0.35
+\end{eqnarray*}
+Da nicht alle RGB-Werte gleich sind, sind $H \neq 0 \vee s \neq 0$
+\item Sättigung \\
+Da $l< 0.5$
+\begin{eqnarray*}
+s &=& \frac{maxdiv(rgb)}{max(rgb)+min(rgb)}\\
+&=& \frac{0.1}{0.7}\\
+&=& \nicefrac{1}{7}
+\end{eqnarray*}
+\item H berechnen \\
+da r und grün maximum sind
+\begin{eqnarray*}
+rot_h &=& \nicefrac{(\nicefrac{(max(rgb) - r)}{6}) + (\nicefrac{maxdiv(rgb)}{2}))}{maxdiv(max)}\\
+&=& \nicefrac{\frac{0.4-0.4}{6}+\frac{0.1}{2}}{0.1}\\
+&=& \nicefrac{0+0.05}{0.1} \\
+&=& 0.5 \\\\
+gruen_h &=& rot_h \;\; (\text{da $r == g$})\\\\
+blau_h &=& \nicefrac{(\nicefrac{(max(rgb) - b)}{6}) + (\nicefrac{maxdiv(rgb)}{2}))}{maxdiv(max)}\\
+&=& \nicefrac{(\nicefrac{0.4 - 0.3)}{6}) + (\nicefrac{0.1}{2}))}{0.1} \\
+&=& \nicefrac{(\nicefrac{0.1}{6}) + 0.05)}{0.1} \\
+&=& \nicefrac{(\nicefrac{1}{60}) + \nicefrac{1}{20})}{0.1} \\
+&=& \nicefrac{(\nicefrac{4}{60})}{0.1} \\
+&=& \nicefrac{(\nicefrac{4}{60})}{\nicefrac{1}{10}} \\
+&=& \nicefrac{40}{60} \\
+&=& \nicefrac{2}{3} \\
+\end{eqnarray*}
+\item h berechnen \\
+da rot == max(rgb)
+\begin{eqnarray*}
+h &=& blau_h - gruen_h \\
+&=& \nicefrac{2}{3} - 0.5 \\
+&=& \nicefrac{1}{6} \\
+&=& 60^\circ \\ \\
+&=& \nicefrac{1}{3} + rot_h - blau_h \\
+&=& \nicefrac{1}{3} + 0.5 - \nicefrac{2}{3} \\
+&=& -\nicefrac{1}{3} + 0.5 \\
+&=& \nicefrac{1}{6} \\
+&=& 60^\circ
+\end{eqnarray*}
+\item HSL 
+$$ H = 60^\circ \; ,\; \; s = \frac{1}{7} \;,\; \; 0.35 $$
+\end{enumerate}
+\end{enumerate}
+\section{Aufgabe 29. Ellipsen (10 Punkte)}
+Eine Ellipse ist das Bild eines Kreises unter einer affinen Transformation. Dies ist die
+Gleichung der Ellipse mit Halbachsen a und b in Standardlage:
+$$ \frac{x}{a}^2 + \frac{y}{b}^2 = 1$$
+\begin{enumerate}
+\item[(a)] Bestimmen Sie die Gleichung der Ellipse mit Halbachsen $a=8$ und $b=3$, die aus der Standardlage um $25^\circ$ im Gegenuhrzeigersinn gedreht wurde.
+\begin{eqnarray*}
+\frac{x}{a}^2 + \frac{y}{b}^2 = 1 &\Leftrightarrow & y^2 = b^2 \cdot (1 - \frac{x^2}{a^2}) \\
+&\Leftrightarrow & y = \pm \sqrt{b^2 \cdot (1 - \frac{x^2}{a^2})}\\
+& \Rightarrow & 
+\begin{pmatrix}
+x \\ y
+\end{pmatrix}
+ = 
+\begin{pmatrix}
+x \\ \pm \sqrt{b^2 \cdot (1 - \frac{x^2}{a^2})}\
+\end{pmatrix} \\
+& \Rightarrow &
+\begin{pmatrix}
+x \\ y
+\end{pmatrix}
+ =
+\begin{pmatrix}
+x \\
+\pm \sqrt{9-\frac{x^2}{64}}
+\end{pmatrix}\\
+\text{Rotation } 
+& \Rightarrow & 
+\begin{pmatrix}
+\cos 25^\circ & \sin 25^\circ \\
+-\sin 25^\circ & \cos 25^\circ \\
+\end{pmatrix}
+\times
+\begin{pmatrix}
+x \\
+\pm \sqrt{9-\frac{x^2}{64}}
+\end{pmatrix} \\
+&=&
+\begin{pmatrix}
+\cos 25^\circ \cdot x + \sin 25^\circ \cdot \pm \sqrt{9-\frac{x^2}{64}}\\
+-\sin 25^\circ \cdot x + \cos 25^\circ \cdot \pm \sqrt{9-\frac{x^2}{64}} \\
+\end{pmatrix}
+\end{eqnarray*}
+\item[(b)] Bestimmen Sie die Gleichung der Ellipse, bei der danach zusätzlich der Mittelpunkte in den Punkt$(2,7)$ verschoben wurde. (Kontrolle: Der Punkt$(2+8\cdot \cos 25^\circ,7+8\cdot\sin 25^\circ)$ muss zum Beispiel die Gleichung erfüllen.)\\
+\begin{eqnarray*}
+& &
+\begin{pmatrix}
+\cos 25^\circ \cdot x + \sin 25^\circ \cdot \pm \sqrt{9-\frac{x^2}{64}}\\
+-\sin 25^\circ \cdot x + \cos 25^\circ \cdot \pm \sqrt{9-\frac{x^2}{64}} \\
+\end{pmatrix}
++
+\begin{pmatrix}
+2 \\ 7
+\end{pmatrix} \\
+oder : \\
+& &
+\begin{pmatrix}
+\cos 25^\circ & \sin 25^\circ & 2\\
+-\sin 25^\circ & \cos 25^\circ & 7\\
+0 & 0 & 1\\
+\end{pmatrix}
+\times
+\begin{pmatrix}
+x \\
+\pm \sqrt{b^2 \cdot (1 - \frac{x^2}{a^2})} \\
+1 \\
+\end{pmatrix}
+\end{eqnarray*}
+\item[(c)] (0 Punkte) Schneiden Sie die entstandene Ellipse aus (b) mit der Geraden $x=4$.
+\item[(d)] Bestimmen sie die höchste und die tiefste horizontale Gerade $y=h$, die die Ellipse aus (b) schneidet.
+\end{enumerate}
+\section{30. Lineare Ungleichungen, 5 Punkte + 5 Zusatzpunkte}
+\begin{enumerate}
+\item[(a)] Polygon in der Ebene, 5 Punkte \\
+Zeichnen Sie die Lösungsmenge des folgenden Systems von Ungleichungen mit Papier, Bleistift und Lineal (und ohne weitere Hilfsmittel) in der x 1 x 2 -Ebene. Gerne können Sie ihr Ergebnis mit Hilfe des Computers überprüfen.
+$$ A = 
+\begin{pmatrix}
+-3 & -1 \\
+3 & 5 \\
+-1 & 0 \\
+1 & -5 \\
+\end{pmatrix}
+, \;
+b =
+\begin{pmatrix}
+-3 \\ 15 \\ -4 \\ 5 \\
+\end{pmatrix},
+\; A\begin{pmatrix}
+x_1 \\ x_2 
+\end{pmatrix}
+\leq
+b
+$$
+\begin{minipage}[c]{14cm}
+\begin{minipage}[c]{7cm}
+\begin{enumerate}
+\item[\Romannum{1}]
+\begin{eqnarray*}
+-3x_1 -x_2 & \leq & -3 \\
+-x_2 & \leq & -3 + 3x_1 \\
+x_2 & \geq & 3 - 3x_1 \\
+\end{eqnarray*}
+\item[\Romannum{2}]
+\begin{eqnarray*}
+3x_1 +5x_2 & \leq & 15 \\
+5x_2 & \leq & 15 - 3x_1 \\
+x_2 & \leq & 3 - \nicefrac{3}{5}x_1 \\
+\end{eqnarray*}
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{7cm}
+\begin{enumerate}
+\item[\Romannum{3}]
+\begin{eqnarray*}
+-x_1 & \leq & -1 \\
+x_1 & \geq & 1 \\
+ & & \\
+\end{eqnarray*}
+\item[\Romannum{4}]
+\begin{eqnarray*}
+x_1 -5x_2 & \leq & 5 \\
+-5x_2 & \leq & 5 - x_1 \\
+x_2 & \leq & -1 + \nicefrac{x_1}{5} \\
+\end{eqnarray*}
+\end{enumerate}
+\end{minipage}
+\end{minipage}
+\item[(b)] Polyeder im Raum, 5 Zusatzpunkte\\
+Die Lösungsmenge der folgenden Ungleichungen beschreibt ein Polyeder im
+Raum. Erstellen sie davon eine ebene Zeichnung.
+\begin{eqnarray*}
+15x + 12y + 20z & \geq & 60 \\
+12x + 20y + 15z & \geq & 60 \\
+z & \leq & 1 \\
+x, y, z & \geq & 0 \\
+\end{eqnarray*}
+Verwenden Sie dazu die folgende Methode. Wir wollen lediglich die Ecken und Kanten des Polyeders zeichnen. Ein Punkt (x, y, z) im Raum soll dabei in der Ebene bei den Koordinaten $(2y-x, 2z-x)$ gezeichnet werden. (Einheiten in cm; überlegen Sie, wieso dies Sinn macht.) Zeichnen Sie die durch die Ungleichungen gegebenen Ebenen zunächst einzeln. Bestimmen Sie dazu für jede Ebene den Schnitt mit den drei Achsen und verbinden Sie die entstandenen Punkte durch Strecken. Welche geometrische Bedeutung haben diese Strecken? Welche Bedeutung haben Schnittpunkte von Strecken, die zu verschiedenen Ebenen gehören? Manche Strecken und Ecken müssen noch zu dem so entstandenen Bild hinzugefügt werden, andere Streckenabschnitte sind nicht Teil des Polyeders. Machen Sie sich darüber Gedanken und zeichnen Sie das Bild zu Ende. (Verwenden Sie wieder nur Papier, Bleistift und Lineal. Gerne können Sie ihr Ergebnis mit Hilfe des Computers überprüfen.)\\
+
+\begin{minipage}[c]{14cm}
+\begin{minipage}[c]{7cm}
+\begin{enumerate}
+\item[\Romannum{1}]
+$$ 15x + 12y + 20z  \geq  60 $$
+\item[\Romannum{1} z=0]
+\begin{eqnarray*}
+15x + 12y & \geq & 60 | -15x\\
+12y & \geq & -15x + 60 | :12\\
+y & \geq & -\nicefrac{5}{4}x +5 \\
+\end{eqnarray*}
+\item[\Romannum{1} z=1]
+\begin{eqnarray*}
+15x + 12y + 20 & \geq & 60 | - 20 -15x\\
+12y & \geq & -15x + 40 | :12\\
+y & \geq & -\nicefrac{5}{4}x + \nicefrac{10}{3} \\
+\end{eqnarray*}
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{7cm}
+\begin{enumerate}
+\item[\Romannum{2}]
+$$ 12x + 20y + 15z  \geq  60 $$
+\item[\Romannum{2} z=0]
+\begin{eqnarray*}
+12x + 20y & \geq & 60 | -12x\\
+20y & \geq & -12x + 60 | :12\\
+y & \geq & -\nicefrac{3}{5}x +3 \\
+\end{eqnarray*}
+\item[\Romannum{2} z=1]
+\begin{eqnarray*}
+12x + 20y + 15 & \geq & 60 | -12x -15\\
+20y & \geq & -12x + 45 | :20\\
+y & \geq & -\nicefrac{3}{5}x + \nicefrac{9}{4} \\
+\end{eqnarray*}
+\end{enumerate}
+\end{minipage}
+\end{minipage}
+
+\section{32. Verständnisfragen zu Farbräumen, 11 Punkte}
+\begin{enumerate}
+\item[(a)] Wieso kann es sein, dass zwei Lichtquellen ein unterschiedliches Lichtspektrum aussenden, aber vom Auge genauso wahrgenommen werden?\\
+
+Einerseits kann dies daran liegen, dass die Spektren sich nur im nicht wahrnehmbaren (sichtbaren) Bereich sich unterscheiden, und somit der sichtbare Teil des Spektrum identisch ist. Andererseits wird im Auge das Signal Licht in ein Elektrisches umgewandelt. Da das Lichtspektrum jedoch unendlich ist und der Mensch an sich "nur" drei verschiedene Zäpfchen zur Farbwahrnehmung hat die nur bestimmte Wellenlängenbereiche in unterschiedlicher Intensität wahrnehmen können, können verschiedene Mischungen die in der resultierenden Formel 
+$$
+\int_{\lambda} S(\lambda) \cdot I(\lambda ) \;  d\lambda
+$$
+das gleiche Ergebnis haben, und somit die selbe Farbe darstellen.
+\item[(b)] Wieso kann ein Computerbildschirme nicht alle Farben darstellen, die vom
+menschlichen Auge unterschieden werden können?
+\item[(c)] Markieren Sie die Graulinie und die reinen Farben im Farbwürfel.\\
+Alle Farben die auf einer Strecke vom Ursprung zum Punkt $\begin{pmatrix}
+1 & 1 & 1 \\
+\end{pmatrix}$ \\
+die reinen Farben stellen die Eckpunkte dar.
+\item[(d)] Markieren Sie im Farbwürfel alle Farben, die mit $h = 60^\circ$ dargestellt werden
+können. (Bezogen auf das HSV-Modell)\\
+Alle Farben die auf der Strecke vom Ursprung zum Punkt 
+$\begin{pmatrix}
+1 & 1 & 0 \\
+\end{pmatrix}$
+liegen
+\item[(e)] Markieren Sie im Farbwürfel alle Farben, die mit $v = 0,5$ dargestellt werden
+können. (Bezogen auf das HSV-Modell)\\ 
+Alle Farben die in einem im Ursprung liegenden Würfel mit der Kantenlänge 0,5 liegen.
+\item[(f)] Markieren Sie im Farbwürfel alle Farben, die im HSV-Modell mit  $s = 0; s =
+1; s = 0,5$ dargestellt werden können.
+\begin{description}
+\item[s=0] Schwarz liegt im Ursprung.
+\item[s=0,5] Alle Farben, die auf den drei im Würfel liegenden Außenseiten liegen.
+\item[s=1] Weiss auf dem Punkt $\begin{pmatrix}
+1 & 1 & 1
+\end{pmatrix}$
+\end{description}
+\item[(g)] Markieren Sie im Farbwürfel alle Farben, die im HSL-Modell mit $l = 0,5$; $l = 0,7$ dargestellt werden können.
+\begin{description}
+\item[l=0,5] Alle Farben die Auf den Drei Diagonalen zwischen den Echten Farben und deren Komplementärfarben liegen.
+\item[l=0,7] Alle Farben, die auf der Fläche liegen, die senkrecht auf der Neutralen Linie steht in einem Abstand der $0,7 * \overline{BW}$
+\end{description}
+\item[(h)] Markieren Sie im Farbwürfel alle Farben, die im HSL-Modell mit $l = 0,5$ und
+$s = 0,5$ dargestellt werden können.\\
+Mittelpunkt.
+\item[(i)] Bei welchen Farben des Farbwürfels ist im HSV-Modell $s$ nicht eindeutig?\\
+Bei allen Farben, die in der gleichen Farbebene liegen und pa.
+\item[(j)] Bei welchen Farben des Farbwürfels ist im HSL-Modell $l$ nicht eindeutig?\\
+Bei allen Farben, die 
+\item[(k)] Wieso werden die Farben, beim YCC-Modell nicht gleich gewichtet?\\
+Diese werden nicht gleich gewichtet, da diese auch von den Zäpfchen in unterschiedlicher Stärke wahr genommen werden.
+\end{enumerate}
+\end{enumerate}
+\end{document}
