@@ -1,20 +1,5 @@
 \documentclass[ucs,9pt]{beamer}
 
-% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
-%
-% In principle, this file can be redistributed and/or modified under
-% the terms of the GNU Public License, version 2.
-%
-% However, this file is supposed to be a template to be modified
-% for your own needs. For this reason, if you use this file as a
-% template and not specifically distribute it as part of a another
-% package/program, I grant the extra permission to freely copy and
-% modify this file as you see fit and even to delete this copyright
-% notice.
-%
-% Modified by Tobias G. Pfeiffer <tobias.pfeiffer@math.fu-berlin.de>
-% to show usage of some features specific to the FU Berlin template.
-
 % remove this line and the "ucs" option to the documentclass when your editor is not utf8-capable
 \usepackage[utf8x]{inputenc}    % to make utf-8 input possible
 \usepackage[english]{babel}     % hyphenation etc., alternatively use 'german' as parameter
@@ -26,27 +11,22 @@
 % the documentclass option "9pt" to "10pt"
 
 % image to be shown on the title page (without file extension, should be pdf or png)
-%\titleimage{fu_500}
 \titleimage{mi-bildbalken}
-\title[Short Paper Title] % (optional, use only with long paper titles)
+\title[|| Sort] % (optional, use only with long paper titles)
 {Parallele Sortierung}
 
 %\subtitle
 %{Include Only If Paper Has a Subtitle}
 
-\author[Author, Another] % (optional, use only with lots of authors)
+\author[, Another] % (optional, use only with lots of authors)
 {Björn Rathjen \and Patrick Winterstein}
 % - Give the names in the same order as the appear in the paper.
 
 \institute[FU Berlin] % (optional, but mostly needed)
 {Freie Universität Berlin}
-% - Keep it simple, no one is interested in your street address.
 
-\date[ProSem Algo] % (optional, should be abbreviation of conference name)
+\date[ProSem Algo]
 {Proseminar Algorithmen, SS14}
-% - Either use conference name or its abbreviation.
-% - Not really informative to the audience, more for people (including
-%   yourself) who are reading the slides online
 
 \subject{Theoretical Computer Science}
 % This is only inserted into the PDF information catalog. Can be left
@@ -71,14 +51,71 @@
   \titlepage
 \end{frame}
 
-\begin{frame}{Outline}
-  \tableofcontents
+\begin{frame}[allowframebreaks]{Outline}
+  \tableofcontents[currentsection,hideallsubsections,shrink,pausesections]
   % You might wish to add the option [pausesections]
 \end{frame}
 
 \section{Motivation}
+\subsection{Allgemein}
+\subsection{Bezug aufs Fach}
 
-\subsection{The Basic Problem That We Studied}
+\section{Vorraussetzungen}
+\subsection{Komparator}
+\subsection{0,1-Prinzip}
+
+% eventuell wenn Vorraussetzungen zu lang werden
+% \subsection{Zusammenfassung}
+
+
+%eventuell noch unter Vorraussetzungen
+\section{Sortiernetzwerk}
+\subsection{Aufbau}
+
+\subsection{Sortieren im Sortiernetzwerk}
+\subsubsection{nativer Ansatz}
+%vergleich mit bubble sort
+\subsubsection{Aufbau eines effektieveren Netzwerks}
+%Einsatzorte
+\begin{frame}{Beschreibung Teil 1}
+\begin{itemize}
+\item Aufgabe
+\item grundlegendes Prinzip
+\item Demonstration (kleines Beispiel)
+\item Veranschaulichung an einem $2^x$ Beispiel
+\item zeigen dass Aufgabe erfüllt wird
+\end{itemize}
+\end{frame}
+\begin{frame}{Beschreibung Teil 2}
+\begin{itemize}
+\item Aufgabe
+\item grundlegendes Prinzip
+\item Demonstration (kleines Beispiel)
+\item Veranschaulichung an einem $2^x$ Beispiel
+\item zeigen dass Aufgabe erfüllt wird
+\end{itemize}
+\end{frame}
+\subsubsection{Kombination von beiden}
+
+
+\section{Laufzeit}
+\subsection{Herleitung}
+\subsection{Vergleich mit Software sortieren}
+%eventuell unte Vorraussetzungen Mergesort, Quicksort
+
+\section{Fazit}
+\subsection{Geschwindigkeit vs Variabilität}
+\subsection{Hardwareaufwand vs Softwareaufwand}
+
+
+\section{Inhalt zusammesfassen}
+
+\section{Ausblick}
+\section{Hybercube}
+\section{Aufbau}
+\subsection{•}
+
+
 
 \begin{frame}{Make Titles Informative. Use Uppercase Letters. Long Titles are Split Automatically.}{Subtitles are optional.}
   % - A title should summarize the slide in an understandable fashion
