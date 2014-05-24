@@ -1,9 +1,10 @@
 \documentclass[ucs,9pt]{beamer}
-
+\setbeamertemplate{navigation symbols}{}
 % remove this line and the "ucs" option to the documentclass when your editor is not utf8-capable
 \usepackage[utf8x]{inputenc}    % to make utf-8 input possible
 \usepackage[english]{babel}     % hyphenation etc., alternatively use 'german' as parameter
-
+\usepackage{listings}
+\lstset{linenumbers=true,tabsize=4}
 \include{fu-beamer-template}  % THIS is the line that includes the FU template!
 
 \usepackage{arev,t1enc} % looks nicer than the standard sans-serif font
@@ -18,7 +19,7 @@
 %\subtitle
 %{Include Only If Paper Has a Subtitle}
 
-\author[, Another] % (optional, use only with lots of authors)
+\author[] % (optional, use only with lots of authors)
 {Björn Rathjen \and Patrick Winterstein}
 % - Give the names in the same order as the appear in the paper.
 
@@ -56,57 +57,102 @@
 \begin{frame}[plain]
   \titlepage
 \end{frame}
-
-\begin{frame}[allowframebreaks]{Outline}
-  \tableofcontents[currentsection,hideallsubsubsections]
+ 
+\begin{frame}{Inhalt}
+  \tableofcontents[hideallsubsubsections,allowframebreaks] %currentsection,hideallsubsections,hideallsubsubsections
   % You might wish to add the option [pausesections]
 \end{frame}
 
 \section{Motivation}
-\begin{frame}
-mot
+\begin{frame}{Motivation}
 \end{frame}
 \subsection{Allgemein}
-\begin{frame}
-allgemein
+\begin{frame}{Allgemein}
+ist Basis für :
+\begin{itemize}
+\item Sortierung
+\item Suche
+\end{itemize}
 \end{frame}
 \subsection{Bezug aufs Fach}
-\begin{frame}
-fach
+\begin{frame}{Bezug aufs Fach}
+\begin{itemize}
+\item Listen , Wörterbücher
+\item Datenbanken
+\item ... 
+\end{itemize}
 \end{frame}
 \section{Vorraussetzungen}
-\begin{frame}
-vorraussetzungen
-\end{frame}
 \subsection{Komparator}
+\begin{frame}{Aufbau}
+abstrakter Aufbau
+\begin{itemize}
+\item 2 Eingänge
+\item vergleichender Baustein
+\item 2 Ausgänge
+\end{itemize}
+\end{frame}
+\begin{frame}{Vergleichender Baustein (i)}
+besteht aus
+\end{frame}
+\begin{frame}[fragile]{Vergleichender Baustein (ii)}
+\begin{lstlisting}
+	void comp(chan in1, in2, out1 out2){
+		a = <- in1
+		b = <- in2
+	
+		if (a < b)
+			out1 <- a
+			out2 <- b
+			return void
+	
+		out1 <- b
+		out2	 <- a
+		return void
+}
+\end{lstlisting}
+\end{frame}
 \begin{frame}
-Komparator
+Konvention für die folgenden Folien
+\begin{itemize}
+\item Reihenfolge des Inputs egal
+\item kleineres Element am oberen Ausgang
+\item größeres Element am unteren Ausgang
+\end{itemize}
 \end{frame}
 \subsection{0,1-Prinzip}
-\begin{frame}
-01 prinzip
+\begin{frame}{Aufgabe}
+soll 
+\begin{itemize}
+\item einfach
+\item anschaulich
+\item aber korrekt
+\end{itemize}
+zeigen dass etwas sortiert wurde
 \end{frame}
+%beispiel an der Tafel ?
+\begin{frame}{Ansatz}
+man kann jede Zahlenfolge durch eine 0,1 Folge repräsentieren
+\end{frame}
+\begin{frame}{0,1- Beispiel}
+
+\end{frame}
+
 % eventuell wenn Vorraussetzungen zu lang werden
 % \subsection{Zusammenfassung}
-
 
 %eventuell noch unter Vorraussetzungen
 \section{Sortiernetzwerk}
 \subsection{Aufbau}
 \begin{frame}
-aufb sort
+besteht aus mehreren Komperatoren
 \end{frame}
 \subsection{Sortieren im Sortiernetzwerk}
-\begin{frame}
+\begin{frame}{Sortieren im Sortiernetzwerk}
 sort in sortnet
 \end{frame}
 \subsubsection*{nativer Ansatz}
 %vergleich mit bubble sort
-\begin{frame}
-nativ
-\end{frame}
-\subsubsection*{Aufbau eines effektieveren Netzwerks}
-%Einsatzorte
 \begin{frame}{Beschreibung Teil 1}
 \begin{itemize}
 \item Aufgabe
@@ -116,6 +162,8 @@ nativ
 \item zeigen dass Aufgabe erfüllt wird
 \end{itemize}
 \end{frame}
+\subsection*{Aufbau eines effektieveren Netzwerks}
+%Einsatzorte
 \begin{frame}{Beschreibung Teil 2}
 \begin{itemize}
 \item Aufgabe
@@ -125,27 +173,87 @@ nativ
 \item zeigen dass Aufgabe erfüllt wird
 \end{itemize}
 \end{frame}
-\subsubsection*{Kombination von beiden}
-
-
+\subsection*{Kombination von beiden}
 \section{Laufzeit}
 \subsection{Herleitung}
+\begin{frame}{Herleitung}
+Herleitung
+\end{frame}
 \subsection{Vergleich mit Software sortieren}
 %eventuell unte Vorraussetzungen Mergesort, Quicksort
-
+\begin{frame}
+Vergleich
+\end{frame}
 \section{Fazit}
+\begin{frame}
+Fazit
+\end{frame}
 \subsection{Geschwindigkeit vs Variabilität}
+\begin{frame}
+speed vs vari
+\end{frame}
 \subsection{Hardwareaufwand vs Softwareaufwand}
+\begin{frame}
+hardware vs software
+\end{frame}
 
-
-\section{Inhalt zusammesfassen}
-
+\section{Zusammenfassung}
+\begin{frame}{Zusammenfassung}
+zusammenfassung
+\end{frame}
 \section{Ausblick}
+\begin{frame}{Ausblick}
+weiter
+\end{frame}
 \subsection{Hybercube}
+\begin{frame}{Hyprecube}
+?¿
+\end{frame}
 \subsubsection*{Aufbau}
+\begin{frame}{Aufbau}
+structur
+\end{frame}
+
+%Ende
+\begin{frame}{Ende}
+Fragen, Anregungen?\\
+(keine Liederwünsche)
+\end{frame}
+
 \subsection{Anhang}
+\appendix
+\section<presentation>*{\appendixname}
+\subsection<presentation>*{For Further Reading}
 
+\begin{frame}[allowframebreaks]
+  \frametitle<presentation>{For Further Reading}
+    
+  \begin{thebibliography}{10}
+    
+  \beamertemplatebookbibitems
+  % Start with overview books.
 
+  \bibitem{}
+    A.~Author.
+    \newblock {\em Taschenbuch der Algorithmen}.
+    \newblock Springer Verlag , 2008.
+    
+  \bibitem{Author1990}
+    Tom Leighton.
+    \newblock {\em Einführung in Parallele Algorithmen und Architekturen}{\\Gitter, Bäume und Hypercubes}.
+    \newblock Thomsom Publisching , 1997.
+ 
+    
+%  \beamertemplatearticlebibitems
+  % Followed by interesting articles. Keep the list short. 
+
+%  \bibitem{Someone2000}
+%    S.~Someone.
+%    \newblock On this and that.
+%    \newblock {\em Journal of This and That}, 2(1):50--100,
+%    2000.
+  \end{thebibliography}
+\end{frame}
 
 \begin{frame}{Make Titles Informative. Use Uppercase Letters. Long Titles are Split Automatically.}{Subtitles are optional.}
   % - A title should summarize the slide in an understandable fashion
@@ -190,7 +298,6 @@ nativ
 \end{frame}
 
 
-\subsection{Previous Work}
 
 \begin{frame}[fragile]{An old algorithm}
 % NB. listings is quite powerful, but not well suited to be used with beamer
@@ -230,9 +337,7 @@ int main (void)
   \visible<4->{Note the use of \alert{\texttt{std::}}.}
 \end{frame}
 
-\section{Our Results/Contribution}
 
-\subsection{Main Results}
 
 \begin{frame}{Make Titles Informative.}
   \begin{example}
@@ -263,20 +368,6 @@ int main (void)
 \end{frame}
 
 
-\subsection{Basic Ideas for Proofs/Implementation}
-
-\begin{frame}{Make Titles Informative.}
-\end{frame}
-
-\begin{frame}{Make Titles Informative.}
-\end{frame}
-
-\begin{frame}{Make Titles Informative.}
-\end{frame}
-
-
-
-\section*{Summary}
 
 \begin{frame}{Summary}
 
@@ -302,43 +393,6 @@ int main (void)
       Something else you haven't solved.
     \end{itemize}
   \end{itemize}
-\end{frame}
-
-
-
-% All of the following is optional and typically not needed. 
-\appendix
-\section<presentation>*{\appendixname}
-\subsection<presentation>*{For Further Reading}
-
-\begin{frame}[allowframebreaks]
-  \frametitle<presentation>{For Further Reading}
-    
-  \begin{thebibliography}{10}
-    
-  \beamertemplatebookbibitems
-  % Start with overview books.
-
-  \bibitem{Author1990}
-    A.~Author.
-    \newblock {\em Taschenbuch der Algorithmen}.
-    \newblock Springer Verlag , 2008.
-    
-  \bibitem{Author1990}
-    Tom Leighton.
-    \newblock {\em Einführung in Parallele Algorithmen und Architekturen}{\\Gitter, Bäume und Hypercubes}.
-    \newblock Thomsom Publisching , 1997.
- 
-    
-%  \beamertemplatearticlebibitems
-  % Followed by interesting articles. Keep the list short. 
-
-%  \bibitem{Someone2000}
-%    S.~Someone.
-%    \newblock On this and that.
-%    \newblock {\em Journal of This and That}, 2(1):50--100,
-%    2000.
-  \end{thebibliography}
 \end{frame}
 
 \end{document}

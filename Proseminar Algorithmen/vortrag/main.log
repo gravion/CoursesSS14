@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.6)  24 MAY 2014 10:25
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.6)  24 MAY 2014 17:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -703,13 +703,6 @@ LaTeX Info: Redefining \textlatin on input line 137.
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 ))
-\@input{fu-beamer-template.aux}
-\openout2 = `fu-beamer-template.aux'.
-
-(./fu-beamer-template.tex
-(/usr/share/texlive/texmf-dist/tex/latex/doublestroke/dsfont.sty
-Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
-)
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count155
 \lst@gtempboxa=\box53
@@ -735,6 +728,13 @@ File: listings.cfg 2013/08/26 1.5b listings configuration
 ))
 Package: listings 2013/08/26 1.5b (Carsten Heinz)
 
+\@input{fu-beamer-template.aux}
+\openout2 = `fu-beamer-template.aux'.
+
+(./fu-beamer-template.tex
+(/usr/share/texlive/texmf-dist/tex/latex/doublestroke/dsfont.sty
+Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
+)
 (/usr/share/texmf/tex/latex/beamer/base/themes/color/beamercolorthemelily.sty
 Package: beamercolorthemelily 2010/06/17  (rcs-revision d02a7cf4d8ae)
 )
@@ -1149,37 +1149,37 @@ File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 54.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 54.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 55.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 54.
-LaTeX Font Info:    Try loading font information for MDA+cmr on input line 54.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 55.
+LaTeX Font Info:    Try loading font information for MDA+cmr on input line 55.
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdacmr.fd
 File: mdacmr.fd 
 )
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Try loading font information for T1+fav on input line 54.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Try loading font information for T1+fav on input line 55.
 
 (/usr/share/texlive/texmf-dist/tex/latex/arev/t1fav.fd
 File: t1fav.fd 2006/05/30 Fontinst v1.929 font definitions for T1/fav.
@@ -1248,7 +1248,7 @@ e
 ))
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box56
-Package hyperref Info: Link coloring OFF on input line 54.
+Package hyperref Info: Link coloring OFF on input line 55.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1258,9 +1258,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count169
 )
-LaTeX Info: Redefining \ref on input line 54.
-LaTeX Info: Redefining \pageref on input line 54.
-LaTeX Info: Redefining \nameref on input line 54.
+LaTeX Info: Redefining \ref on input line 55.
+LaTeX Info: Redefining \pageref on input line 55.
+LaTeX Info: Redefining \nameref on input line 55.
 
 (./main.out) (./main.out)
 \@outlinefile=\write5
@@ -1277,39 +1277,39 @@ File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
 )
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/zavm/m/n --> OT1/cmss/m/n on input line 54.
+(Font)                  OT1/zavm/m/n --> OT1/cmss/m/n on input line 55.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/zavm/b/n --> OT1/cmss/bx/n on input line 54.
+(Font)                  OT1/zavm/b/n --> OT1/cmss/bx/n on input line 55.
 \symnumbers=\mathgroup9
 \sympureletters=\mathgroup10
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/fav/m/n on input line 54.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 54.
+(Font)                  OT1/cmss/m/n --> T1/fav/m/n on input line 55.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 55.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/zavm/b/n --> T1/fav/bx/n on input line 54.
+(Font)                  OT1/zavm/b/n --> T1/fav/bx/n on input line 55.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/zavm/b/n --> T1/fav/bx/n on input line 54.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 54.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 54.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 54.
+(Font)                  OT1/zavm/b/n --> T1/fav/bx/n on input line 55.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 55.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 55.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 55.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  T1/fvm/m/n --> T1/fvm/m/n on input line 54.
+(Font)                  T1/fvm/m/n --> T1/fvm/m/n on input line 55.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/fvm/b/n --> T1/fvm/m/n on input line 54.
+(Font)                  T1/fvm/b/n --> T1/fvm/m/n on input line 55.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/fav/m/n --> T1/fav/bx/n on input line 54.
+(Font)                  T1/fav/m/n --> T1/fav/bx/n on input line 55.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/fav/m/it --> T1/fav/bx/it on input line 54.
+(Font)                  T1/fav/m/it --> T1/fav/bx/it on input line 55.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/fav/bx/n on input line 54.
+(Font)                  OT1/cmss/bx/n --> T1/fav/bx/n on input line 55.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/fav/bx/n --> T1/fav/bx/n on input line 54.
+(Font)                  T1/fav/bx/n --> T1/fav/bx/n on input line 55.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/fav/m/n --> T1/fav/bx/n on input line 54.
+(Font)                  T1/fav/m/n --> T1/fav/bx/n on input line 55.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/fav/m/it --> T1/fav/bx/it on input line 54.
+(Font)                  T1/fav/m/it --> T1/fav/bx/it on input line 55.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/fvm/m/n --> T1/fvm/bx/n on input line 54.
+(Font)                  T1/fvm/m/n --> T1/fvm/bx/n on input line 55.
 
 (/usr/share/texmf/tex/latex/beamer/base/translator/dicts/translator-basic-dicti
 onary/translator-basic-dictionary-English.dict
@@ -1335,69 +1335,69 @@ Dictionary: translator-numbers-dictionary, Language: English
 tionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 54.
+LaTeX Info: Redefining \includegraphics on input line 55.
 \c@lstlisting=\count170
  (./main.nav)
-Overfull \hbox (1.58499pt too wide) in paragraph at lines 54--54
+Overfull \hbox (1.58499pt too wide) in paragraph at lines 55--55
 [][]\T1/fav/m/n/5 ,  
  []
 
 
-Overfull \hbox (273.60109pt too wide) in paragraph at lines 58--58
+Overfull \hbox (273.60109pt too wide) in paragraph at lines 59--59
 [] [] 
  []
 
-LaTeX Font Info:    Try loading font information for OML+zavm on input line 58.
+LaTeX Font Info:    Try loading font information for OML+zavm on input line 59.
 
 (/usr/share/texlive/texmf-dist/tex/latex/arev/omlzavm.fd
 File: omlzavm.fd 2006/05/30 Fontinst v1.929 font definitions for OML/zavm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zavm on input line 58.
+LaTeX Font Info:    Try loading font information for OMS+zavm on input line 59.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/arev/omszavm.fd
 File: omszavm.fd 2006/05/30 Fontinst v1.929 font definitions for OMS/zavm.
 )
-LaTeX Font Info:    Try loading font information for OMX+mdbch on input line 58
+LaTeX Font Info:    Try loading font information for OMX+mdbch on input line 59
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdbch/omxmdbch.fd
 File: omxmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OMX/mdbch.
 )
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 8.64006pt on input line 58.
+(Font)              scaled to size 8.64006pt on input line 59.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 6.72005pt on input line 58.
+(Font)              scaled to size 6.72005pt on input line 59.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 4.80003pt on input line 58.
-LaTeX Font Info:    Try loading font information for U+msa on input line 58.
+(Font)              scaled to size 4.80003pt on input line 59.
+LaTeX Font Info:    Try loading font information for U+msa on input line 59.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 58.
+LaTeX Font Info:    Try loading font information for U+msb on input line 59.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for MDA+mdbch on input line 58
+LaTeX Font Info:    Try loading font information for MDA+mdbch on input line 59
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdbch/mdamdbch.fd
 File: mdamdbch.fd 2013/08/29 Fontinst v1.933 font definitions for MDA/mdbch.
 )
 LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
-(Font)              scaled to size 8.64006pt on input line 58.
+(Font)              scaled to size 8.64006pt on input line 59.
 LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
-(Font)              scaled to size 6.72005pt on input line 58.
+(Font)              scaled to size 6.72005pt on input line 59.
 LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
-(Font)              scaled to size 4.80003pt on input line 58.
-LaTeX Font Info:    Try loading font information for U+zavm on input line 58.
+(Font)              scaled to size 4.80003pt on input line 59.
+LaTeX Font Info:    Try loading font information for U+zavm on input line 59.
 
 (/usr/share/texlive/texmf-dist/tex/latex/arev/uzavm.fd
 File: uzavm.fd 2006/05/30 Fontinst v1.929 font definitions for U/zavm.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 58--58
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
 
  []
 
@@ -1413,19 +1413,14 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 
 [2
 
- <./FULogo_RGB.pdf>]
+ <./FULogo_RGB.pdf>] (./main.toc)
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
 
 [3
 
-
-] (./main.toc)
-Overfull \vbox (0.61911pt too high) detected at line 65
- []
-
-
+]
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1433,6 +1428,11 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [4
 
 ]
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 5.76004pt on input line 76.
+LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
+(Font)              scaled to size 5.76004pt on input line 76.
+
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1446,18 +1446,14 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 
 [6
 
-]
+] (./main.toc)
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
 
 [7
 
-] (./main.toc)
-Overfull \vbox (0.61911pt too high) detected at line 77
- []
-
-
+]
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1472,6 +1468,12 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [9
 
 ]
+\openout4 = `main.vrb'.
+
+ (./main.vrb
+LaTeX Font Info:    Font shape `T1/fav/bx/n' in size <7> not available
+(Font)              Font shape `T1/fav/b/n' tried instead on input line 3.
+)
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1485,11 +1487,7 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 
 [11
 
-] (./main.toc)
-Overfull \vbox (0.61911pt too high) detected at line 94
- []
-
-
+]
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1510,7 +1508,7 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 
 [14
 
-]
+] (./main.toc)
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1518,11 +1516,6 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [15
 
 ]
-LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 118.
-LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
-(Font)              scaled to size 5.76004pt on input line 118.
-
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1536,22 +1529,14 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 
 [17
 
-] (./main.toc)
-Overfull \vbox (0.61911pt too high) detected at line 131
- []
-
-
+]
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
 
 [18
 
-] (./main.toc)
-Overfull \vbox (0.61911pt too high) detected at line 136
- []
-
-
+]
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1565,11 +1550,7 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 
 [20
 
-] (./main.toc)
-Overfull \vbox (11.5691pt too high) detected at line 143
- []
-
-
+]
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1577,17 +1558,13 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [21
 
 ]
-LaTeX Font Info:    Try loading font information for T1+fvm on input line 159.
- (/usr/share/texlive/texmf-dist/tex/latex/bera/t1fvm.fd
-File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
-)
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
 
 [22
 
-]
+] (./main.toc)
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1615,7 +1592,7 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 
 [26
 
-]
+] (./main.toc)
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1629,17 +1606,7 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 
 [28
 
-]
-\openout4 = `main.vrb'.
-
- (./main.vrb (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2013/08/26 1.5b listings language file
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
-)
-LaTeX Font Info:    Font shape `T1/fav/bx/n' in size <7> not available
-(Font)              Font shape `T1/fav/b/n' tried instead on input line 3.
-)
+] (./main.toc)
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1647,48 +1614,46 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [29
 
 ]
-\openout4 = `main.vrb'.
-
- (./main.vrb)
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
 
 [30
 
-] (./main.vrb)
+]
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
 
 [31
 
-] (./main.vrb)
+]
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
 
 [32
 
-] (./main.vrb)
+]
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
 
 [33
 
-] (./main.toc)
-Overfull \vbox (1.5776pt too high) detected at line 233
- []
-
-
+]
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
 
 [34
 
-]
+ </usr/share/texmf/tex/latex/beamer/base/art/beamericonbook.pdf>]
+LaTeX Font Info:    Try loading font information for T1+fvm on input line 267.
+
+(/usr/share/texlive/texmf-dist/tex/latex/bera/t1fvm.fd
+File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
+)
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1738,6 +1703,13 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [41
 
 ]
+\openout4 = `main.vrb'.
+
+ (./main.vrb (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2013/08/26 1.5b listings language file
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
+))
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1745,27 +1717,86 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [42
 
 ]
+\openout4 = `main.vrb'.
+
+ (./main.vrb)
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
 
 [43
 
-]
+] (./main.vrb)
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
 
 [44
 
-]
+] (./main.vrb)
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
 
 [45
 
- </usr/share/texmf/tex/latex/beamer/base/art/beamericonbook.pdf>]
+] (./main.vrb)
+Overfull \hbox (1.58499pt too wide) has occurred while \output is active
+[][]\T1/fav/m/n/5 , 
+ []
+
+[46
+
+]
+Overfull \hbox (1.58499pt too wide) has occurred while \output is active
+[][]\T1/fav/m/n/5 , 
+ []
+
+[47
+
+]
+Overfull \hbox (1.58499pt too wide) has occurred while \output is active
+[][]\T1/fav/m/n/5 , 
+ []
+
+[48
+
+]
+Overfull \hbox (1.58499pt too wide) has occurred while \output is active
+[][]\T1/fav/m/n/5 , 
+ []
+
+[49
+
+]
+Overfull \hbox (1.58499pt too wide) has occurred while \output is active
+[][]\T1/fav/m/n/5 , 
+ []
+
+[50
+
+]
+Overfull \hbox (1.58499pt too wide) has occurred while \output is active
+[][]\T1/fav/m/n/5 , 
+ []
+
+[51
+
+]
+Overfull \hbox (1.58499pt too wide) has occurred while \output is active
+[][]\T1/fav/m/n/5 , 
+ []
+
+[52
+
+]
+Overfull \hbox (1.58499pt too wide) has occurred while \output is active
+[][]\T1/fav/m/n/5 , 
+ []
+
+[53
+
+]
 \tf@nav=\write6
 \openout6 = `main.nav'.
 
@@ -1775,24 +1806,30 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 \tf@snm=\write8
 \openout8 = `main.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 344.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 344.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 398.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 398.
+ (./main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 398.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 398.
 
-(./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 344.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 344.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 28615C59508927E0E5578E2841B925E3;3133.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 344.
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 05C92EE0D64D547D231490A58FD00E0A;1175
+(rerunfilecheck)             After:  622FA8EFF26FACC6B036681CBA95CBA2;2512.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 398.
  ) 
 Here is how much of TeX's memory you used:
- 23559 strings out of 494985
- 393703 string characters out of 6180357
- 523975 words of memory out of 5000000
- 26101 multiletter control sequences out of 15000+600000
- 57204 words of font info for 83 fonts, out of 8000000 for 9000
+ 23602 strings out of 494985
+ 393593 string characters out of 6180357
+ 523169 words of memory out of 5000000
+ 26131 multiletter control sequences out of 15000+600000
+ 57503 words of font info for 84 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 49i,16n,56p,393b,1252s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,12n,56p,433b,1227s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/arev/arevoml.enc}{/usr/share/t
 exlive/texmf-dist/fonts/enc/dvips/arev/arevoms.enc}{/usr/share/texlive/texmf-di
 st/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/publi
@@ -1804,10 +1841,10 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chb7y.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chbma.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7v.pfb>
-Output written on main.pdf (45 pages, 372855 bytes).
+Output written on main.pdf (53 pages, 329405 bytes).
 PDF statistics:
- 1605 PDF objects out of 1728 (max. 8388607)
- 1500 compressed objects within 15 object streams
- 122 named destinations out of 1000 (max. 500000)
- 242 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 600 PDF objects out of 1000 (max. 8388607)
+ 518 compressed objects within 6 object streams
+ 134 named destinations out of 1000 (max. 500000)
+ 218 words of extra memory for PDF output out of 10000 (max. 10000000)
 
