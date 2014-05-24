@@ -1,29 +1,25 @@
 \beamer@endinputifotherversion {3.24pt}
 \select@language {english}
 \beamer@sectionintoc {1}{Motivation}{4}{0}{1}
-\beamer@subsectionintoc {1}{1}{Allgemein}{4}{0}{1}
-\beamer@subsectionintoc {1}{2}{Bezug aufs Fach}{5}{0}{1}
-\beamer@sectionintoc {2}{Vorraussetzungen}{6}{0}{2}
-\beamer@subsectionintoc {2}{1}{Komparator}{6}{0}{2}
-\beamer@subsectionintoc {2}{2}{0,1-Prinzip}{7}{0}{2}
-\beamer@sectionintoc {3}{Sortiernetzwerk}{8}{0}{3}
-\beamer@subsectionintoc {3}{1}{Aufbau}{8}{0}{3}
-\beamer@subsectionintoc {3}{2}{Sortieren im Sortiernetzwerk}{9}{0}{3}
-\beamer@subsubsectionintoc {3}{2}{1}{nativer Ansatz}{10}{0}{3}
-\beamer@subsubsectionintoc {3}{2}{2}{Aufbau eines effektieveren Netzwerks}{10}{0}{3}
-\beamer@subsubsectionintoc {3}{2}{3}{Kombination von beiden}{12}{0}{3}
-\beamer@sectionintoc {4}{Laufzeit}{12}{0}{4}
-\beamer@subsectionintoc {4}{1}{Herleitung}{12}{0}{4}
-\beamer@subsectionintoc {4}{2}{Vergleich mit Software sortieren}{13}{0}{4}
-\beamer@sectionintoc {5}{Fazit}{14}{0}{5}
-\beamer@subsectionintoc {5}{1}{Geschwindigkeit vs Variabilit\IeC {\"a}t}{14}{0}{5}
-\beamer@subsectionintoc {5}{2}{Hardwareaufwand vs Softwareaufwand}{15}{0}{5}
-\beamer@sectionintoc {6}{Inhalt zusammesfassen}{16}{0}{6}
-\beamer@sectionintoc {7}{Ausblick}{16}{0}{7}
-\beamer@sectionintoc {8}{Hybercube}{16}{0}{8}
-\beamer@sectionintoc {9}{Aufbau}{16}{0}{9}
-\beamer@subsectionintoc {9}{1}{\IeC {\textbullet }}{16}{0}{9}
-\beamer@subsectionintoc {9}{2}{Previous Work}{24}{0}{9}
-\beamer@sectionintoc {10}{Our Results/Contribution}{30}{0}{10}
-\beamer@subsectionintoc {10}{1}{Main Results}{30}{0}{10}
-\beamer@subsectionintoc {10}{2}{Basic Ideas for Proofs/Implementation}{37}{0}{10}
+\beamer@subsectionintoc {1}{1}{Allgemein}{6}{0}{1}
+\beamer@subsectionintoc {1}{2}{Bezug aufs Fach}{7}{0}{1}
+\beamer@sectionintoc {2}{Vorraussetzungen}{8}{0}{2}
+\beamer@subsectionintoc {2}{1}{Komparator}{10}{0}{2}
+\beamer@subsectionintoc {2}{2}{0,1-Prinzip}{11}{0}{2}
+\beamer@sectionintoc {3}{Sortiernetzwerk}{12}{0}{3}
+\beamer@subsectionintoc {3}{1}{Aufbau}{13}{0}{3}
+\beamer@subsectionintoc {3}{2}{Sortieren im Sortiernetzwerk}{14}{0}{3}
+\beamer@sectionintoc {4}{Laufzeit}{18}{0}{4}
+\beamer@subsectionintoc {4}{1}{Herleitung}{19}{0}{4}
+\beamer@subsectionintoc {4}{2}{Vergleich mit Software sortieren}{19}{0}{4}
+\beamer@sectionintoc {5}{Fazit}{19}{0}{5}
+\beamer@subsectionintoc {5}{1}{Geschwindigkeit vs Variabilit\IeC {\"a}t}{20}{0}{5}
+\beamer@subsectionintoc {5}{2}{Hardwareaufwand vs Softwareaufwand}{20}{0}{5}
+\beamer@sectionintoc {6}{Inhalt zusammesfassen}{20}{0}{6}
+\beamer@sectionintoc {7}{Ausblick}{21}{0}{7}
+\beamer@subsectionintoc {7}{1}{Hybercube}{22}{0}{7}
+\beamer@subsectionintoc {7}{2}{Anhang}{22}{0}{7}
+\beamer@subsectionintoc {7}{3}{Previous Work}{29}{0}{7}
+\beamer@sectionintoc {8}{Our Results/Contribution}{34}{0}{8}
+\beamer@subsectionintoc {8}{1}{Main Results}{35}{0}{8}
+\beamer@subsectionintoc {8}{2}{Basic Ideas for Proofs/Implementation}{41}{0}{8}

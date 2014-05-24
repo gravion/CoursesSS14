@@ -38,11 +38,17 @@
 
 % Delete this, if you do not want the table of contents to pop up at
 % the beginning of each subsection:
-\AtBeginSubsection[]
+%\AtBeginSubsection[]
+%{
+%  \begin{frame}<beamer>{Outline}
+%    \tableofcontents[currentsection,hideallsubsections]
+%  \end{frame}
+%}
+\AtBeginSection[]
 {
-  \begin{frame}<beamer>{Outline}
-    \tableofcontents[currentsection,currentsubsection]
-  \end{frame}
+	\begin{frame}<beamer>
+		\tableofcontents[currentsection,hideothersubsubsections,hideothersubsections]
+	\end{frame}
 }
 
 \begin{document}
@@ -52,18 +58,34 @@
 \end{frame}
 
 \begin{frame}[allowframebreaks]{Outline}
-  \tableofcontents[currentsection,hideallsubsections,shrink,pausesections]
+  \tableofcontents[currentsection,hideallsubsubsections]
   % You might wish to add the option [pausesections]
 \end{frame}
 
 \section{Motivation}
+\begin{frame}
+mot
+\end{frame}
 \subsection{Allgemein}
+\begin{frame}
+allgemein
+\end{frame}
 \subsection{Bezug aufs Fach}
-
+\begin{frame}
+fach
+\end{frame}
 \section{Vorraussetzungen}
+\begin{frame}
+vorraussetzungen
+\end{frame}
 \subsection{Komparator}
+\begin{frame}
+Komparator
+\end{frame}
 \subsection{0,1-Prinzip}
-
+\begin{frame}
+01 prinzip
+\end{frame}
 % eventuell wenn Vorraussetzungen zu lang werden
 % \subsection{Zusammenfassung}
 
@@ -71,11 +93,19 @@
 %eventuell noch unter Vorraussetzungen
 \section{Sortiernetzwerk}
 \subsection{Aufbau}
-
+\begin{frame}
+aufb sort
+\end{frame}
 \subsection{Sortieren im Sortiernetzwerk}
-\subsubsection{nativer Ansatz}
+\begin{frame}
+sort in sortnet
+\end{frame}
+\subsubsection*{nativer Ansatz}
 %vergleich mit bubble sort
-\subsubsection{Aufbau eines effektieveren Netzwerks}
+\begin{frame}
+nativ
+\end{frame}
+\subsubsection*{Aufbau eines effektieveren Netzwerks}
 %Einsatzorte
 \begin{frame}{Beschreibung Teil 1}
 \begin{itemize}
@@ -95,7 +125,7 @@
 \item zeigen dass Aufgabe erfüllt wird
 \end{itemize}
 \end{frame}
-\subsubsection{Kombination von beiden}
+\subsubsection*{Kombination von beiden}
 
 
 \section{Laufzeit}
@@ -111,9 +141,9 @@
 \section{Inhalt zusammesfassen}
 
 \section{Ausblick}
-\section{Hybercube}
-\section{Aufbau}
-\subsection{•}
+\subsection{Hybercube}
+\subsubsection*{Aufbau}
+\subsection{Anhang}
 
 
 
