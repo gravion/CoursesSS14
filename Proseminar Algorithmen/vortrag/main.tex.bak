@@ -3,8 +3,8 @@
 % remove this line and the "ucs" option to the documentclass when your editor is not utf8-capable
 \usepackage[utf8x]{inputenc}    % to make utf-8 input possible
 \usepackage[english]{babel}     % hyphenation etc., alternatively use 'german' as parameter
-\usepackage{listings}
-\lstset{linenumbers=true,tabsize=4}
+%\usepackage{listings}
+
 \include{fu-beamer-template}  % THIS is the line that includes the FU template!
 
 \usepackage{arev,t1enc} % looks nicer than the standard sans-serif font
@@ -62,54 +62,61 @@
   \tableofcontents[hideallsubsubsections,allowframebreaks] %currentsection,hideallsubsections,hideallsubsubsections
   % You might wish to add the option [pausesections]
 \end{frame}
-
 \section{Motivation}
-\begin{frame}{Motivation}
-\end{frame}
-\subsection{Allgemein}
-\begin{frame}{Allgemein}
+\begin{frame}{Motivatior : Allgemein}
 ist Basis für :
 \begin{itemize}
-\item Sortierung
 \item Suche
+\item (Sortierung)
 \end{itemize}
 \end{frame}
-\subsection{Bezug aufs Fach}
 \begin{frame}{Bezug aufs Fach}
 \begin{itemize}
-\item Listen , Wörterbücher
-\item Datenbanken
+\item Listen
+\item Wörterbücher
 \item ... 
 \end{itemize}
 \end{frame}
 \section{Vorraussetzungen}
 \subsection{Komparator}
 \begin{frame}{Aufbau}
+\begin{minipage}[c]{5cm}
 abstrakter Aufbau
 \begin{itemize}
 \item 2 Eingänge
 \item vergleichender Baustein
 \item 2 Ausgänge
 \end{itemize}
+\end{minipage}
+\hfill
+\pause
+\begin{minipage}[c]{5cm}
+konkret
+\begin{itemize}
+\item Datenleitungen
+\item vernetzte Transistoren
+\item Datenleitungen
+\end{itemize}
+\end{minipage}
 \end{frame}
 \begin{frame}{Vergleichender Baustein (i)}
 besteht aus
 \end{frame}
 \begin{frame}[fragile]{Vergleichender Baustein (ii)}
-\begin{lstlisting}
-	void comp(chan in1, in2, out1 out2){
-		a = <- in1
-		b = <- in2
-	
-		if (a < b)
-			out1 <- a
-			out2 <- b
-			return void
-	
-		out1 <- b
-		out2	 <- a
-		return void
-}
+\begin{lstlisting}[laguage={inform},tabsize=4]
+    void comp(chan in1, in2, out1 out2){
+        a = <- in1;
+        b = <- in2;
+        
+        if (a < b){
+            out1 <- a;
+            out2 <- b;
+            return void;
+        }
+        out1 <- b;
+        out2	 <- a;
+        return void;
+    }
 \end{lstlisting}
 \end{frame}
 \begin{frame}
@@ -121,21 +128,19 @@ Konvention für die folgenden Folien
 \end{itemize}
 \end{frame}
 \subsection{0,1-Prinzip}
-\begin{frame}{Aufgabe}
-soll 
-\begin{itemize}
-\item einfach
-\item anschaulich
-\item aber korrekt
-\end{itemize}
-zeigen dass etwas sortiert wurde
+\begin{frame}{Aussage}
+Wenn es eine Folge A gibt, die ein Sortiennetzwerk nicht sortiert, so existiert auch eine 0,1-Folge, die von diesem Netzwerk nicht sortiert wird.
 \end{frame}
-%beispiel an der Tafel ?
 \begin{frame}{Ansatz}
 man kann jede Zahlenfolge durch eine 0,1 Folge repräsentieren
+$$
+f(c) = \begin{cases} 0 , & if \;\;c < k \\
+1 , & if \;\;c \geq k
+\end{cases}
+$$
 \end{frame}
 \begin{frame}{0,1- Beispiel}
-
+Beispiel an der Tafel ? Bild
 \end{frame}
 
 % eventuell wenn Vorraussetzungen zu lang werden
@@ -145,11 +150,13 @@ man kann jede Zahlenfolge durch eine 0,1 Folge repräsentieren
 \section{Sortiernetzwerk}
 \subsection{Aufbau}
 \begin{frame}
-besteht aus mehreren Komperatoren
+besteht aus mehreren Eingabeleitungen die durch Komperatoren vernetzt sind.
+Das Ergebnis ist eine sortierte Folge der Eingabe,
+die bei unterschiedlicher Eingabeanordnungen im gleichen Ergebnis endet.
 \end{frame}
 \subsection{Sortieren im Sortiernetzwerk}
 \begin{frame}{Sortieren im Sortiernetzwerk}
-sort in sortnet
+Bild aus dem Buch
 \end{frame}
 \subsubsection*{nativer Ansatz}
 %vergleich mit bubble sort
@@ -158,10 +165,26 @@ sort in sortnet
 \item Aufgabe
 \item grundlegendes Prinzip
 \item Demonstration (kleines Beispiel)
-\item Veranschaulichung an einem $2^x$ Beispiel
-\item zeigen dass Aufgabe erfüllt wird
+\item Laufzeit
 \end{itemize}
 \end{frame}
+\begin{frame}{nativ : Aufgabe}
+\begin{itemize}
+\item Resultat soll sortierte Eingabe sein
+\end{itemize}
+\end{frame}
+\begin{frame}{nativ : grundlegenders Prinzip}
+\begin{itemize}
+\item intuitiver Einsatz von Vergleichen
+\item Schrittweises sortieren
+%mh sehr leere Folien
+\end{itemize}
+\end{frame}
+\begin{frame}{Demonstration}
+Bild kleiner Zahlenfolge 4-8-16\\
+Beispiel
+\end{frame}
+
 \subsection*{Aufbau eines effektieveren Netzwerks}
 %Einsatzorte
 \begin{frame}{Beschreibung Teil 2}
@@ -169,11 +192,44 @@ sort in sortnet
 \item Aufgabe
 \item grundlegendes Prinzip
 \item Demonstration (kleines Beispiel)
-\item Veranschaulichung an einem $2^x$ Beispiel
-\item zeigen dass Aufgabe erfüllt wird
+\item Laufzeit
 \end{itemize}
 \end{frame}
-\subsection*{Kombination von beiden}
+\begin{frame}{effektiver : Aufgabe}
+{\color{red}gefällt mir noch nicht}
+\begin{itemize}
+\item Resultat soll sortierte Eingabe sein
+\item \alert{soll effizient sein}
+\end{itemize}
+\end{frame}
+\begin{frame}{effektiver : grundlegenders Prinzip}
+\begin{itemize}
+\item intuitiver Einsatz von Vergleichen
+\item[]\alert{+ Einbezug von Teile und Herrscher}
+% mh sehr leere Folien
+\end{itemize}
+\end{frame}
+\begin{frame}{Aufteilung}
+Bild Buch Mischer + biton Sortierer
+\end{frame}
+\begin{frame}{effektiver : grundlegendes Prinzip}
+{\color{red}gefällt mir noch nicht}
+\begin{itemize}
+\item intuitiver Einsatz von Vergleichen
+\item[]\alert{+ Einbezug von Teile und Herrscher}
+\item Schrittweises sortieren 
+\item[]\alert{+ Einbezug vorheriger Ergebnisse}
+% mh sehr leere Folien
+\end{itemize}
+\end{frame}
+\begin{frame}{Biton -Sortierer : Aufbau}
+Bild
+%Erklären anzeichnen an der Tafel
+\end{frame}
+\begin{frame}{Demonstration}
+Bild kleiner Zahlenfolge 4-8-16\\
+Beispiel
+\end{frame}
 \section{Laufzeit}
 \subsection{Herleitung}
 \begin{frame}{Herleitung}
@@ -182,7 +238,7 @@ Herleitung
 \subsection{Vergleich mit Software sortieren}
 %eventuell unte Vorraussetzungen Mergesort, Quicksort
 \begin{frame}
-Vergleich
+Unterschiedliche Betrachtungen Schritte gegen 
 \end{frame}
 \section{Fazit}
 \begin{frame}
@@ -244,16 +300,19 @@ Fragen, Anregungen?\\
     \newblock Thomsom Publisching , 1997.
  
     
-%  \beamertemplatearticlebibitems
+  \beamertemplatearticlebibitems
   % Followed by interesting articles. Keep the list short. 
 
-%  \bibitem{Someone2000}
-%    S.~Someone.
-%    \newblock On this and that.
-%    \newblock {\em Journal of This and That}, 2(1):50--100,
-%    2000.
+  \bibitem{0,1-Prinzip}
+    S.~Someone.
+   % \href{http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/networks/nulleins.htm}
+    \newblock 
+    \newblock {http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/networks/nulleins.htm}
+    
   \end{thebibliography}
 \end{frame}
+
+\end{document}
 
 \begin{frame}{Make Titles Informative. Use Uppercase Letters. Long Titles are Split Automatically.}{Subtitles are optional.}
   % - A title should summarize the slide in an understandable fashion
@@ -394,5 +453,3 @@ int main (void)
     \end{itemize}
   \end{itemize}
 \end{frame}
-
-\end{document}

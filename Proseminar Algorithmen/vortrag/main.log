@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.6)  24 MAY 2014 17:35
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.6)  25 MAY 2014 20:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -703,6 +703,13 @@ LaTeX Info: Redefining \textlatin on input line 137.
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 ))
+\@input{fu-beamer-template.aux}
+\openout2 = `fu-beamer-template.aux'.
+
+(./fu-beamer-template.tex
+(/usr/share/texlive/texmf-dist/tex/latex/doublestroke/dsfont.sty
+Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
+)
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count155
 \lst@gtempboxa=\box53
@@ -728,13 +735,6 @@ File: listings.cfg 2013/08/26 1.5b listings configuration
 ))
 Package: listings 2013/08/26 1.5b (Carsten Heinz)
 
-\@input{fu-beamer-template.aux}
-\openout2 = `fu-beamer-template.aux'.
-
-(./fu-beamer-template.tex
-(/usr/share/texlive/texmf-dist/tex/latex/doublestroke/dsfont.sty
-Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
-)
 (/usr/share/texmf/tex/latex/beamer/base/themes/color/beamercolorthemelily.sty
 Package: beamercolorthemelily 2010/06/17  (rcs-revision d02a7cf4d8ae)
 )
@@ -1421,6 +1421,11 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [3
 
 ]
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 5.76004pt on input line 72.
+LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
+(Font)              scaled to size 5.76004pt on input line 72.
+
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1428,25 +1433,20 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [4
 
 ]
-LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 76.
-LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
-(Font)              scaled to size 5.76004pt on input line 76.
-
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
 
 [5
 
-]
+] (./main.toc)
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
 
 [6
 
-] (./main.toc)
+]
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1543,7 +1543,7 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 
 [19
 
-] (./main.toc)
+]
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1564,7 +1564,7 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 
 [22
 
-] (./main.toc)
+]
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1592,7 +1592,7 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 
 [26
 
-] (./main.toc)
+]
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1627,7 +1627,7 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 
 [31
 
-]
+] (./main.toc)
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1648,19 +1648,14 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 
 [34
 
- </usr/share/texmf/tex/latex/beamer/base/art/beamericonbook.pdf>]
-LaTeX Font Info:    Try loading font information for T1+fvm on input line 267.
-
-(/usr/share/texlive/texmf-dist/tex/latex/bera/t1fvm.fd
-File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
-)
+]
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
 
 [35
 
-]
+] (./main.toc)
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1674,7 +1669,7 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 
 [37
 
-]
+] (./main.toc)
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1703,13 +1698,6 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [41
 
 ]
-\openout4 = `main.vrb'.
-
- (./main.vrb (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2013/08/26 1.5b listings language file
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
-))
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1717,86 +1705,14 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [42
 
 ]
-\openout4 = `main.vrb'.
-
- (./main.vrb)
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
 
 [43
 
-] (./main.vrb)
-Overfull \hbox (1.58499pt too wide) has occurred while \output is active
-[][]\T1/fav/m/n/5 , 
- []
-
-[44
-
-] (./main.vrb)
-Overfull \hbox (1.58499pt too wide) has occurred while \output is active
-[][]\T1/fav/m/n/5 , 
- []
-
-[45
-
-] (./main.vrb)
-Overfull \hbox (1.58499pt too wide) has occurred while \output is active
-[][]\T1/fav/m/n/5 , 
- []
-
-[46
-
-]
-Overfull \hbox (1.58499pt too wide) has occurred while \output is active
-[][]\T1/fav/m/n/5 , 
- []
-
-[47
-
-]
-Overfull \hbox (1.58499pt too wide) has occurred while \output is active
-[][]\T1/fav/m/n/5 , 
- []
-
-[48
-
-]
-Overfull \hbox (1.58499pt too wide) has occurred while \output is active
-[][]\T1/fav/m/n/5 , 
- []
-
-[49
-
-]
-Overfull \hbox (1.58499pt too wide) has occurred while \output is active
-[][]\T1/fav/m/n/5 , 
- []
-
-[50
-
-]
-Overfull \hbox (1.58499pt too wide) has occurred while \output is active
-[][]\T1/fav/m/n/5 , 
- []
-
-[51
-
-]
-Overfull \hbox (1.58499pt too wide) has occurred while \output is active
-[][]\T1/fav/m/n/5 , 
- []
-
-[52
-
-]
-Overfull \hbox (1.58499pt too wide) has occurred while \output is active
-[][]\T1/fav/m/n/5 , 
- []
-
-[53
-
-]
+ </usr/share/texmf/tex/latex/beamer/base/art/beamericonbook.pdf> </usr/share/te
+xmf/tex/latex/beamer/base/art/beamericonarticle.pdf>]
 \tf@nav=\write6
 \openout6 = `main.nav'.
 
@@ -1806,45 +1722,36 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 \tf@snm=\write8
 \openout8 = `main.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 398.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 398.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 315.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 315.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 398.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 398.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 05C92EE0D64D547D231490A58FD00E0A;1175
-(rerunfilecheck)             After:  622FA8EFF26FACC6B036681CBA95CBA2;2512.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 398.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 315.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 315.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: FA5E9B1001FD32160BB3843065DE4B07;2270.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 315.
  ) 
 Here is how much of TeX's memory you used:
- 23602 strings out of 494985
- 393593 string characters out of 6180357
- 523169 words of memory out of 5000000
- 26131 multiletter control sequences out of 15000+600000
- 57503 words of font info for 84 fonts, out of 8000000 for 9000
+ 23370 strings out of 494985
+ 389266 string characters out of 6180357
+ 494528 words of memory out of 5000000
+ 25943 multiletter control sequences out of 15000+600000
+ 55732 words of font info for 79 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 49i,12n,56p,433b,1227s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,12n,53p,433b,1215s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/arev/arevoml.enc}{/usr/share/t
-exlive/texmf-dist/fonts/enc/dvips/arev/arevoms.enc}{/usr/share/texlive/texmf-di
-st/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/publi
-c/arev/ArevSans-Bold.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/arev
-/ArevSans-Oblique.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/arev/Ar
-evSans-Roman.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chb7y.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chbma.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7v.pfb>
-Output written on main.pdf (53 pages, 329405 bytes).
+exlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fo
+nts/type1/public/arev/ArevSans-Bold.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/arev/ArevSans-Oblique.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/arev/ArevSans-Roman.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/math
+design/mdbch/md-chb7y.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mat
+hdesign/mdbch/md-chbma.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ma
+thdesign/mdbch/md-chr7v.pfb>
+Output written on main.pdf (43 pages, 302077 bytes).
 PDF statistics:
- 600 PDF objects out of 1000 (max. 8388607)
- 518 compressed objects within 6 object streams
- 134 named destinations out of 1000 (max. 500000)
- 218 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 518 PDF objects out of 1000 (max. 8388607)
+ 446 compressed objects within 5 object streams
+ 112 named destinations out of 1000 (max. 500000)
+ 202 words of extra memory for PDF output out of 10000 (max. 10000000)
 
