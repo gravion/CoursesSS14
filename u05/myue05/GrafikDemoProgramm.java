@@ -52,7 +52,7 @@ class TestPanel extends JPanel implements MouseListener {
     }
 
     // /////////////////////////
-    // Bresenham Algorithmus //
+    // Bresenham Algorithmus  //
     // /////////////////////////
 
     // soll mit übergabe die punkte entsprechend einzeichnen
@@ -61,100 +61,62 @@ class TestPanel extends JPanel implements MouseListener {
     }
 
     public void mypaint(Point p1, Point p2, Graphics g) {
-
-        int x_start, x_end, y_start, y_end;
         double m;
-
-        if (p1.x - p2.x != 0) {
-            m = (p1.y - p2.y) / (p1.x - p2.x);
+        
+        if (p1.x != p2.x) {
+            m = (double)(p2.y - p1.y) / (double)(p2.x - p1.x);
         }else {
-            m=1;
+            m=-1; // eigentlich unendlich
         }
+        m = -m;
+        System.out.println("m: " + m);
 
         // Unterscheidung nach der Steigung
-        if (m < -1) {
-            // p1 über p2
+        if (m > 0 && m <= 1) {
             if (p1.x < p2.x) {
-                x_start = p1.x;
-                x_end = p2.x;
-                y_start = p1.y;
-                y_end = p2.y;
+                // p1 über p2
+                Algorithm.mk1(p1, p2, g);
             } else {
-                // p2 über p1
-                x_start = p2.x;
-                x_end = p1.x;
-                y_start = p2.y;
-                y_end = p1.y;
+                // p1 unter p2
+                Algorithm.mk1(p2, p1, g);
             }
-            g.drawLine(x_start, y_start, x_end, y_end);
-            for (int i = 0; i < y_end; y = y - 4) {
-                x = (int) Math.round(x_start - i * (y_start - i) / m);
-                g.fillRect(x, y_start - i, 4, 4);
-            }
-
-        } else if (m <= -1 && m < 0) {
-            // p1 über p2
+        } else if (m >= 1) {
             if (p1.x < p2.x) {
-
+                // p1 über p2
+                Algorithm.mg1(p1, p2, g);
             } else {
-                // p2 über p1
-
+                // p1 unter p2
+                Algorithm.mg1(p2, p1, g);
             }
-        } else if (m <= 0 && m < 1) {
-            // p1 über p2
+        } else if (m <= -1) {
             if (p1.x < p2.x) {
-
+                // p1 über p2
+                Algorithm.mkm1(p1, p2, g);
             } else {
-                // p2 über p1
-
+                // p1 unter p2
+                Algorithm.mkm1(p2, p1, g);
             }
-        } else if (m <= 1) {
-            // p1 über p2
+        } else if (m > -1) {
             if (p1.x < p2.x) {
-
+                // p1 über p2
+                Algorithm.mgm1(p1, p2, g);
             } else {
-                // p2 über p1
-
+                // p1 unter p2
+                Algorithm.mgm1(p2, p1, g);
             }
         }
-
-        /*
-         * if (p1.x < p2.x) { x_start = p1.x; y_start = p1.y; x_end = p2.x; if
-         * (p1.y > p2.y) { for (int i = x_start; i < x_end; i += 4) { int y; y =
-         * y_start + Math.round((i-x_start) * (p2.y - p1.y) / (p2.x - p1.x));
-         * g.fillRect(i, y, 4, 4); } }else { for (int i = x_start; i < x_end; i
-         * += 4) { int y; y = y_start - Math.round(i * (p2.y - p1.y) / (p2.x -
-         * p1.x)); g.fillRect(i,y, 4, 4); } } } else { x_start = p2.x; y_start =
-         * p2.y; x_end = p1.x; for (int i = x_start; i < x_end; i += 4) { int y;
-         * y = y_start + Math.round((i-x_start) * (p2.y - p1.y) / (p2.x -
-         * p1.x)); g.fillRect(i, y_start + y, 4, 4);
-         * 
-         * } }
-         */
     }
 
-    // ////////////////////
+    ////////////////////
     // Eingabe (Maus) //
-    // ////////////////////
+    ////////////////////
 
-    public void mouseReleased(MouseEvent e) {
-    }
-
-    public void mouseEntered(MouseEvent e) {
-    }
-
-    public void mouseExited(MouseEvent e) {
-    }
-
-    public void mouseClicked(MouseEvent e) {
-    }
-
-    public void mouseMoved(MouseEvent e) {
-    }
-
-    public void mouseDragged(MouseEvent e) {
-    }
-
+    public void mouseReleased(MouseEvent e) { ; }
+    public void mouseEntered(MouseEvent e) { ; }
+    public void mouseExited(MouseEvent e) { ; }
+    public void mouseClicked(MouseEvent e) { ; }
+    public void mouseMoved(MouseEvent e) { ; }
+    public void mouseDragged(MouseEvent e) { ; }
     public void mousePressed(MouseEvent e) {
         // x = e.getX();
         // y = e.getY();
