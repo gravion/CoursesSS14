@@ -160,7 +160,7 @@ Bild aus dem Buch
 \end{frame}
 \subsubsection*{nativer Ansatz}
 %vergleich mit bubble sort
-\begin{frame}{Beschreibung Teil 1}
+\begin{frame}{nativer Ansatz}
 \begin{itemize}
 \item Aufgabe
 \item grundlegendes Prinzip
@@ -179,6 +179,8 @@ Bild aus dem Buch
 \item Schrittweises sortieren
 %mh sehr leere Folien
 \end{itemize}
+Bild \\
+siehe 2 
 \end{frame}
 \begin{frame}{Demonstration}
 Bild kleiner Zahlenfolge 4-8-16\\
@@ -187,7 +189,7 @@ Beispiel
 
 \subsection*{Aufbau eines effektieveren Netzwerks}
 %Einsatzorte
-\begin{frame}{Beschreibung Teil 2}
+\begin{frame}{effektiverer Ansatz}
 \begin{itemize}
 \item Aufgabe
 \item grundlegendes Prinzip
@@ -210,7 +212,7 @@ Beispiel
 \end{itemize}
 \end{frame}
 \begin{frame}{Aufteilung}
-Bild Buch Mischer + biton Sortierer
+Bild Buch Biton-Sortierer
 \end{frame}
 \begin{frame}{effektiver : grundlegendes Prinzip}
 {\color{red}gefällt mir noch nicht}
@@ -238,25 +240,50 @@ Herleitung
 \subsection{Vergleich mit Software sortieren}
 %eventuell unte Vorraussetzungen Mergesort, Quicksort
 \begin{frame}
-Unterschiedliche Betrachtungen Schritte gegen 
+Unterschiedliche Betrachtungen Schritte gegen Vergleiche, versuch der
+Darstellung
+\end{frame}
+\begin{frame}{Bubblesort im Hardwarenetz}
+Bild Bubblesort \\
+siehe 1 
+\end{frame}
+\begin{frame}{Mergesort im Hardwarenetz}
+Bild Mergesort \\
+siehe 4 
+\end{frame}
+\begin{frame}
+Bild Quicksort \\
+Bild 5
 \end{frame}
 \section{Fazit}
-\begin{frame}
-Fazit
-\end{frame}
 \subsection{Geschwindigkeit vs Variabilität}
 \begin{frame}
-speed vs vari
+\begin{itemize}
+\item hohe Geschwindigkeit durch direkte Hardware Implementriegung
+\item starre Struktur , bildet Rahmen der Möglichkeiten
+\item stark typisierte Eingabe
+\end{itemize}
 \end{frame}
 \subsection{Hardwareaufwand vs Softwareaufwand}
 \begin{frame}
-hardware vs software
+\begin{itemize}
+  \item Software zur Auswertung keine zum sortieren
+  \item geringe Skalierbarkeit
+  \item hoher Aufwand wenn Eingabelimit überschritten wird
+  \item nur lokal
+  \item Hardware Konzeption eventuell aufwendiger
+\end{itemize}
 \end{frame}
 
 \section{Zusammenfassung}
 \begin{frame}{Zusammenfassung}
-zusammenfassung
+\begin{itemize}
+  \item paralleles sortieren ist schnell und effizient
+  \item stark Problemabhängig
+  \item … {\color{red} muss noch gefüllt werden}
+\end{itemize}
 \end{frame}
+
 \section{Ausblick}
 \begin{frame}{Ausblick}
 weiter

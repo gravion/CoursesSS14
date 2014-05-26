@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.6)  25 MAY 2014 20:28
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.4.24)  26 MAY 2014 10:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 4 languages loaded.
+Babel <3.9h> and hyphenation patterns for 9 languages loaded.
 (/usr/share/texmf/tex/latex/beamer/base/beamer.cls
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasercs.sty
 Package: beamerbasercs 2012/11/13 (rcs-revision cb16a617839f)
@@ -1627,7 +1627,7 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 
 [31
 
-] (./main.toc)
+]
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1648,14 +1648,14 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 
 [34
 
-]
+] (./main.toc)
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
 
 [35
 
-] (./main.toc)
+]
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1676,14 +1676,16 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 
 [38
 
-]
+] (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
+File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+)
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
 
 [39
 
-]
+] (./main.toc)
 Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 [][]\T1/fav/m/n/5 , 
  []
@@ -1711,6 +1713,20 @@ Overfull \hbox (1.58499pt too wide) has occurred while \output is active
 
 [43
 
+]
+Overfull \hbox (1.58499pt too wide) has occurred while \output is active
+[][]\T1/fav/m/n/5 , 
+ []
+
+[44
+
+]
+Overfull \hbox (1.58499pt too wide) has occurred while \output is active
+[][]\T1/fav/m/n/5 , 
+ []
+
+[45
+
  </usr/share/texmf/tex/latex/beamer/base/art/beamericonbook.pdf> </usr/share/te
 xmf/tex/latex/beamer/base/art/beamericonarticle.pdf>]
 \tf@nav=\write6
@@ -1722,20 +1738,20 @@ xmf/tex/latex/beamer/base/art/beamericonarticle.pdf>]
 \tf@snm=\write8
 \openout8 = `main.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 315.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 315.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 342.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 342.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 315.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 315.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 342.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 342.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: FA5E9B1001FD32160BB3843065DE4B07;2270.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 315.
+(rerunfilecheck)             Checksum: D0D1B3F43ADBF0743D8BF7958823489A;2270.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 342.
  ) 
 Here is how much of TeX's memory you used:
- 23370 strings out of 494985
- 389266 string characters out of 6180357
- 494528 words of memory out of 5000000
- 25943 multiletter control sequences out of 15000+600000
+ 23625 strings out of 494935
+ 392149 string characters out of 6178122
+ 494803 words of memory out of 5000000
+ 26207 multiletter control sequences out of 15000+600000
  55732 words of font info for 79 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  49i,12n,53p,433b,1215s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1748,10 +1764,10 @@ ic/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/math
 design/mdbch/md-chb7y.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mat
 hdesign/mdbch/md-chbma.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ma
 thdesign/mdbch/md-chr7v.pfb>
-Output written on main.pdf (43 pages, 302077 bytes).
+Output written on main.pdf (45 pages, 303932 bytes).
 PDF statistics:
- 518 PDF objects out of 1000 (max. 8388607)
- 446 compressed objects within 5 object streams
- 112 named destinations out of 1000 (max. 500000)
+ 531 PDF objects out of 1000 (max. 8388607)
+ 457 compressed objects within 5 object streams
+ 116 named destinations out of 1000 (max. 500000)
  202 words of extra memory for PDF output out of 10000 (max. 10000000)
 

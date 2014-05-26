@@ -10,10 +10,10 @@
 \beamer@sectionintoc {4}{Laufzeit}{29}{0}{4}
 \beamer@subsectionintoc {4}{1}{Herleitung}{30}{0}{4}
 \beamer@subsectionintoc {4}{2}{Vergleich mit Software sortieren}{31}{0}{4}
-\beamer@sectionintoc {5}{Fazit}{32}{0}{5}
-\beamer@subsectionintoc {5}{1}{Geschwindigkeit vs Variabilit\IeC {\"a}t}{34}{0}{5}
-\beamer@subsectionintoc {5}{2}{Hardwareaufwand vs Softwareaufwand}{35}{0}{5}
-\beamer@sectionintoc {6}{Zusammenfassung}{36}{0}{6}
-\beamer@sectionintoc {7}{Ausblick}{38}{0}{7}
-\beamer@subsectionintoc {7}{1}{Hybercube}{40}{0}{7}
-\beamer@subsectionintoc {7}{2}{Anhang}{43}{0}{7}
+\beamer@sectionintoc {5}{Fazit}{35}{0}{5}
+\beamer@subsectionintoc {5}{1}{Geschwindigkeit vs Variabilit\IeC {\"a}t}{36}{0}{5}
+\beamer@subsectionintoc {5}{2}{Hardwareaufwand vs Softwareaufwand}{37}{0}{5}
+\beamer@sectionintoc {6}{Zusammenfassung}{38}{0}{6}
+\beamer@sectionintoc {7}{Ausblick}{40}{0}{7}
+\beamer@subsectionintoc {7}{1}{Hybercube}{42}{0}{7}
+\beamer@subsectionintoc {7}{2}{Anhang}{45}{0}{7}
