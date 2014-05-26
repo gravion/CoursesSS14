@@ -43,8 +43,8 @@ class TestPanel extends JPanel implements MouseListener {
         g.fillRect(0, 0, d.width, d.height);
         g.setColor(Color.white);
         mypaint(eins, zwei, g);
-        g.fillRect(eins.x, eins.y, 4, 4);
-        g.fillRect(zwei.x, zwei.y, 4, 4);
+        g.fillRect(eins.x, eins.y, 1, 1);
+        g.fillRect(zwei.x, zwei.y, 1, 1);
     }
 
     public TestPanel() {
@@ -66,7 +66,12 @@ class TestPanel extends JPanel implements MouseListener {
         if (p1.x != p2.x) {
             m = (double)(p2.y - p1.y) / (double)(p2.x - p1.x);
         }else {
-            m=-1; // eigentlich unendlich
+            if(p1.y > p2.y){
+                g.fillRect(p1.x, p2.y, 1, p1.y - p2.y);
+            }else{
+                g.fillRect(p1.x, p1.y, 1, p2.y - p1.y);
+            }
+            return;
         }
         m = -m;
         System.out.println("m: " + m);
@@ -75,34 +80,34 @@ class TestPanel extends JPanel implements MouseListener {
         if (m > 0 && m <= 1) {
             if (p1.x < p2.x) {
                 // p1 über p2
-                Algorithm.mk1(p1, p2, g);
+                Algorithm1p.mk1(p1, p2, g);
             } else {
                 // p1 unter p2
-                Algorithm.mk1(p2, p1, g);
+                Algorithm1p.mk1(p2, p1, g);
             }
         } else if (m >= 1) {
             if (p1.x < p2.x) {
                 // p1 über p2
-                Algorithm.mg1(p1, p2, g);
+                Algorithm1p.mg1(p1, p2, g);
             } else {
                 // p1 unter p2
-                Algorithm.mg1(p2, p1, g);
+                Algorithm1p.mg1(p2, p1, g);
             }
         } else if (m <= -1) {
             if (p1.x < p2.x) {
                 // p1 über p2
-                Algorithm.mkm1(p1, p2, g);
+                Algorithm1p.mkm1(p1, p2, g);
             } else {
                 // p1 unter p2
-                Algorithm.mkm1(p2, p1, g);
+                Algorithm1p.mkm1(p2, p1, g);
             }
         } else if (m > -1) {
             if (p1.x < p2.x) {
                 // p1 über p2
-                Algorithm.mgm1(p1, p2, g);
+                Algorithm1p.mgm1(p1, p2, g);
             } else {
                 // p1 unter p2
-                Algorithm.mgm1(p2, p1, g);
+                Algorithm1p.mgm1(p2, p1, g);
             }
         }
     }
@@ -117,21 +122,13 @@ class TestPanel extends JPanel implements MouseListener {
     public void mouseClicked(MouseEvent e) { ; }
     public void mouseMoved(MouseEvent e) { ; }
     public void mouseDragged(MouseEvent e) { ; }
+    
     public void mousePressed(MouseEvent e) {
-        // x = e.getX();
-        // y = e.getY();
-        // repaint();
         if (e.getButton() == MouseEvent.BUTTON1) {
             eins.setLocation(e.getX(), e.getY());
         } else {
             zwei.setLocation(e.getX(), e.getY());
         }
-        // System.out.println("Punkt Eins = "+eins.x+" "+eins.y);
-        // System.out.println("Punkt Zwei = "+zwei.x+" "+zwei.y);
-        // mypaint();
         repaint();
     }
-
-    // TODO linie zeichnen
-
 }
