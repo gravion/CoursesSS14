@@ -13,7 +13,7 @@
 
 % image to be shown on the title page (without file extension, should be pdf or png)
 \titleimage{mi-bildbalken}
-\title[|| Sort] % (optional, use only with long paper titles)
+\title[Para Sort] % (optional, use only with long paper titles)
 {Parallele Sortierung}
 
 %\subtitle
@@ -29,7 +29,7 @@
 \date[ProSem Algo]
 {Proseminar Algorithmen, SS14}
 
-\subject{Theoretical Computer Science}
+%\subject{Theoretical Computer Science}
 % This is only inserted into the PDF information catalog. Can be left
 % out.
 
@@ -37,14 +37,6 @@
 % \insertshortauthor, \insertshortinstitute, \insertshorttitle, \insertshortdate, ...
 \renewcommand{\footlinetext}{\insertshortinstitute, \insertshorttitle, \insertshortdate}
 
-% Delete this, if you do not want the table of contents to pop up at
-% the beginning of each subsection:
-%\AtBeginSubsection[]
-%{
-%  \begin{frame}<beamer>{Outline}
-%    \tableofcontents[currentsection,hideallsubsections]
-%  \end{frame}
-%}
 \AtBeginSection[]
 {
 	\begin{frame}<beamer>
@@ -54,54 +46,52 @@
 
 \begin{document}
 
+%Titelblatt
 \begin{frame}[plain]
   \titlepage
 \end{frame}
  
+%Inhaltsverzeichnis
 \begin{frame}{Inhalt}
   \tableofcontents[hideallsubsubsections,allowframebreaks] %currentsection,hideallsubsections,hideallsubsubsections
   % You might wish to add the option [pausesections]
 \end{frame}
+
+% Motivation
 \section{Motivation}
+    
 \begin{frame}{Motivatior : Allgemein}
-ist Basis für :
-\begin{itemize}
-\item Suche
-\item (Sortierung)
-\end{itemize}
+    ist Basis für :
+    \begin{itemize}
+        \item Suche
+        \item (Sortierung)
+        \begin{itemize}
+            \item Listen
+            \item Wörterbücher
+            \item ... 
+        \end{itemize}
+        \item Ist dies auch in Hardware möglich ?
+    \end{itemize}
 \end{frame}
-\begin{frame}{Bezug aufs Fach}
-\begin{itemize}
-\item Listen
-\item Wörterbücher
-\item ... 
-\end{itemize}
-\end{frame}
-\section{Vorraussetzungen}
+
+\section{Grundlage des Sortierens}
 \subsection{Komparator}
 \begin{frame}{Aufbau}
-\begin{minipage}[c]{5cm}
-abstrakter Aufbau
-\begin{itemize}
-\item 2 Eingänge
-\item vergleichender Baustein
-\item 2 Ausgänge
-\end{itemize}
-\end{minipage}
-\hfill
-\pause
-\begin{minipage}[c]{5cm}
-konkret
-\begin{itemize}
-\item Datenleitungen
-\item vernetzte Transistoren
-\item Datenleitungen
-\end{itemize}
-\end{minipage}
+    \begin{minipage}[c]{5cm}
+        \begin{itemize}
+            \item 2 Eingänge
+            \item vergleichender Baustein
+            \item 2 Ausgänge
+        \end{itemize}
+	\begin{minipage}[c]{7cm}
+
+\end{minipage}        
+% TODO Bild Komparator
+    \end{minipage}
+    
 \end{frame}
-\begin{frame}{Vergleichender Baustein (i)}
-besteht aus
-\end{frame}
+
+%Pseudocode
 \begin{frame}[fragile]{Vergleichender Baustein (ii)}
 \begin{lstlisting}[laguage={inform},tabsize=4]
     void comp(chan in1, in2, out1 out2){
@@ -119,165 +109,192 @@ besteht aus
     }
 \end{lstlisting}
 \end{frame}
-\begin{frame}
-Konvention für die folgenden Folien
-\begin{itemize}
-\item Reihenfolge des Inputs egal
-\item kleineres Element am oberen Ausgang
-\item größeres Element am unteren Ausgang
-\end{itemize}
-\end{frame}
-\subsection{0,1-Prinzip}
-\begin{frame}{Aussage}
-Wenn es eine Folge A gibt, die ein Sortiennetzwerk nicht sortiert, so existiert auch eine 0,1-Folge, die von diesem Netzwerk nicht sortiert wird.
-\end{frame}
-\begin{frame}{Ansatz}
-man kann jede Zahlenfolge durch eine 0,1 Folge repräsentieren
-$$
-f(c) = \begin{cases} 0 , & if \;\;c < k \\
-1 , & if \;\;c \geq k
-\end{cases}
-$$
-\end{frame}
-\begin{frame}{0,1- Beispiel}
-Beispiel an der Tafel ? Bild
-\end{frame}
 
-% eventuell wenn Vorraussetzungen zu lang werden
-% \subsection{Zusammenfassung}
-
-%eventuell noch unter Vorraussetzungen
 \section{Sortiernetzwerk}
 \subsection{Aufbau}
+
 \begin{frame}
-besteht aus mehreren Eingabeleitungen die durch Komperatoren vernetzt sind.
-Das Ergebnis ist eine sortierte Folge der Eingabe,
-die bei unterschiedlicher Eingabeanordnungen im gleichen Ergebnis endet.
+    \begin{itemize}
+        \item mehrere Eingabeleitungen
+        \item Vergleichende Schritte müssen dazwischen laufen
+        \item mehrere Ausgabeleitungen sortierte Ausgabe
+    \end{itemize}
 \end{frame}
-\subsection{Sortieren im Sortiernetzwerk}
-\begin{frame}{Sortieren im Sortiernetzwerk}
-Bild aus dem Buch
-\end{frame}
+
 \subsubsection*{nativer Ansatz}
-%vergleich mit bubble sort
-\begin{frame}{Beschreibung Teil 1}
-\begin{itemize}
-\item Aufgabe
-\item grundlegendes Prinzip
-\item Demonstration (kleines Beispiel)
-\item Laufzeit
-\end{itemize}
-\end{frame}
 \begin{frame}{nativ : Aufgabe}
-\begin{itemize}
-\item Resultat soll sortierte Eingabe sein
-\end{itemize}
+\begin{semiverbatim}
+    \uncover<1-> {Aufgabe
+        \begin{itemize}
+            \item Resultat soll sortierte Eingabe sein
+            \end{itemize}}
+    \uncover<2-> {\item grundlegendes Prinzip
+        \begin{itemize}
+            \item intuitiver Einsatz von Vergleichen
+            \item Schrittweises sortieren
+        \end{itemize}}
+\end{semiverbatim}
 \end{frame}
-\begin{frame}{nativ : grundlegenders Prinzip}
-\begin{itemize}
-\item intuitiver Einsatz von Vergleichen
-\item Schrittweises sortieren
-%mh sehr leere Folien
-\end{itemize}
+
+\begin{frame}{nativ : grundlegendes Prinzip}
+    Bild \\
+    siehe 2 
 \end{frame}
+
 \begin{frame}{Demonstration}
-Bild kleiner Zahlenfolge 4-8-16\\
-Beispiel
+    Bild kleiner Zahlenfolge 4-8-16\\
+    Beispiel
+\end{frame}
+
+\subsection{Korrektheit}
+\begin{frame}{0,1-Prinzip}
+\begin{theorem} 
+Wenn es eine Folge A gibt, die ein Sortiennetzwerk nicht sortiert, so existiert auch eine 0,1-Folge, die von diesem Netzwerk nicht sortiert wird.
+\end{theorem}
+\begin{proof}
+{\color{red} fill}
+\end{proof}
+\end{frame}
+
+\begin{frame}{Ansatz}
+    man kann jede Zahlenfolge durch eine 0,1 Folge repräsentieren
+    $$
+    f(c) = \begin{cases} 0 , & if \;\;c < k \\
+    1 , & if \;\;c \geq k
+    \end{cases}$$
+\end{frame}
+
+\begin{frame}{0,1- Beispiel}
+    Beispiel an der Tafel ? Bild
 \end{frame}
 
 \subsection*{Aufbau eines effektieveren Netzwerks}
 %Einsatzorte
-\begin{frame}{Beschreibung Teil 2}
-\begin{itemize}
-\item Aufgabe
-\item grundlegendes Prinzip
-\item Demonstration (kleines Beispiel)
-\item Laufzeit
-\end{itemize}
+\begin{frame}{effektiverer Ansatz}
+    \begin{itemize}
+        \item Aufgabe
+        \item grundlegendes Prinzip
+        \item Demonstration (kleines Beispiel)
+        \item Laufzeit
+    \end{itemize}
 \end{frame}
-\begin{frame}{effektiver : Aufgabe}
-{\color{red}gefällt mir noch nicht}
-\begin{itemize}
-\item Resultat soll sortierte Eingabe sein
-\item \alert{soll effizient sein}
-\end{itemize}
+
+\begin{frame}{effektiver}
+    \begin{semiverbatim}
+        \uncover<1-> {Aufgabe :
+            \begin{itemize}
+                \item Resultat soll sortierte Eingabe sein
+                \item \alert{soll effizient sein}
+            \end{itemize}}
+        \uncover<2-> {grundlegendes Prinzip :
+            \begin{itemize}
+                \item intuitiver Einsatz von Vergleichen
+                \item[]\alert{+ Einbezug von Teile und Herrscher}
+                % mh sehr leere Folien
+            \end{itemize}}
+    \end{semiverbatim}
 \end{frame}
-\begin{frame}{effektiver : grundlegenders Prinzip}
-\begin{itemize}
-\item intuitiver Einsatz von Vergleichen
-\item[]\alert{+ Einbezug von Teile und Herrscher}
-% mh sehr leere Folien
-\end{itemize}
-\end{frame}
+
 \begin{frame}{Aufteilung}
-Bild Buch Mischer + biton Sortierer
+    Bild Buch Biton-Sortierer
 \end{frame}
-\begin{frame}{effektiver : grundlegendes Prinzip}
-{\color{red}gefällt mir noch nicht}
-\begin{itemize}
-\item intuitiver Einsatz von Vergleichen
-\item[]\alert{+ Einbezug von Teile und Herrscher}
-\item Schrittweises sortieren 
-\item[]\alert{+ Einbezug vorheriger Ergebnisse}
-% mh sehr leere Folien
-\end{itemize}
-\end{frame}
+
 \begin{frame}{Biton -Sortierer : Aufbau}
-Bild
-%Erklären anzeichnen an der Tafel
+    Bild
+    %Erklären anzeichnen an der Tafel
 \end{frame}
+
 \begin{frame}{Demonstration}
-Bild kleiner Zahlenfolge 4-8-16\\
-Beispiel
+    Bild kleiner Zahlenfolge 4-8-16\\
+    Beispiel
 \end{frame}
+
 \section{Laufzeit}
 \subsection{Herleitung}
+\begin{frame}
+\uncover<2-> {$$ 1 $$}
+\uncover<1-> {$$ \frac{1}{2}\; \cdot\;\log_2 n \;\; (\log_2 n\;+\;1)$$}
+\end{frame}
 \begin{frame}{Herleitung}
-Herleitung
+    Herleitung
 \end{frame}
 \subsection{Vergleich mit Software sortieren}
-%eventuell unte Vorraussetzungen Mergesort, Quicksort
+    %eventuell unte Vorraussetzungen Mergesort, Quicksort
 \begin{frame}
-Unterschiedliche Betrachtungen Schritte gegen 
+    Unterschiedliche Betrachtungen Schritte gegen Vergleiche, versuch der Darstellung
 \end{frame}
-\section{Fazit}
-\begin{frame}
-Fazit
+
+\begin{frame}{Bubblesort im Hardwarenetz}
+    Bild Bubblesort \\
+    siehe 1     
 \end{frame}
-\subsection{Geschwindigkeit vs Variabilität}
-\begin{frame}
-speed vs vari
+
+\begin{frame}{Mergesort im Hardwarenetz}
+    Bild Mergesort \\
+    siehe 4 
 \end{frame}
-\subsection{Hardwareaufwand vs Softwareaufwand}
+
 \begin{frame}
-hardware vs software
+    Bild Quicksort \\
+    Bild 5
+\end{frame}
+
+\section{Gegenüberstellung}
+\begin{frame}
+    \begin{itemize}
+        \item Geschwindigkeit vs Variabilität
+        \begin{itemize}
+            \item hohe Geschwindigkeit durch direkte Hardware Implementriegung
+            \item starre Struktur , bildet Rahmen der Möglichkeiten
+            \item stark typisierte Eingabe
+        \end{itemize}
+    \item Hardwareaufwand vs Softwareaufwand
+        \begin{itemize}
+            \item Software zur Auswertung keine zum sortieren
+            \item geringe Skalierbarkeit
+            \item hoher Aufwand wenn Eingabelimit überschritten wird
+            \item nur lokal
+            \item Hardware Konzeption eventuell aufwendiger
+        \end{itemize}
+    \end{itemize}
 \end{frame}
 
 \section{Zusammenfassung}
 \begin{frame}{Zusammenfassung}
-zusammenfassung
+\begin{itemize}
+  \item paralleles sortieren ist schnell und effizient 
+  \item stark Problemabhängig
+  \item … {\color{red} muss noch gefüllt werden}
+\end{itemize}
 \end{frame}
+
 \section{Ausblick}
 \begin{frame}{Ausblick}
 weiter
 \end{frame}
+
 \subsection{Hybercube}
 \begin{frame}{Hyprecube}
 ?¿
 \end{frame}
-\subsubsection*{Aufbau}
+
 \begin{frame}{Aufbau}
 structur
 \end{frame}
 
+\begin{frame}{Funktion}
+
+\end{frame}
+
 %Ende
 \begin{frame}{Ende}
-Fragen, Anregungen?\\
-(keine Liederwünsche)
+    Fragen, Anregungen?\\
+    (keine Liederwünsche)
 \end{frame}
 
 \subsection{Anhang}
 \appendix
+
 \section<presentation>*{\appendixname}
 \subsection<presentation>*{For Further Reading}
 
@@ -355,8 +372,6 @@ Fragen, Anregungen?\\
     \end{itemize}
   \end{itemize}
 \end{frame}
-
-
 
 \begin{frame}[fragile]{An old algorithm}
 % NB. listings is quite powerful, but not well suited to be used with beamer
