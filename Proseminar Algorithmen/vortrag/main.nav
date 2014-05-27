@@ -10,128 +10,112 @@
 \headcommand {\beamer@framepages {3}{3}}
 \headcommand {\slideentry {1}{0}{4}{4/4}{}{0}}
 \headcommand {\beamer@framepages {4}{4}}
-\headcommand {\slideentry {1}{0}{5}{5/5}{}{0}}
+\headcommand {\sectionentry {2}{Grundlage des Sortierens}{5}{Grundlage des Sortierens}{0}}
+\headcommand {\beamer@sectionpages {3}{4}}
+\headcommand {\beamer@subsectionpages {3}{4}}
+\headcommand {\slideentry {2}{0}{5}{5/5}{}{0}}
 \headcommand {\beamer@framepages {5}{5}}
-\headcommand {\sectionentry {2}{Vorraussetzungen}{6}{Vorraussetzungen}{0}}
-\headcommand {\beamer@sectionpages {3}{5}}
-\headcommand {\beamer@subsectionpages {3}{5}}
-\headcommand {\slideentry {2}{0}{6}{6/6}{}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{6}{Komparator}}\headcommand {\beamer@subsectionpages {5}{5}}
+\headcommand {\slideentry {2}{1}{1}{6/6}{Komparator}{0}}
 \headcommand {\beamer@framepages {6}{6}}
-\headcommand {\beamer@subsectionentry {0}{2}{1}{7}{Komparator}}\headcommand {\beamer@subsectionpages {6}{6}}
-\headcommand {\slideentry {2}{1}{1}{7/8}{Komparator}{0}}
-\headcommand {\beamer@framepages {7}{8}}
-\headcommand {\slideentry {2}{1}{2}{9/9}{Komparator}{0}}
+\headcommand {\slideentry {2}{1}{2}{7/7}{Komparator}{0}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\sectionentry {3}{Sortiernetzwerk}{8}{Sortiernetzwerk}{0}}
+\headcommand {\beamer@sectionpages {5}{7}}
+\headcommand {\beamer@subsectionpages {6}{7}}
+\headcommand {\slideentry {3}{0}{3}{8/8}{}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{9}{Aufbau}}\headcommand {\beamer@subsectionpages {8}{8}}
+\headcommand {\slideentry {3}{1}{1}{9/9}{Aufbau}{0}}
 \headcommand {\beamer@framepages {9}{9}}
-\headcommand {\slideentry {2}{1}{3}{10/10}{Komparator}{0}}
-\headcommand {\beamer@framepages {10}{10}}
-\headcommand {\slideentry {2}{1}{4}{11/11}{Komparator}{0}}
-\headcommand {\beamer@framepages {11}{11}}
-\headcommand {\beamer@subsectionentry {0}{2}{2}{12}{0,1-Prinzip}}\headcommand {\beamer@subsectionpages {7}{11}}
-\headcommand {\slideentry {2}{2}{1}{12/12}{0,1-Prinzip}{0}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{1}{1}{10}{nativer Ansatz}}
+\headcommand {\slideentry {3}{1}{2}{10/11}{Aufbau}{0}}
+\headcommand {\beamer@framepages {10}{11}}
+\headcommand {\slideentry {3}{1}{3}{12/12}{Aufbau}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\slideentry {2}{2}{2}{13/13}{0,1-Prinzip}{0}}
+\headcommand {\slideentry {3}{1}{4}{13/13}{Aufbau}{0}}
 \headcommand {\beamer@framepages {13}{13}}
-\headcommand {\slideentry {2}{2}{3}{14/14}{0,1-Prinzip}{0}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{14}{Korrektheit}}\headcommand {\beamer@subsectionpages {9}{13}}
+\headcommand {\slideentry {3}{2}{1}{14/14}{Korrektheit}{0}}
 \headcommand {\beamer@framepages {14}{14}}
-\headcommand {\sectionentry {3}{Sortiernetzwerk}{15}{Sortiernetzwerk}{0}}
-\headcommand {\beamer@sectionpages {6}{14}}
-\headcommand {\beamer@subsectionpages {12}{14}}
-\headcommand {\slideentry {3}{0}{4}{15/15}{}{0}}
+\headcommand {\slideentry {3}{2}{2}{15/15}{Korrektheit}{0}}
 \headcommand {\beamer@framepages {15}{15}}
-\headcommand {\beamer@subsectionentry {0}{3}{1}{16}{Aufbau}}\headcommand {\beamer@subsectionpages {15}{15}}
-\headcommand {\slideentry {3}{1}{1}{16/16}{Aufbau}{0}}
+\headcommand {\slideentry {3}{2}{3}{16/16}{Korrektheit}{0}}
 \headcommand {\beamer@framepages {16}{16}}
-\headcommand {\beamer@subsectionentry {0}{3}{2}{17}{Sortieren im Sortiernetzwerk}}\headcommand {\beamer@subsectionpages {16}{16}}
-\headcommand {\slideentry {3}{2}{1}{17/17}{Sortieren im Sortiernetzwerk}{0}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{17}{Aufbau eines effektieveren Netzwerks}}\headcommand {\beamer@subsectionpages {14}{16}}
+\headcommand {\slideentry {3}{3}{1}{17/17}{Aufbau eines effektieveren Netzwerks}{0}}
 \headcommand {\beamer@framepages {17}{17}}
-\headcommand {\beamer@subsubsectionentry {0}{3}{2}{1}{18}{nativer Ansatz}}
-\headcommand {\slideentry {3}{2}{2}{18/18}{Sortieren im Sortiernetzwerk}{0}}
-\headcommand {\beamer@framepages {18}{18}}
-\headcommand {\slideentry {3}{2}{3}{19/19}{Sortieren im Sortiernetzwerk}{0}}
-\headcommand {\beamer@framepages {19}{19}}
-\headcommand {\slideentry {3}{2}{4}{20/20}{Sortieren im Sortiernetzwerk}{0}}
+\headcommand {\slideentry {3}{3}{2}{18/19}{Aufbau eines effektieveren Netzwerks}{0}}
+\headcommand {\beamer@framepages {18}{19}}
+\headcommand {\slideentry {3}{3}{3}{20/20}{Aufbau eines effektieveren Netzwerks}{0}}
 \headcommand {\beamer@framepages {20}{20}}
-\headcommand {\slideentry {3}{2}{5}{21/21}{Sortieren im Sortiernetzwerk}{0}}
+\headcommand {\slideentry {3}{3}{4}{21/21}{Aufbau eines effektieveren Netzwerks}{0}}
 \headcommand {\beamer@framepages {21}{21}}
-\headcommand {\beamer@subsectionentry {0}{3}{3}{22}{Aufbau eines effektieveren Netzwerks}}\headcommand {\beamer@subsectionpages {17}{21}}
-\headcommand {\slideentry {3}{3}{1}{22/22}{Aufbau eines effektieveren Netzwerks}{0}}
+\headcommand {\slideentry {3}{3}{5}{22/22}{Aufbau eines effektieveren Netzwerks}{0}}
 \headcommand {\beamer@framepages {22}{22}}
-\headcommand {\slideentry {3}{3}{2}{23/23}{Aufbau eines effektieveren Netzwerks}{0}}
+\headcommand {\sectionentry {4}{Laufzeit}{23}{Laufzeit}{0}}
+\headcommand {\beamer@sectionpages {8}{22}}
+\headcommand {\beamer@subsectionpages {17}{22}}
+\headcommand {\slideentry {4}{0}{6}{23/23}{}{0}}
 \headcommand {\beamer@framepages {23}{23}}
-\headcommand {\slideentry {3}{3}{3}{24/24}{Aufbau eines effektieveren Netzwerks}{0}}
-\headcommand {\beamer@framepages {24}{24}}
-\headcommand {\slideentry {3}{3}{4}{25/25}{Aufbau eines effektieveren Netzwerks}{0}}
-\headcommand {\beamer@framepages {25}{25}}
-\headcommand {\slideentry {3}{3}{5}{26/26}{Aufbau eines effektieveren Netzwerks}{0}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{24}{Herleitung}}\headcommand {\beamer@subsectionpages {23}{23}}
+\headcommand {\slideentry {4}{1}{1}{24/25}{Herleitung}{0}}
+\headcommand {\beamer@framepages {24}{25}}
+\headcommand {\slideentry {4}{1}{2}{26/26}{Herleitung}{0}}
 \headcommand {\beamer@framepages {26}{26}}
-\headcommand {\slideentry {3}{3}{6}{27/27}{Aufbau eines effektieveren Netzwerks}{0}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{27}{Vergleich mit Software sortieren}}\headcommand {\beamer@subsectionpages {24}{26}}
+\headcommand {\slideentry {4}{2}{1}{27/27}{Vergleich mit Software sortieren}{0}}
 \headcommand {\beamer@framepages {27}{27}}
-\headcommand {\slideentry {3}{3}{7}{28/28}{Aufbau eines effektieveren Netzwerks}{0}}
+\headcommand {\slideentry {4}{2}{2}{28/28}{Vergleich mit Software sortieren}{0}}
 \headcommand {\beamer@framepages {28}{28}}
-\headcommand {\sectionentry {4}{Laufzeit}{29}{Laufzeit}{0}}
-\headcommand {\beamer@sectionpages {15}{28}}
-\headcommand {\beamer@subsectionpages {22}{28}}
-\headcommand {\slideentry {4}{0}{8}{29/29}{}{0}}
+\headcommand {\slideentry {4}{2}{3}{29/29}{Vergleich mit Software sortieren}{0}}
 \headcommand {\beamer@framepages {29}{29}}
-\headcommand {\beamer@subsectionentry {0}{4}{1}{30}{Herleitung}}\headcommand {\beamer@subsectionpages {29}{29}}
-\headcommand {\slideentry {4}{1}{1}{30/30}{Herleitung}{0}}
+\headcommand {\slideentry {4}{2}{4}{30/30}{Vergleich mit Software sortieren}{0}}
 \headcommand {\beamer@framepages {30}{30}}
-\headcommand {\beamer@subsectionentry {0}{4}{2}{31}{Vergleich mit Software sortieren}}\headcommand {\beamer@subsectionpages {30}{30}}
-\headcommand {\slideentry {4}{2}{1}{31/31}{Vergleich mit Software sortieren}{0}}
+\headcommand {\sectionentry {5}{Gegen\IeC {\"u}berstellung}{31}{Gegen\IeC {\"u}berstellung}{0}}
+\headcommand {\beamer@sectionpages {23}{30}}
+\headcommand {\beamer@subsectionpages {27}{30}}
+\headcommand {\slideentry {5}{0}{5}{31/31}{}{0}}
 \headcommand {\beamer@framepages {31}{31}}
-\headcommand {\slideentry {4}{2}{2}{32/32}{Vergleich mit Software sortieren}{0}}
+\headcommand {\slideentry {5}{0}{6}{32/32}{}{0}}
 \headcommand {\beamer@framepages {32}{32}}
-\headcommand {\slideentry {4}{2}{3}{33/33}{Vergleich mit Software sortieren}{0}}
+\headcommand {\sectionentry {6}{Zusammenfassung}{33}{Zusammenfassung}{0}}
+\headcommand {\beamer@sectionpages {31}{32}}
+\headcommand {\beamer@subsectionpages {31}{32}}
+\headcommand {\slideentry {6}{0}{7}{33/33}{}{0}}
 \headcommand {\beamer@framepages {33}{33}}
-\headcommand {\slideentry {4}{2}{4}{34/34}{Vergleich mit Software sortieren}{0}}
+\headcommand {\slideentry {6}{0}{8}{34/34}{}{0}}
 \headcommand {\beamer@framepages {34}{34}}
-\headcommand {\sectionentry {5}{Fazit}{35}{Fazit}{0}}
-\headcommand {\beamer@sectionpages {29}{34}}
-\headcommand {\beamer@subsectionpages {31}{34}}
-\headcommand {\slideentry {5}{0}{5}{35/35}{}{0}}
+\headcommand {\sectionentry {7}{Ausblick}{35}{Ausblick}{0}}
+\headcommand {\beamer@sectionpages {33}{34}}
+\headcommand {\beamer@subsectionpages {33}{34}}
+\headcommand {\slideentry {7}{0}{9}{35/35}{}{0}}
 \headcommand {\beamer@framepages {35}{35}}
-\headcommand {\beamer@subsectionentry {0}{5}{1}{36}{Geschwindigkeit vs Variabilit\IeC {\"a}t}}\headcommand {\beamer@subsectionpages {35}{35}}
-\headcommand {\slideentry {5}{1}{1}{36/36}{Geschwindigkeit vs Variabilit\IeC {\"a}t}{0}}
+\headcommand {\slideentry {7}{0}{10}{36/36}{}{0}}
 \headcommand {\beamer@framepages {36}{36}}
-\headcommand {\beamer@subsectionentry {0}{5}{2}{37}{Hardwareaufwand vs Softwareaufwand}}\headcommand {\beamer@subsectionpages {36}{36}}
-\headcommand {\slideentry {5}{2}{1}{37/37}{Hardwareaufwand vs Softwareaufwand}{0}}
+\headcommand {\beamer@subsectionentry {0}{7}{1}{37}{Hybercube}}\headcommand {\beamer@subsectionpages {35}{36}}
+\headcommand {\slideentry {7}{1}{1}{37/37}{Hybercube}{0}}
 \headcommand {\beamer@framepages {37}{37}}
-\headcommand {\sectionentry {6}{Zusammenfassung}{38}{Zusammenfassung}{0}}
-\headcommand {\beamer@sectionpages {35}{37}}
-\headcommand {\beamer@subsectionpages {37}{37}}
-\headcommand {\slideentry {6}{0}{2}{38/38}{}{0}}
+\headcommand {\slideentry {7}{1}{2}{38/38}{Hybercube}{0}}
 \headcommand {\beamer@framepages {38}{38}}
-\headcommand {\slideentry {6}{0}{3}{39/39}{}{0}}
+\headcommand {\slideentry {7}{1}{3}{39/39}{Hybercube}{0}}
 \headcommand {\beamer@framepages {39}{39}}
-\headcommand {\sectionentry {7}{Ausblick}{40}{Ausblick}{0}}
-\headcommand {\beamer@sectionpages {38}{39}}
-\headcommand {\beamer@subsectionpages {38}{39}}
-\headcommand {\slideentry {7}{0}{4}{40/40}{}{0}}
+\headcommand {\slideentry {7}{1}{4}{40/40}{Hybercube}{0}}
 \headcommand {\beamer@framepages {40}{40}}
-\headcommand {\slideentry {7}{0}{5}{41/41}{}{0}}
-\headcommand {\beamer@framepages {41}{41}}
-\headcommand {\beamer@subsectionentry {0}{7}{1}{42}{Hybercube}}\headcommand {\beamer@subsectionpages {40}{41}}
-\headcommand {\slideentry {7}{1}{1}{42/42}{Hybercube}{0}}
-\headcommand {\beamer@framepages {42}{42}}
-\headcommand {\beamer@subsubsectionentry {0}{7}{1}{1}{43}{Aufbau}}
-\headcommand {\slideentry {7}{1}{2}{43/43}{Hybercube}{0}}
-\headcommand {\beamer@framepages {43}{43}}
-\headcommand {\slideentry {7}{1}{3}{44/44}{Hybercube}{0}}
-\headcommand {\beamer@framepages {44}{44}}
-\headcommand {\beamer@subsectionentry {0}{7}{2}{45}{Anhang}}\headcommand {\beamer@subsectionpages {42}{44}}
+\headcommand {\beamer@subsectionentry {0}{7}{2}{41}{Anhang}}\headcommand {\beamer@subsectionpages {37}{40}}
 \headcommand {\partentry {Appendix}{1}}
-\headcommand {\beamer@partpages {1}{44}}
-\headcommand {\beamer@sectionpages {40}{44}}
-\headcommand {\beamer@subsectionpages {45}{44}}
-\headcommand {\beamer@appendixpages {45}}
-\headcommand {\sectionentry {8}{Appendix}{45}{Appendix}{1}}
-\headcommand {\beamer@sectionpages {45}{44}}
-\headcommand {\beamer@subsectionpages {45}{44}}
-\headcommand {\beamer@subsectionentry {1}{8}{1}{45}{For Further Reading}}\headcommand {\beamer@subsectionpages {45}{44}}
-\headcommand {\slideentry {8}{1}{1}{45/45}{For Further Reading}{1}}
-\headcommand {\beamer@framepages {45}{45}}
-\headcommand {\beamer@partpages {45}{45}}
-\headcommand {\beamer@subsectionpages {45}{45}}
-\headcommand {\beamer@sectionpages {45}{45}}
-\headcommand {\beamer@documentpages {45}}
-\headcommand {\def \inserttotalframenumber {44}}
+\headcommand {\beamer@partpages {1}{40}}
+\headcommand {\beamer@sectionpages {35}{40}}
+\headcommand {\beamer@subsectionpages {41}{40}}
+\headcommand {\beamer@appendixpages {41}}
+\headcommand {\sectionentry {8}{Appendix}{41}{Appendix}{1}}
+\headcommand {\beamer@sectionpages {41}{40}}
+\headcommand {\beamer@subsectionpages {41}{40}}
+\headcommand {\beamer@subsectionentry {1}{8}{1}{41}{For Further Reading}}\headcommand {\beamer@subsectionpages {41}{40}}
+\headcommand {\slideentry {8}{1}{1}{41/41}{For Further Reading}{1}}
+\headcommand {\beamer@framepages {41}{41}}
+\headcommand {\beamer@partpages {41}{41}}
+\headcommand {\beamer@subsectionpages {41}{41}}
+\headcommand {\beamer@sectionpages {41}{41}}
+\headcommand {\beamer@documentpages {41}}
+\headcommand {\def \inserttotalframenumber {38}}

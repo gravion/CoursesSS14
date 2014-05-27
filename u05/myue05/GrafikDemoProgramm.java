@@ -61,6 +61,7 @@ class TestPanel extends JPanel implements MouseListener {
 
     }
 
+    // soll mit übergabe die punkte entsprechend einzeichnen
     public void mypaint(Point p1, Point p2, Graphics g) {
         double m;
         
