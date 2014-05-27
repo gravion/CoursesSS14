@@ -77,19 +77,19 @@
 \section{Grundlage des Sortierens}
 \subsection{Komparator}
 \begin{frame}{Aufbau}
-    \begin{figure}
-		\begin{minipage}[l]{7cm}
+    \begin{minipage}[c]{14.5cm}
+    		\begin{minipage}[c]{5cm}
         		\begin{itemize}
             		\item 2 Eingänge
 	            \item vergleichender Baustein
     		        \item 2 Ausgänge
         		\end{itemize}
 	    \end{minipage}
-    		\hfill
-		\begin{minipage}[r]{10cm}
+%    		\hfill
+		\begin{minipage}[c]{5cm}
 			\includegraphics[scale=0.5]{Komparator1.eps}
 	 	\end{minipage}
-    \end{figure}	
+    \end{minipage}
 \end{frame}
 
 %Pseudocode
@@ -138,19 +138,21 @@
 \end{frame}
 
 \begin{frame}{nativ : grundlegendes Prinzip}
-    Bild \\
-    siehe 2 
+\begin{center}
+    \includegraphics[scale=0.8]{bild2Komparatornetzwerk.eps}
+\end{center}
 \end{frame}
 
 \begin{frame}{Demonstration}
-    Bild kleiner Zahlenfolge 4-8-16\\
-    Beispiel
+\begin{center}
+   \includegraphics[scale=0.8]{bild2beispiel.eps}
+  \end{center}
 \end{frame}
 
 \subsection{Korrektheit}
 \begin{frame}{0,1-Prinzip}
 \begin{theorem} 
-Wenn es eine Folge A gibt, die ein Sortiennetzwerk nicht sortiert, so existiert auch eine 0,1-Folge, die von diesem Netzwerk nicht sortiert wird.
+Wenn es eine Folge A gibt, die ein Sortiernetzwerk nicht sortiert, so existiert auch eine 0,1-Folge, die von diesem Netzwerk nicht sortiert wird.
 \end{theorem}
 \begin{proof}
 {\color{red} fill}
@@ -166,28 +168,27 @@ Wenn es eine Folge A gibt, die ein Sortiennetzwerk nicht sortiert, so existiert 
 \end{frame}
 
 \begin{frame}{0,1- Beispiel}
-    Beispiel an der Tafel ? Bild
+\begin{semiverbatim}
+\uncover<1-> {
+\begin{center}
+\includegraphics[scale=0.8]{01beispiel.eps}
+\end{center}
+}
+\uncover<2-> {\begin{center} {\color{green}Beispiel an der Tafel ?}\end{center} }
+\end{semiverbatim}
 \end{frame}
 
 \subsection*{Aufbau eines effektieveren Netzwerks}
 %Einsatzorte
-\begin{frame}{effektiverer Ansatz}
-    \begin{itemize}
-        \item Aufgabe
-        \item grundlegendes Prinzip
-        \item Demonstration (kleines Beispiel)
-        \item Laufzeit
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{effektiver}
+\begin{frame}{effektiveres Netzwerk}
     \begin{semiverbatim}
-        \uncover<1-> {Aufgabe :
+    		\uncover<1-> { }
+        \uncover<2-> {Aufgabe :
             \begin{itemize}
                 \item Resultat soll sortierte Eingabe sein
                 \item \alert{soll effizient sein}
             \end{itemize}}
-        \uncover<2-> {grundlegendes Prinzip :
+        \uncover<3-> {grundlegendes Prinzip :
             \begin{itemize}
                 \item intuitiver Einsatz von Vergleichen
                 \item[]\alert{+ Einbezug von Teile und Herrscher}
@@ -197,12 +198,15 @@ Wenn es eine Folge A gibt, die ein Sortiennetzwerk nicht sortiert, so existiert 
 \end{frame}
 
 \begin{frame}{Aufteilung}
-    Bild Buch Biton-Sortierer
+\begin{center}
+\includegraphics[scale=0.6]{bitonmischer.eps}
+\end{center}
 \end{frame}
 
 \begin{frame}{Biton -Sortierer : Aufbau}
-    Bild
-    %Erklären anzeichnen an der Tafel
+    \begin{center}
+    		\includegraphics[scale=0.6]{biton2.eps}
+    \end{center}
 \end{frame}
 
 \begin{frame}{Demonstration}
@@ -214,30 +218,33 @@ Wenn es eine Folge A gibt, die ein Sortiennetzwerk nicht sortiert, so existiert 
 \subsection{Herleitung}
 \begin{frame}
 \uncover<2-> {$$ 1 $$}
+\uncover<3-> {$$ 1 + 2 $$ }
+\uncover<4-> {$$ 1 + 2 + … + k-1 + k  = \sum_{i=1}^k i$$ }
+\uncover<5-> {$$ \frac{k \cdot (k+1)}{2} | n = 2^k $$}
 \uncover<1-> {$$ \frac{1}{2}\; \cdot\;\log_2 n \;\; (\log_2 n\;+\;1)$$}
 \end{frame}
-\begin{frame}{Herleitung}
-    Herleitung
-\end{frame}
+
 \subsection{Vergleich mit Software sortieren}
-    %eventuell unte Vorraussetzungen Mergesort, Quicksort
 \begin{frame}
-    Unterschiedliche Betrachtungen Schritte gegen Vergleiche, versuch der Darstellung
+	\begin{itemize}
+		\item Unterschiedliche Betrachtungen Schritte gegen Vergleiche, Versuch der Darstellung
+	 	\item Abhängigkeit von der Eingabe
+	 	\item Bezug zum vorherigen Vergleich
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Bubblesort im Hardwarenetz}
-    Bild Bubblesort \\
-    siehe 1     
+	\begin{center}
+	    \includegraphics[scale=0.65]{bubblesort.eps}
+	\end{center}
 \end{frame}
 
-\begin{frame}{Mergesort im Hardwarenetz}
-    Bild Mergesort \\
-    siehe 4 
-\end{frame}
-
-\begin{frame}
-    Bild Quicksort \\
-    Bild 5
+\begin{frame}{Softwaresortieren im Hardwarenetz}
+    \begin{center}
+    		\includegraphics[scale=0.65]{mergesort.eps}
+\end{center}     
+ wo ist das Pivot Element ?\\
+        Wo ist nun das größte Element ?
 \end{frame}
 
 \section{Gegenüberstellung}
@@ -257,6 +264,8 @@ Wenn es eine Folge A gibt, die ein Sortiennetzwerk nicht sortiert, so existiert 
             \item nur lokal
             \item Hardware Konzeption eventuell aufwendiger
         \end{itemize}
+       
+        
     \end{itemize}
 \end{frame}
 
@@ -264,8 +273,8 @@ Wenn es eine Folge A gibt, die ein Sortiennetzwerk nicht sortiert, so existiert 
 \begin{frame}{Zusammenfassung}
 \begin{itemize}
   \item paralleles sortieren ist schnell und effizient 
-  \item stark Problemabhängig
-  \item … {\color{red} muss noch gefüllt werden}
+  \item problemabhängige Lösung
+  \item starr, nicht universell
 \end{itemize}
 \end{frame}
 
