@@ -31,7 +31,7 @@ public class GrafikDemoProgramm {
 class TestPanel extends JPanel implements MouseListener {
     int x = 10;
     int y = 10;
-    int weight = 1;
+    int weight = 1; //hier die Rechteckgröße ändern
     AlgorithmXp a;
     Point eins = new Point(); // linker mouse knopf
     Point zwei = new Point(); // rechter mouse knopf
@@ -55,11 +55,6 @@ class TestPanel extends JPanel implements MouseListener {
     // /////////////////////////
     // Bresenham Algorithmus  //
     // /////////////////////////
-
-    // soll mit links vongabe die punkte entsprechend einzeichnen
-    public void drawpoint() {
-
-    }
 
     // soll mit übergabe die punkte entsprechend einzeichnen
     public void mypaint(Point p1, Point p2, Graphics g) {
