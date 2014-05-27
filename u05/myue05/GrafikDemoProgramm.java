@@ -41,10 +41,10 @@ class TestPanel extends JPanel implements MouseListener {
         g.fillRect(0, 0, d.width, d.height);
         g.setColor(Color.white);
         mypaint(eins, zwei, g);
-        g.fillRect(eins.x, eins.y, 1, 1);
-        g.fillRect(zwei.x, zwei.y, 1, 1);
-//        g.fillRect(eins.x, eins.y, 4, 4);
-//        g.fillRect(zwei.x, zwei.y, 4, 4);
+//        g.fillRect(eins.x, eins.y, 1, 1);
+//        g.fillRect(zwei.x, zwei.y, 1, 1);
+        g.fillRect(eins.x, eins.y, 4, 4);
+        g.fillRect(zwei.x, zwei.y, 4, 4);
     }
 
     public TestPanel() {
@@ -56,10 +56,6 @@ class TestPanel extends JPanel implements MouseListener {
     // /////////////////////////
 
     // soll mit übergabe die punkte entsprechend einzeichnen
-    public void drawpoint() {
-
-    }
-
     public void mypaint(Point p1, Point p2, Graphics g) {
         double m;
         
