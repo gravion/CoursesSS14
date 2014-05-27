@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.4.24)  26 MAY 2014 10:01
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.6)  27 MAY 2014 13:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 9 languages loaded.
+Babel <3.9h> and hyphenation patterns for 4 languages loaded.
 (/usr/share/texmf/tex/latex/beamer/base/beamer.cls
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasercs.sty
 Package: beamerbasercs 2012/11/13 (rcs-revision cb16a617839f)
@@ -1748,10 +1748,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 342.
  ) 
 Here is how much of TeX's memory you used:
- 23625 strings out of 494935
- 392149 string characters out of 6178122
- 494803 words of memory out of 5000000
- 26207 multiletter control sequences out of 15000+600000
+ 23625 strings out of 494985
+ 392149 string characters out of 6180357
+ 494528 words of memory out of 5000000
+ 26191 multiletter control sequences out of 15000+600000
  55732 words of font info for 79 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  49i,12n,53p,433b,1215s stack positions out of 5000i,500n,10000p,200000b,80000s
