@@ -5,8 +5,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-//import java.awt.geom.Point2D;
-
 public class GrafikDemoProgramm {
     private static void createAndShowGUI() {
         // Create and set up the window.
@@ -45,6 +43,8 @@ class TestPanel extends JPanel implements MouseListener {
         mypaint(eins, zwei, g);
         g.fillRect(eins.x, eins.y, 1, 1);
         g.fillRect(zwei.x, zwei.y, 1, 1);
+//        g.fillRect(eins.x, eins.y, 4, 4);
+//        g.fillRect(zwei.x, zwei.y, 4, 4);
     }
 
     public TestPanel() {
@@ -68,46 +68,55 @@ class TestPanel extends JPanel implements MouseListener {
         }else {
             if(p1.y > p2.y){
                 g.fillRect(p1.x, p2.y, 1, p1.y - p2.y);
+                //g.fillRect(p1.x, p2.y, 4, p1.y - p2.y);
             }else{
                 g.fillRect(p1.x, p1.y, 1, p2.y - p1.y);
+                //g.fillRect(p1.x, p2.y, 4, p1.y - p2.y);
             }
             return;
         }
         m = -m;
-        System.out.println("m: " + m);
 
         // Unterscheidung nach der Steigung
         if (m > 0 && m <= 1) {
             if (p1.x < p2.x) {
                 // p1 über p2
                 Algorithm1p.mk1(p1, p2, g);
+                //Algorithm4p.mk1(p1, p2, g);
             } else {
                 // p1 unter p2
                 Algorithm1p.mk1(p2, p1, g);
+                //Algorithm4p.mk1(p2, p1, g);
             }
         } else if (m >= 1) {
             if (p1.x < p2.x) {
                 // p1 über p2
                 Algorithm1p.mg1(p1, p2, g);
+                //Algorithm4p.mg1(p1, p2, g);
             } else {
                 // p1 unter p2
                 Algorithm1p.mg1(p2, p1, g);
+                //Algorithm4p.mg1(p2, p1, g);
             }
         } else if (m <= -1) {
             if (p1.x < p2.x) {
                 // p1 über p2
                 Algorithm1p.mkm1(p1, p2, g);
+                //Algorithm4p.mkm1(p1, p2, g);
             } else {
                 // p1 unter p2
                 Algorithm1p.mkm1(p2, p1, g);
+                //Algorithm4p.mkm1(p2, p1, g);
             }
         } else if (m > -1) {
             if (p1.x < p2.x) {
                 // p1 über p2
                 Algorithm1p.mgm1(p1, p2, g);
+                //Algorithm4p.mgm1(p1, p2, g);
             } else {
                 // p1 unter p2
                 Algorithm1p.mgm1(p2, p1, g);
+                //Algorithm4p.mgm1(p2, p1, g);
             }
         }
     }
