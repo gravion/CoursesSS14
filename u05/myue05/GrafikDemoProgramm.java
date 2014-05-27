@@ -31,6 +31,8 @@ public class GrafikDemoProgramm {
 class TestPanel extends JPanel implements MouseListener {
     int x = 10;
     int y = 10;
+    int weight = 1;
+    AlgorithmXp a;
     Point eins = new Point(); // linker mouse knopf
     Point zwei = new Point(); // rechter mouse knopf
 
@@ -41,19 +43,23 @@ class TestPanel extends JPanel implements MouseListener {
         g.fillRect(0, 0, d.width, d.height);
         g.setColor(Color.white);
         mypaint(eins, zwei, g);
-//        g.fillRect(eins.x, eins.y, 1, 1);
-//        g.fillRect(zwei.x, zwei.y, 1, 1);
-        g.fillRect(eins.x, eins.y, 4, 4);
-        g.fillRect(zwei.x, zwei.y, 4, 4);
+        g.fillRect(eins.x-1, eins.y-1, weight+2, weight+2);
+        g.fillRect(zwei.x-1, zwei.y-1, weight+2, weight+2);
     }
 
     public TestPanel() {
+        a = new AlgorithmXp(weight);
         addMouseListener(this);
     }
 
     // /////////////////////////
     // Bresenham Algorithmus  //
     // /////////////////////////
+
+    // soll mit links vongabe die punkte entsprechend einzeichnen
+    public void drawpoint() {
+
+    }
 
     // soll mit übergabe die punkte entsprechend einzeichnen
     public void mypaint(Point p1, Point p2, Graphics g) {
@@ -73,46 +79,38 @@ class TestPanel extends JPanel implements MouseListener {
         }
         m = -m;
 
-        // Unterscheidung nach der Steigung
+        // rechts vonscheidung nach der Steigung
         if (m > 0 && m <= 1) {
             if (p1.x < p2.x) {
-                // p1 über p2
-                Algorithm1p.mk1(p1, p2, g);
-                //Algorithm4p.mk1(p1, p2, g);
+                // p1 links von p2
+                a.mk1(p2, p1, g);
             } else {
-                // p1 unter p2
-                Algorithm1p.mk1(p2, p1, g);
-                //Algorithm4p.mk1(p2, p1, g);
+                // p1 rechts von p2
+                a.mk1(p1, p2, g);
             }
         } else if (m >= 1) {
             if (p1.x < p2.x) {
-                // p1 über p2
-                Algorithm1p.mg1(p1, p2, g);
-                //Algorithm4p.mg1(p1, p2, g);
+                // p1 links von p2
+                a.mg1(p1, p2, g);
             } else {
-                // p1 unter p2
-                Algorithm1p.mg1(p2, p1, g);
-                //Algorithm4p.mg1(p2, p1, g);
+                // p1 rechts von p2
+                a.mg1(p2, p1, g);
             }
         } else if (m <= -1) {
             if (p1.x < p2.x) {
-                // p1 über p2
-                Algorithm1p.mkm1(p1, p2, g);
-                //Algorithm4p.mkm1(p1, p2, g);
+                // p1 links von p2
+                a.mkm1(p1, p2, g);
             } else {
-                // p1 unter p2
-                Algorithm1p.mkm1(p2, p1, g);
-                //Algorithm4p.mkm1(p2, p1, g);
+                // p1 rechts von p2
+                a.mkm1(p2, p1, g);
             }
         } else if (m > -1) {
             if (p1.x < p2.x) {
-                // p1 über p2
-                Algorithm1p.mgm1(p1, p2, g);
-                //Algorithm4p.mgm1(p1, p2, g);
+                // p1 links von p2
+                a.mgm1(p1, p2, g);
             } else {
-                // p1 unter p2
-                Algorithm1p.mgm1(p2, p1, g);
-                //Algorithm4p.mgm1(p2, p1, g);
+                // p1 rechts von p2
+                a.mgm1(p2, p1, g);
             }
         }
     }
