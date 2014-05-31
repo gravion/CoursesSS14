@@ -23,6 +23,8 @@ public class Options extends JFrame implements ActionListener {
         
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setSize(160,520);
+        this.setLocation((int)mainFrame.getLocation().getX() + mainFrame.getWidth(),
+                            (int)mainFrame.getLocation().getY());
         contentFrame = (JPanel)this.getContentPane();
         contentFrame.setLayout(new GridLayout(8,2));
         //Display the window.

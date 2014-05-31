@@ -41,16 +41,18 @@ public class MainFrame extends JFrame {
     class PaintPanel extends JPanel{
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
-            g.setColor(Color.gray);
-            Dimension d = getSize(); // loesche die Anzeige
-            for(int i = 0; i < mainFrame.getWidth(); i++){
-                for(int j = 0; j < mainFrame.getHeight(); j++){
-                    if(e.pointInEllipsoid(((double)i-(int)(mainFrame.getWidth()/2))/10, ((double)j-(int)(mainFrame.getHeight()/2))/10)){
-                        g.setColor(Color.white);
-                    }else{
-                        g.setColor(Color.gray);
+            if(e != null){
+                g.setColor(Color.gray);
+                Dimension d = getSize(); // loesche die Anzeige
+                for(int i = 0; i < mainFrame.getWidth(); i++){
+                    for(int j = 0; j < mainFrame.getHeight(); j++){
+                        if(e.pointInEllipsoid(((double)i-(int)(mainFrame.getWidth()/2))/10, ((double)j-(int)(mainFrame.getHeight()/2))/10)){
+                            g.setColor(Color.white);
+                        }else{
+                            g.setColor(Color.gray);
+                        }
+                        g.fillRect(i, j, 1, 1);
                     }
-                    g.fillRect(i, j, 1, 1);
                 }
             }
         }
