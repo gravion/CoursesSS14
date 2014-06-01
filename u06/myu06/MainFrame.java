@@ -1,12 +1,13 @@
 package myu06;
 
 import java.awt.Color;
-import java.awt.Dimension;
+//import java.awt.Dimension;
 import java.awt.Graphics;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public class MainFrame extends JFrame {
 
     MainFrame mainFrame;
@@ -26,7 +27,7 @@ public class MainFrame extends JFrame {
         
         mainFrame = this;
         o = new Options(this);
-        o.show();
+        o.repaint();
     }
     
     public void paintEllipsoid(double a, double b, double c, double d, double e, double f){
@@ -43,7 +44,7 @@ public class MainFrame extends JFrame {
             super.paintComponent(g);
             if(e != null){
                 g.setColor(Color.gray);
-                Dimension d = getSize(); // loesche die Anzeige
+//                Dimension d = getSize(); // loesche die Anzeige
                 for(int i = 0; i < mainFrame.getWidth(); i++){
                     for(int j = 0; j < mainFrame.getHeight(); j++){
                         if(e.pointInEllipsoid(((double)i-(int)(mainFrame.getWidth()/2))/10, ((double)j-(int)(mainFrame.getHeight()/2))/10)){
