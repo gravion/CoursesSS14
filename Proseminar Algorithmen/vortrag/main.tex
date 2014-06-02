@@ -66,7 +66,8 @@
 
 %4  
 \begin{frame}{Motivation : Allgemein}
-    ist Basis für :
+Sortieren \\
+    ist Grundlage für :
     \begin{itemize}
         \item Suche
         \item (Sortierung)
@@ -225,11 +226,11 @@ Wenn es eine Folge A gibt, die ein Sortiernetzwerk nicht sortiert, so existiert 
 \begin{frame}{Bitonmischer}
 Ablauf :
 \begin{itemize}
-\item sortierte Eingabelisten gemischt
+\item sortiert / mischt Eingabelisten
 	\begin{itemize}
 	\item untere Hälfte alle größer als in oberer
 	\end{itemize}
-\item rekursiv die kleineren listen 
+\item rekursiv die kleineren Listen 
 \item Resultat eine Sortierte Liste
 \end{itemize}
 \end{frame}
@@ -295,7 +296,7 @@ N & Anzahl der Schritte \\
 	\end{center}
 \end{frame}
 
-%25
+%26
 \begin{frame}{Softwaresortieren im Hardwarenetz}
 Mergesort Quicksort
     \begin{center}
@@ -304,13 +305,13 @@ Mergesort Quicksort
     		%Zeichnung 2 wo war das größere Element vorher 
     		%			welcher Vergleich muss nun gemacht werden
 \end{center}     
-\uncover<2-> {Quichsort : wo ist das Pivot Element ?\\ Mit welchem Element müssen wir nun vergleichen?}\\
+\uncover<2-> {Quicksort : wo ist das Pivot Element ?\\ Mit welchem Element müssen wir nun vergleichen?}\\
 \uncover<3-> {Mergesort : Wo ist nun das größte Element ? \\welcher Vergleich kommt nun?)}
 \end{frame}
 
 %26
 \section{Gegenüberstellung}
-\begin{frame}
+\begin{frame}{Gegenüberstellung}
     \begin{itemize}
         \item Geschwindigkeit vs Variabilität
         \begin{itemize}
@@ -351,24 +352,8 @@ Mergesort Quicksort
 \end{frame}
 
 
-<<<<<<< HEAD
+
 %29
-=======
-\begin{frame}{Aufbau}
-structure
-\end{frame}
-
-\begin{frame}{Funktion}
-
-\end{frame}
-
-%Ende
-\begin{frame}{Ende}
-    Fragen, Anregungen?\\
-    (keine Liederwünsche)
-\end{frame}
-
->>>>>>> branch 'master' of https://github.com/gravion/CoursesSS14
 \subsection{Anhang}
 \appendix
 \section<presentation>*{\appendixname}
@@ -383,7 +368,6 @@ structure
   % Start with overview books.
 
   \bibitem{}
-    A.~Author.
     \newblock {\em Taschenbuch der Algorithmen}.
     \newblock Springer Verlag , 2008.
     
@@ -391,37 +375,18 @@ structure
     Tom Leighton.
     \newblock {\em Einführung in Parallele Algorithmen und Architekturen}{\\Gitter, Bäume und Hypercubes}.
     \newblock Thomsom Publisching , 1997.
+    \newblock 3-8266-0248-X
  
     
   \beamertemplatearticlebibitems
   % Followed by interesting articles. Keep the list short. 
 
   \bibitem{0,1-Prinzip}
-    S.~Someone.
-   % \href{http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/networks/nulleins.htm}
-    \newblock 
+    %\href{http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/networks/nulleins.htm}
+    \newblock zum 0,1-Prinzip
     \newblock {http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/networks/nulleins.htm}
     
   \end{thebibliography}
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\end{document}
-
-
-\subsection{Hybercube}
-\begin{frame}{Hyprecube}
-?¿
-\end{frame}
-
-\begin{frame}{Aufbau}
-structur
-\end{frame}
-
-\begin{frame}{Funktion}
-
 \end{frame}
 
 %Ende
@@ -430,140 +395,4 @@ structur
     (keine Liederwünsche)
 \end{frame}
 
-\begin{frame}{Make Titles Informative. Use Uppercase Letters. Long Titles are Split Automatically.}{Subtitles are optional.}
-  % - A title should summarize the slide in an understandable fashion
-  %   for anyone how does not follow everything on the slide itself.
-  \begin{itemize}
-  \item
-    Use \texttt{itemize} a lot.
-  \item
-   	Kurze Sätze benutzen.
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Make Titles Informative.}
-
-  You can create overlays\dots
-  \begin{itemize}
-  \item using the \texttt{pause} command:
-    \begin{itemize}
-    \item
-      First item.
-      \pause
-    \item    
-      Second item.
-    \end{itemize}
-  \item
-    using overlay specifications:
-    \begin{itemize}
-    \item<3->
-      First item.
-    \item<4->
-      Second item.
-    \end{itemize}
-  \item
-    using the general \texttt{uncover} command:
-    \begin{itemize}
-      \uncover<5->{\item
-        First item.}
-      \uncover<6->{\item
-        Second item.}
-    \end{itemize}
-  \end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]{An old algorithm}
-% NB. listings is quite powerful, but not well suited to be used with beamer
-%  consider using semiverbatim or the like, see below
-\begin{lstlisting}[language=C]
-int main (void)
-{
-  std::vector<bool> is_prime (100, true);
-  for (int i = 2; i < 100; i++)
-    if (is_prime[i])
-      {
-        std::cout << i << " ";
-        for (int j = i; j < 100;
-            is_prime [j] = false, j+=i);
-      }
-  return 0;
-}
-\end{lstlisting}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{An Algorithm For Finding Primes Numbers.}
-\begin{semiverbatim}
-\uncover<1->{\alert<0>{int main (void)}}
-\uncover<1->{\alert<0>{\{}}
-\uncover<1->{\alert<1>{ \alert<4>{std::}vector<bool> is_prime (100, true);}}
-\uncover<1->{\alert<1>{ for (int i = 2; i < 100; i++)}}
-\uncover<2->{\alert<2>{    if (is_prime[i])}}
-\uncover<2->{\alert<0>{      \{}}
-\uncover<3->{\alert<3>{        \alert<4>{std::}cout << i << " ";}}
-\uncover<3->{\alert<3>{        for (int j = i; j < 100;}}
-\uncover<3->{\alert<3>{             is_prime [j] = false, j+=i);}}
-\uncover<2->{\alert<0>{      \}}}
-\uncover<1->{\alert<0>{ return 0;}}
-\uncover<1->{\alert<0>{\}}}
-\end{semiverbatim}
-  \visible<4->{Note the use of \alert{\texttt{std::}}.}
-\end{frame}
-
-
-
-\begin{frame}{Make Titles Informative.}
-  \begin{example}
-    \begin{itemize}
-    \item 2 is prime (two divisors: 1 and 2).
-    \item 3 is prime (two divisors: 1 and 3).
-    \item 4 is not prime (\alert{three} divisors: 1, 2, and 4).
-    \end{itemize}
-  \end{example}
-\end{frame}
-
-\begin{frame}{Make Titles Informative.}
-\begin{theorem}
- There is no largest prime number and, in addition, $$\int_\Omega \nabla u \cdot \nabla v = - \int_\Omega u \Delta v + \int_{\partial\Omega} u v n$$
- \end{theorem}
- \begin{proof}
- \begin{enumerate}
- \item<1-> Suppose $p$ were the largest prime number.
- \item<2-> Let $q$ be the product of the first $p$ numbers.
- \item<3-> Then $q + 1$ is not divisible by any of them.
- \item<1-> Thus $q + 1$ is also prime and greater than $p$.\qedhere
- \end{enumerate} 
- \end{proof}
- \uncover<4->{The proof used \textit{reductio ad absurdum}.}
-\end{frame}
-
-\begin{frame}{Make Titles Informative.}
-\end{frame}
-
-
-
-\begin{frame}{Summary}
-
-  % Keep the summary *very short*.
-  \begin{itemize}
-  \item
-    The \alert{first main message} of your talk in one or two lines.
-  \item
-    The \alert{second main message} of your talk in one or two lines.
-  \item
-    Perhaps a \alert{third message}, but not more than that.
-  \end{itemize}
-  
-  % The following outlook is optional.
-  \vskip0pt plus.5fill
-  \begin{itemize}
-  \item
-    Outlook
-    \begin{itemize}
-    \item
-      Something you haven't solved.
-    \item
-      Something else you haven't solved.
-    \end{itemize}
-  \end{itemize}
-\end{frame}
+\end{document}
