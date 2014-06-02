@@ -14,7 +14,7 @@
 % image to be shown on the title page (without file extension, should be pdf or png)
 \titleimage{mi-bildbalken}
 \title[Para Sort] % (optional, use only with long paper titles)
-{Parallele Sortierung}
+{Paralleles Sortierung}
 
 %\subtitle
 %{Include Only If Paper Has a Subtitle}
@@ -47,19 +47,24 @@
 \begin{document}
 
 %Titelblatt
+%1
 \begin{frame}[plain]
   \titlepage
 \end{frame}
  
 %Inhaltsverzeichnis
+%2
 \begin{frame}{Inhalt}
   \tableofcontents[hideallsubsubsections,allowframebreaks] %currentsection,hideallsubsections,hideallsubsubsections
   % You might wish to add the option [pausesections]
 \end{frame}
 
+
 % Motivation
+%3
 \section{Motivation}
-    
+
+%4  
 \begin{frame}{Motivation : Allgemein}
     ist Basis für :
     \begin{itemize}
@@ -74,8 +79,11 @@
     \end{itemize}
 \end{frame}
 
+%5
 \section{Grundlage des Sortierens}
 \subsection{Komparator}
+
+%6
 \begin{frame}{Aufbau}
     \begin{minipage}[c]{14.5cm}
     		\begin{minipage}[c]{5cm}
@@ -93,6 +101,7 @@
 \end{frame}
 
 %Pseudocode
+%6
 \begin{frame}[fragile]{Vergleichender Baustein (ii)}
 \begin{lstlisting}[laguage={inform},tabsize=4]
     void comp(chan in1, in2, out1 out2){
@@ -111,98 +120,133 @@
 \end{lstlisting}
 \end{frame}
 
+%7
 \section{Sortiernetzwerk}
 \subsection{Aufbau}
 
+%8
 \begin{frame}{Erweiterung : Aufbau}
     \begin{itemize}
-        \item mehrere Eingabeleitungen
-        \item Vergleichende Schritte müssen dazwischen laufen
-        \item mehrere Ausgabeleitungen sortierte Ausgabe
+        \item mehrere Eingabeleitungen (gleiche Anzahl an Ausgabeleitungen)
+        \item mehrere vergleichende Schritte
+        \item Ausgabe soll sortiert sein
     \end{itemize}
 \end{frame}
 
-\subsubsection*{nativer Ansatz}
-\begin{frame}{nativ : Aufgabe}
-\begin{semiverbatim}
-    \uncover<1-> {Aufgabe
+%9
+\subsubsection*{naiver Ansatz}
+
+%10
+\begin{frame}{naiv : Aufgabe}
+\uncover<1-> {Aufgabe :\\
         \begin{itemize}
-            \item Resultat soll sortierte Eingabe sein
-            \end{itemize}}
-    \uncover<2-> {\item grundlegendes Prinzip
+            \item Resultat soll sortierte Ausgabe sein
+            \end{itemize}
+            }
+\uncover<2-> {grundlegendes Prinzip :
         \begin{itemize}
             \item intuitiver Einsatz von Vergleichen
             \item Schrittweises sortieren
         \end{itemize}}
-\end{semiverbatim}
 \end{frame}
 
-\begin{frame}{nativ : grundlegendes Prinzip}
+%11
+\begin{frame}{naiv : grundlegendes Prinzip}
 \begin{center}
     \includegraphics[scale=0.8]{bild2Komparatornetzwerk.eps}
 \end{center}
 \end{frame}
 
+%12
 \begin{frame}{Demonstration}
 \begin{center}
    \includegraphics[scale=0.8]{bild2beispiel.eps}
   \end{center}
 \end{frame}
 
+%13
 \subsection{Korrektheit}
 \begin{frame}{0,1-Prinzip}
-\begin{theorem} 
+\begin{center}
 Wenn es eine Folge A gibt, die ein Sortiernetzwerk nicht sortiert, so existiert auch eine 0,1-Folge, die von diesem Netzwerk nicht sortiert wird.
-\end{theorem}
-\begin{proof}
-{\color{red} fill}
-\end{proof}
+\end{center}
+%\begin{proof}
+%siehe Tafel
+%\uncover<2-> Anwendung Abbildung 
+%\end{proof}
 \end{frame}
 
+%14
 \begin{frame}{Ansatz}
-    man kann jede Zahlenfolge durch eine 0,1 Folge repräsentieren
+    man kann jede Zahlenfolge durch eine 0,1 Folge repräsentieren\\
+    Konstante k und Zahlenfolge A mit den Elementen $a_i$\\
     $$
-    f(c) = \begin{cases} 0 , & if \;\;c < k \\
-    1 , & if \;\;c \geq k
+    f(a_i) = \begin{cases} 0 , & if \;\;a_i < k \\
+    1 , & if \;\;a_i \geq k
     \end{cases}$$
 \end{frame}
 
+%15
 \begin{frame}{0,1- Beispiel}
-\begin{semiverbatim}
 \uncover<1-> {
 \begin{center}
 \includegraphics[scale=0.8]{01beispiel.eps}
 \end{center}
 }
+%Bild letzte Komparatorebene weglassen
 \uncover<2-> {\begin{center} {\color{green}Beispiel an der Tafel ?}\end{center} }
-\end{semiverbatim}
 \end{frame}
 
+%16
 \subsection*{Aufbau eines effektieveren Netzwerks}
 %Einsatzorte
 \begin{frame}{effektiveres Netzwerk}
-    \begin{semiverbatim}[fontfamily=ucs]
-    		\uncover<1-> { }
-        \uncover<2-> {Aufgabe :
+\uncover<2-> {Aufgabe :
             \begin{itemize}
-                \item Resultat soll sortierte Eingabe sein
+                \item Resultat soll sortierte Ausgabe sein
                 \item \alert{soll effizient sein}
             \end{itemize}}
-        \uncover<3-> {grundlegendes Prinzip :
+\uncover<3-> {grundlegendes Prinzip :
             \begin{itemize}
                 \item intuitiver Einsatz von Vergleichen
                 \item[]\alert{+ Einbezug von Teile und Herrscher}
                 % mh sehr leere Folien
             \end{itemize}}
-    \end{semiverbatim}
 \end{frame}
 
+%17
 \begin{frame}{Aufteilung}
 \begin{center}
 \includegraphics[scale=0.6]{bitonmischer.eps}
 \end{center}
 \end{frame}
 
+%18
+\begin{frame}{Bitonmischer}
+Ablauf :
+\begin{itemize}
+\item sortierte Eingabelisten gemischt
+	\begin{itemize}
+	\item untere Hälfte alle größer als in oberer
+	\end{itemize}
+\item rekursiv die kleineren listen 
+\item Resultat eine Sortierte Liste
+\end{itemize}
+\end{frame}
+
+%19
+\begin{frame}{odd even sort}
+Ablauf :
+\begin{itemize}
+\item bekommen zwei sortierte Listen
+\item trennen in geraden und ungeraden Index
+\item fassen a(even) b(odd) = c und a(odd) b(even) = d zusammen (Resultat muss sortiert sein)
+\item c und d werden indexweise verschachtelt
+\item aufeinander folgende paare werden verglichen und in richtige Reihenfolge gebracht
+\end{itemize}
+\end{frame}
+
+%20
 \begin{frame}{Biton -Sortierer : Aufbau}
     \begin{center}
     		\includegraphics[scale=0.6]{biton2.eps}
@@ -214,39 +258,57 @@ Wenn es eine Folge A gibt, die ein Sortiernetzwerk nicht sortiert, so existiert 
     Beispiel
 \end{frame}
 
+%21
 \section{Laufzeit}
 \subsection{Herleitung}
-\begin{frame}
-\uncover<2-> {$$ 1 $$}
-\uncover<3-> {$$ 1 + 2 $$ }
-\uncover<4-> {$$ 1 + 2 + … + k-1 + k  = \sum_{i=1}^k i$$ }
-\uncover<5-> {$$ \frac{k \cdot (k+1)}{2} | n = 2^k $$}
-\uncover<1-> {$$ \frac{1}{2}\; \cdot\;\log_2 n \;\; (\log_2 n\;+\;1)$$}
+
+%22
+\begin{frame}{Herleitung der Laufzeit}
+\begin{center}
+\begin{tabular}{c|c}
+%eventuell noch 2^0
+N & Anzahl der Schritte \\
+\hline \\
+\uncover<1-> {$2^1$} & \uncover<2-> { $1$}\\
+\uncover<3-> {$2^2$} & \uncover<4-> { $1 + 2$}\\
+\uncover<5-> {$2^k$}& \uncover<6-> { $1 + 2 + 3 + … + k-1 + k  = \sum_{i=1}^k i$}\\
+\uncover<7-> {{\color{gray}(kleiner Gauss)}} & \uncover<8-> {$ =\frac{k \cdot (k+1)}{2} $} \\
+\uncover<9-> {{\color{gray}$(k = log_2 n)$}} &\uncover<10-> {$\Rightarrow \frac{1}{2}\; \cdot\;\log_2 n \;\; (\log_2 n\;+\;1)$} \\
+\end{tabular}
+\end{center}
 \end{frame}
 
+%23
 \subsection{Vergleich mit Software sortieren}
-\begin{frame}
+\begin{frame}{Vergleich zu Softwareansätzen}
 	\begin{itemize}
-		\item Unterschiedliche Betrachtungen Schritte gegen Vergleiche, Versuch der Darstellung
+		\item Schritte gegen Vergleiche
 	 	\item Abhängigkeit von der Eingabe
 	 	\item Bezug zum vorherigen Vergleich
 	\end{itemize}
 \end{frame}
 
+%24
 \begin{frame}{Bubblesort im Hardwarenetz}
 	\begin{center}
 	    \includegraphics[scale=0.65]{bubblesort.eps}
 	\end{center}
 \end{frame}
 
+%25
 \begin{frame}{Softwaresortieren im Hardwarenetz}
+Mergesort Quicksort
     \begin{center}
     		\includegraphics[scale=0.65]{mergesort.eps}
+    		%Zeichnung 1 Pivot ist nicht auffindbar
+    		%Zeichnung 2 wo war das größere Element vorher 
+    		%			welcher Vergleich muss nun gemacht werden
 \end{center}     
- wo ist das Pivot Element ?\\
-        Wo ist nun das größte Element ?
+\uncover<2-> {Quichsort : wo ist das Pivot Element ?\\ Mit welchem Element müssen wir nun vergleichen?}\\
+\uncover<3-> {Mergesort : Wo ist nun das größte Element ? \\welcher Vergleich kommt nun?)}
 \end{frame}
 
+%26
 \section{Gegenüberstellung}
 \begin{frame}
     \begin{itemize}
@@ -267,6 +329,7 @@ Wenn es eine Folge A gibt, die ein Sortiernetzwerk nicht sortiert, so existiert 
     \end{itemize}
 \end{frame}
 
+%27
 \section{Zusammenfassung}
 \begin{frame}{Zusammenfassung}
 \begin{itemize}
@@ -276,33 +339,21 @@ Wenn es eine Folge A gibt, die ein Sortiernetzwerk nicht sortiert, so existiert 
 \end{itemize}
 \end{frame}
 
+%28
 \section{Ausblick}
 \begin{frame}{Ausblick}
-weiter
+\begin{itemize}
+\item andere Arten von Netzwerken
+\item Hypercubes
+\item Simulation von Maschinenmodellen
+\item …
+\end{itemize}
 \end{frame}
 
-\subsection{Hybercube}
-\begin{frame}{Hyprecube}
-?¿
-\end{frame}
 
-\begin{frame}{Aufbau}
-structur
-\end{frame}
-
-\begin{frame}{Funktion}
-
-\end{frame}
-
-%Ende
-\begin{frame}{Ende}
-    Fragen, Anregungen?\\
-    (keine Liederwünsche)
-\end{frame}
-
+%29
 \subsection{Anhang}
 \appendix
-
 \section<presentation>*{\appendixname}
 \subsection<presentation>*{For Further Reading}
 
@@ -338,6 +389,26 @@ structur
 \end{frame}
 
 \end{document}
+
+
+\subsection{Hybercube}
+\begin{frame}{Hyprecube}
+?¿
+\end{frame}
+
+\begin{frame}{Aufbau}
+structur
+\end{frame}
+
+\begin{frame}{Funktion}
+
+\end{frame}
+
+%Ende
+\begin{frame}{Ende}
+    Fragen, Anregungen?\\
+    (keine Liederwünsche)
+\end{frame}
 
 \begin{frame}{Make Titles Informative. Use Uppercase Letters. Long Titles are Split Automatically.}{Subtitles are optional.}
   % - A title should summarize the slide in an understandable fashion
