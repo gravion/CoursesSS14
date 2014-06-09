@@ -1,4 +1,4 @@
-package myue05;
+package u05;
 
 import javax.swing.*;
 

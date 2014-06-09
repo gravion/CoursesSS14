@@ -1,4 +1,4 @@
-package myu06;
+package u06;
 
 import java.awt.Color;
 //import java.awt.Dimension;

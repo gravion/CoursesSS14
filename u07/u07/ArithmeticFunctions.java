@@ -1,4 +1,4 @@
-package myu07;
+package u07;
 
 public class ArithmeticFunctions {
     // Kugelfunktion: x² + y² + z² = 1

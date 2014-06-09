@@ -1,4 +1,4 @@
-package myu03;
+package u03;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;

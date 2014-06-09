@@ -1,4 +1,4 @@
-package myu07;
+package u07;
 
 import java.awt.Color;
 import java.awt.Graphics;

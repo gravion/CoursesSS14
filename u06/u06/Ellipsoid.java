@@ -1,4 +1,4 @@
-package myu06;
+package u06;
 
 public class Ellipsoid {
     // form: ax²+bxy+cy²+dx+ey+f<=0
