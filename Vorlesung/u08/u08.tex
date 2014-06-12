@@ -1,0 +1,78 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{color,graphicx,framed}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{listings}
+\usepackage[section]{placeins}
+\usepackage{pstricks,pst-tree,pst-node}
+\usepackage{dsfont}
+\usepackage{ulem}
+\usepackage{nicefrac}
+
+\title{Computergrafik\\Übungsblatt 08}
+\author{Björn Rathjen}
+\date{SS14}
+
+\begin{document}
+\maketitle
+\newpage
+\section{Aufgabe 42 : Interpolation}
+\begin{itemize}
+\item[(a)]
+ \begin{eqnarray}
+P' &=& T P \\
+&=& T ( \frac{1}{3} A + \frac{1}{3} B + \frac{1}{3} C \\
+&=& T \frac{1}{3} A + T\frac{1}{3} B + T\frac{1}{3} C \\
+&=& \frac{1}{3} TA + \frac{1}{3} TB + \frac{1}{3} TC \\
+&=& \frac{1}{3} \begin{pmatrix}
+9 \\ 0 \\ 35 \\49 
+\end{pmatrix} + \frac{1}{3} 
+\begin{pmatrix}
+15 \\ -3 \\ 3 \\ 12 
+\end{pmatrix} + \frac{1}{3}
+\begin{pmatrix}
+18 \\ 36 \\ 47 \\ 5 \\
+\end{pmatrix} \\
+&=& \frac{1}{3} \begin{pmatrix} 9 + 15 + 18\\
+0 - 3 + 36 \\
+35 + 3 + 47 \\
+49 + 12 + 5 \\
+\end{pmatrix}\\
+&=& \frac{1}{3} \begin{pmatrix}
+42 \\ 33 \\ 85 \\ 66 
+\end{pmatrix}\\
+&=& \begin{pmatrix}
+14 \\ 11 \\ \frac{85}{3} \\ 22 
+\end{pmatrix}\\
+&=& \begin{pmatrix}
+\nicefrac{14}{22} \\ \nicefrac{11}{22} \\ \nicefrac{85}{66} \\ 1 
+\end{pmatrix}\\
+&\Rightarrow &  \text{Karthesische Koordinaten}
+\begin{pmatrix}
+\nicefrac{7}{11} \\ \nicefrac{1}{2} \\ \nicefrac{85}{66}
+\end{pmatrix}
+\end{eqnarray}
+\newpage
+\item[(b)]
+Vorraussetzung $j_2 > j_1$
+\begin{lstlisting}
+func nocmalvektor(){
+	list normalenvektor
+	i = 0
+	dj = j_2 - j_1
+	dn = n - n'
+	step =  dn / dj
+	for i=0; i < dj; i++ {
+		normalev = (0.6 , 0.8 ,0) + i * step
+		Length = sqrt(normalv(1)^2 + normalv(2)^2 + normalv(3)^2)
+		normalenvektoren.add( normalv/ Lenght )
+	} 
+	return normalenvektoren
+}
+\end{lstlisting}
+es fe
+\item[(c)] Es muss jeweils die Position von I interpoliert werden. Dies geschieht ebenfalls über die Eckpunkte der entstandenen Dreiecke. 
+\end{itemize}
+\end{document}

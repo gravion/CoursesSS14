@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{color,graphicx,framed}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{listings}
+\usepackage[section]{placeins}
+\usepackage{pstricks,pst-tree,pst-node}
+\usepackage{dsfont}
+\usepackage{ulem}
+\usepackage{nicefrac}
+
+\title{Computergrafik\\Übungsblatt 09}
+\author{Björn Rathjen}
+\date{SS14}
+
+\begin{document}
+\maketitle
+\newpage
+\section{Aufgabe 46 : Verstädnisfrage}
+Gegenüberstellung von Kegelmantel als
+\begin{itemize}
+\item Dreiecksgitter
+\item Gleichung $x^2 + y^2 = z^2 \; , \; 0\leq z \leq 1$ 
+\end{itemize}
+Die Punkte beschreiben die Trennung von Geometrie und Kombinatorik\\
+
+\begin{tabular}{c|c|c}
+Operation / Aufgabenstellung &
+Dreiecksgitter &
+Gleichung \\ \hline
+ 
+Darstellung & 
+Annäherung an die Form &
+nummerisch genaue Darstellung \\ \hline 
+
+Beleuchtung / Färbung & 
+\begin{minipage}[c]{5cm} performanter aber nicht exact \end{minipage} &
+\begin{minipage}[c]{5cm} sehr aufwändig da keine lineare Interpolation möglich, genau \end{minipage} \hspace{0.3cm}\\ \hline  
+
+Algorithmen &
+\hspace{0.3cm }\begin{minipage}[c]{5cm} Gouraud-Schattierung, Phong-Schattierung– Phong-Blinn-Schattierung \end{minipage}& 
+Bresenham (Raserung -> Aliasing),\\ \hline \hspace{0.3cm}
+
+Datenstruktur &
+darstellbar &
+nur Formel somit immer eine neue Berechnung notwendig \\
+
+\end{tabular}\\
+Raytracing … forward raytracing … rayshooting 
+Datenstrucktur Durchlaufbarkeit
+Supersampling \\
+
+\end{document}
