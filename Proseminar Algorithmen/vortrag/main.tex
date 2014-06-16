@@ -3,8 +3,6 @@
 % remove this line and the "ucs" option to the documentclass when your editor is not utf8-capable
 \usepackage[utf8x]{inputenc}    % to make utf-8 input possible
 \usepackage[english]{babel}     % hyphenation etc., alternatively use 'german' as parameter
-%\usepackage{listings}
-
 \include{fu-beamer-template}  % THIS is the line that includes the FU template!
 
 \usepackage{arev,t1enc} % looks nicer than the standard sans-serif font
@@ -39,13 +37,11 @@
 
 \AtBeginSection[]
 {
-	\begin{frame}<beamer>
-		\tableofcontents[currentsection,hideothersubsubsections,hideothersubsections]
-	\end{frame}
+\begin{frame}<beamer>
+	\tableofcontents[currentsection,hideothersubsubsections,hideothersubsections]
+\end{frame}
 }
-
 \begin{document}
-
 %Titelblatt
 %1
 \begin{frame}[plain]
@@ -76,7 +72,7 @@ Sortieren \\
             \item Wörterbücher
             \item ... 
         \end{itemize}
-        \item Ist dies auch in Hardware möglich ?
+        \item Ist dies auch effektiver / in Hardware möglich ?
     \end{itemize}
 \end{frame}
 
@@ -104,10 +100,11 @@ Sortieren \\
 %Pseudocode
 %6
 \begin{frame}[fragile]{Vergleichender Baustein (ii)}
-\begin{lstlisting}[laguage={inform},tabsize=4]
-    void comp(chan in1, in2, out1, out2){
-        a = <- in1;
-        b = <- in2;
+\begin{center}
+\begin{lstlisting}[laguage={inform},tabsize=4,numbers=left]
+    void comp(chan in1, in2, out1, out2 Comparer{}){
+        a := <- in1;
+        b := <- in2;
         
         if (a < b){
             out1 <- a;
@@ -119,6 +116,7 @@ Sortieren \\
         return void;
     }
 \end{lstlisting}
+\end{center}
 \end{frame}
 
 %7
@@ -126,68 +124,119 @@ Sortieren \\
 \subsection{Aufbau}
 
 %8
-\begin{frame}{Erweiterung : Aufbau}
-    \begin{itemize}
+\begin{frame}{Erweiterung : Aufbau , Aufgabe}
+\uncover<1-> { Aufbau :\\ \begin{itemize}
         \item mehrere Eingabeleitungen (gleiche Anzahl an Ausgabeleitungen)
         \item mehrere vergleichende Schritte
-        \item Ausgabe soll sortiert sein
-    \end{itemize}
-\end{frame}
-
-%9
-\subsubsection*{naiver Ansatz}
-
-%10
-\begin{frame}{naiv : Aufgabe}
-\uncover<1-> {Aufgabe :\\
+    \end{itemize}}
+\uncover<2-> {Aufgabe :\\
         \begin{itemize}
             \item Resultat soll sortierte Ausgabe sein
             \end{itemize}
             }
-\uncover<2-> {grundlegendes Prinzip :
+\uncover<3-> {grundlegendes Prinzip :
         \begin{itemize}
             \item intuitiver Einsatz von Vergleichen
             \item Schrittweises sortieren
         \end{itemize}}
 \end{frame}
 
-%11
+%9
+\subsubsection*{naiver Ansatz}
+
+%10
 \begin{frame}{naiv : grundlegendes Prinzip}
 \begin{center}
     \includegraphics[scale=0.8]{bild2Komparatornetzwerk.eps}
 \end{center}
 \end{frame}
 
-%12
+%11
 \begin{frame}{Demonstration}
 \begin{center}
-   \includegraphics[scale=0.8]{bild2beispiel.eps}
+   \includegraphics[scale=0.8]{bild2beispiel.eps}\\
+\uncover<2-> {Das Zahlenbeispiel funktioniert, aber funktioniert auch jedes andere ?}\\
   \end{center}
+
+\end{frame}
+
+%12
+\subsection{Korrektheit}
+\begin{frame}{0,1-Prinzip}
+\vfill
+\uncover<1-> {
+\begin{center}
+\begin{minipage}[c]{9cm}
+Lemma: \\
+Wenn es eine Folge A gibt, die ein Sor\-tier\-netz\-werk nicht sortiert, so existiert auch eine 0,1-Folge, die von diesem Netzwerk nicht sortiert wird.
+\end{minipage}
+\vfill
+\end{center}
+}
+\begin{itemize}
+\uncover<2-> { \item Führen einen Beweis durch Widerspruch \\}
+\uncover<3-> { \item d.h : Wenn ein Algorithmus eine Eingabefolge nicht sortiert, so sortiert er trotzdem alle 0,1-Folgen. }
+\uncover<4-> { \item somit ist das Ziel eine 0,1-Folge zu finden, die nicht sortiert wird}
+\end{itemize} 
 \end{frame}
 
 %13
-\subsection{Korrektheit}
-\begin{frame}{0,1-Prinzip}
-\begin{center}
-Wenn es eine Folge A gibt, die ein Sortiernetzwerk nicht sortiert, so existiert auch eine 0,1-Folge, die von diesem Netzwerk nicht sortiert wird.
-\end{center}
-%\begin{proof}
-%siehe Tafel
-%\uncover<2-> Anwendung Abbildung 
-%\end{proof}
-\end{frame}
+\begin{frame}{Beweis : 0,1-Prinzip}
+\begin{proof}
+\begin{itemize}
+\item benötigen folgendes
+\begin{itemize}
+\uncover<2-> {\item Eingabefolge $E \; = \; e_0 … e_N$}
+\uncover<3-> {\item sortierte Folge $S\; = \; s_0 … s_N$}
+\uncover<4-> {\item unsortierte Ausgabefolge $U \; = \; u_0 … u_N$}
+\uncover<5-> {\item k : (kleinster) Index an dem $u_k \neq s_k$}
+\end{itemize}
+\uncover<6-> {\item dann gilt :
+\begin{enumerate}
+\item[(1)] $u_i = s_i \;\;\forall \;0 \leq i < k$ 
+% alle Werte vor k sind sortiert 
+% muss existieren, da u unsortiert ist
+\uncover<7-> {\item[(2)] $u_r = s_k \;\; \text{mit : }r>k  $}
+% es gibt also ein Element das in der Folge danach steht und dem sortierten Elemelnt entspricht
+\end{enumerate}}
+\end{itemize}
+\end{proof}
+\end{frame} 
 
 %14
-\begin{frame}{Ansatz}
+\begin{frame}
+\begin{proof}
+\begin{itemize}
+\item 
     man kann jede Zahlenfolge durch eine 0,1 Folge repräsentieren\\
-    Konstante k und Zahlenfolge A mit den Elementen $a_i$\\
+    Konstante c $(\text{heir : }c = s_k)$ und Zahlenfolge E mit den Elementen $e_i$\\
     $$
-    f(a_i) = \begin{cases} 0 , & if \;\;a_i < k \\
-    1 , & if \;\;a_i \geq k
+    f(e) = \begin{cases} 0 , & if \;\; e_i \leq s_k \\
+    1 , & if \;\; e_i \geq s_k
     \end{cases}$$
+\uncover<2-> {\item Ausgabe muss also wie folgt aussehen 
+$$ 00 …… 01{\uncover <3-> {_k}}…0_{\uncover <3-> {_r}} …$$}
+\uncover<4-> {\item[$\Rightarrow$] 0,1-Folge ist nicht sortiert}
+\uncover<5-> {\item[$\Rightarrow$] Widerspruch zur Annahme }
+\end{itemize}
+\end{proof}
 \end{frame}
 
 %15
+\begin{frame}{0,1-Prinzip}
+Vorteile des 0,1-Prinzips : 
+\begin{itemize}
+\item einfach 
+	\begin{itemize}
+		\item sauberer Testcode
+		\item Sicherheit
+	\end{itemize}
+\item Anzahl der Testfälle sinkt \\ 
+$$  n^n\rightarrow 2^n $$
+\end{itemize}
+\end{frame}
+
+%16
 \begin{frame}{0,1- Beispiel}
 \uncover<1-> {
 \begin{center}
@@ -198,7 +247,27 @@ Wenn es eine Folge A gibt, die ein Sortiernetzwerk nicht sortiert, so existiert 
 \uncover<2-> {\begin{center} {\color{green}Beispiel an der Tafel ?}\end{center} }
 \end{frame}
 
-%16
+%17
+\begin{frame}{Bubblesort im Komparatornetz}
+	\begin{center}
+	    \includegraphics[scale=0.65]{bubblesort.eps}
+	\end{center}
+\end{frame}
+
+%18
+\begin{frame}{Softwaresortieren im Hardwarenetz}
+Mergesort Quicksort
+    \begin{center}
+    		\includegraphics[scale=0.65]{mergesort.eps}
+    		%Zeichnung 1 Pivot ist nicht auffindbar
+    		%Zeichnung 2 wo war das größere Element vorher 
+    		%			welcher Vergleich muss nun gemacht werden
+\end{center}     
+\uncover<2-> {Quicksort : wo ist das Pivot Element ?\\ Mit welchem Element müssen wir nun vergleichen?}\\
+\uncover<3-> {Mergesort : Wo ist nun das größte Element ? \\welcher Vergleich kommt nun?)}
+\end{frame}
+
+%19
 \subsection*{Aufbau eines effektieveren Netzwerks}
 %Einsatzorte
 \begin{frame}{effektiveres Netzwerk}
@@ -215,14 +284,67 @@ Wenn es eine Folge A gibt, die ein Sortiernetzwerk nicht sortiert, so existiert 
             \end{itemize}}
 \end{frame}
 
-%17
-\begin{frame}{Aufteilung}
+%20
+\subsection{Odd-Even-Sort}
+\begin{frame}{odd even sort}
+Zur Entwicklung verwenden wir Odd-Even-Sort\\
+\vspace{1cm}
+\uncover<2-> {Ablauf :
+\begin{itemize}
+\uncover<2-> {\item Voraussetzung : bekommen zwei sortierte Listen}
+\uncover<3-> {\item trennen in geraden und ungeraden Index}
+\uncover<4-> {\item fassen a(even) b(odd) = c und a(odd) b(even) = d zusammen (Resultat wird rekursiv sortiert)}
+\uncover<5-> {\item sortierte c und d werden indexweise verschachtelt}
+\uncover<6-> {\item aufeinander folgende Paare werden verglichen und in richtige Reihenfolge gebracht}
+\end{itemize}}
+\end{frame}
+
+%21
+\begin{frame}{Beispiel : odd-even-sort}
+Beipiel : an der Tafel\\
+\begin{itemize}
+%zwei sortierte Listen 
+\item[] $$ A = 2,3,4,8 $$
+\item[] $$ B = 1,5,6,7 $$
+%indexweise aufteilen zusammenbringen und sortieren
+\uncover<2-> {\item[] $$ A_e = 2,4 \;\;\; B_o = 5,7 \;\;\; \Rightarrow \;\;\; C= 2,4,5,7 $$}
+\uncover<3-> {\item[] $$ A_o = 3,8 \;\;\; B_e = 1,6 \;\;\; \Rightarrow \;\;\; D = 1,3,6,8 $$}
+%verschachteln
+\uncover<4-> {\item[] nach dem verschachteln $$ 2,1,4,3,5,6,7,8,$$}
+%nebeneinanderstehende vergleichen
+\uncover<5-> {\item[] Resultat : $$1,2,3,4,5,6,7,8$$}
+\end{itemize}
+\end{frame}
+
+%22
+\begin{frame}{Wieso funktioniert das?}
+\begin{itemize}
+\item Veranschaulichung mit dem 0,1-Pinzip
+	\begin{itemize}
+		% Illustration an der Tafel
+		% listen teilen ineinander 0 und 1 
+		% Verschachtelung legt diese zusammen
+		% nur aufeinanderfolgende müssen verglichen werden weil i+2 schon sortiert ist
+		\item gleichmäßiges Aufteilen von Nullen und Einsen
+		\item somit alle nah beieinander
+	\end{itemize}
+\item mit Bubblesort verwandt : Laufzeit \\
+\begin{itemize}
+\item[worst : ] $O(n^2)$
+\item[best  : ] $O(n)$
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+%23
+\begin{frame}{Übertragung auf Komparatornetzwerk}
 \begin{center}
 \includegraphics[scale=0.6]{bitonmischer.eps}
 \end{center}
 \end{frame}
 
-%18
+%24
 \begin{frame}{Bitonmischer}
 Ablauf :
 \begin{itemize}
@@ -235,39 +357,29 @@ Ablauf :
 \end{itemize}
 \end{frame}
 
-%19
-\begin{frame}{odd even sort}
-Ablauf :
-\begin{itemize}
-\item bekommen zwei sortierte Listen
-\item trennen in geraden und ungeraden Index
-\item fassen a(even) b(odd) = c und a(odd) b(even) = d zusammen (Resultat muss sortiert sein)
-\item c und d werden indexweise verschachtelt
-\item aufeinander folgende paare werden verglichen und in richtige Reihenfolge gebracht
-\end{itemize}
-\end{frame}
-
-%20
+%25
 \begin{frame}{Biton -Sortierer : Aufbau}
     \begin{center}
     		\includegraphics[scale=0.6]{biton2.eps}
     \end{center}
 \end{frame}
 
+%26
 \begin{frame}{Demonstration}
     Bild kleiner Zahlenfolge 4-8-16\\
     Beispiel
 \end{frame}
 
-%21
+%27
 \section{Laufzeit}
 \subsection{Herleitung}
 
-%22
+%28
 \begin{frame}{Herleitung der Laufzeit}
 \begin{center}
 \begin{tabular}{c|c}
 %eventuell noch 2^0
+% paralleles zeigen an der Tafel / folie 
 N & Anzahl der Schritte \\
 \hline \\
 \uncover<1-> {$2^1$} & \uncover<2-> { $1$}\\
@@ -279,73 +391,60 @@ N & Anzahl der Schritte \\
 \end{center}
 \end{frame}
 
-%23
+%29
+% 
 \subsection{Vergleich mit Software sortieren}
 \begin{frame}{Vergleich zu Softwareansätzen}
 	\begin{itemize}
 		\item Schritte gegen Vergleiche
+			\begin{itemize}
+				\item in jedem Schritt $\frac{n}{2}$ Komparatoren benötigt 
+				\item[] $\frac{n}{4}\; \cdot\;\log_2 n \;\; (\log_2 n\;+\;1)$ 
+				\item 1 Vergleicher bei Software benötigt
+				\item Laufzeit konstant
+			\end{itemize}
 	 	\item Abhängigkeit von der Eingabe
 	 	\item Bezug zum vorherigen Vergleich
 	\end{itemize}
 \end{frame}
 
-%24
-\begin{frame}{Bubblesort im Hardwarenetz}
-	\begin{center}
-	    \includegraphics[scale=0.65]{bubblesort.eps}
-	\end{center}
-\end{frame}
+%30
+%\section{Gegenüberstellung}
+%\begin{frame}{Gegenüberstellung}
+%    \begin{itemize}
+%        \item Geschwindigkeit vs Variabilität
+%        \begin{itemize}
+%            \item hohe Geschwindigkeit durch direkte Hardware Implementierung
+%            \item starre Struktur , bildet Rahmen der Möglichkeiten
+%            \item stark typisierte Eingabe
+%        \end{itemize}
+%    \item Hardwareaufwand vs Softwareaufwand
+%        \begin{itemize}
+%            \item Software zur Auswertung keine zum sortieren
+%            \item geringe Skalierbarkeit
+%            \item hoher Aufwand wenn Eingabelimit überschritten wird
+%            \item nur lokal
+%            \item Hardware Konzeption eventuell aufwendiger
+%        \end{itemize}
+%    \end{itemize}
+%\end{frame}
 
-%26
-\begin{frame}{Softwaresortieren im Hardwarenetz}
-Mergesort Quicksort
-    \begin{center}
-    		\includegraphics[scale=0.65]{mergesort.eps}
-    		%Zeichnung 1 Pivot ist nicht auffindbar
-    		%Zeichnung 2 wo war das größere Element vorher 
-    		%			welcher Vergleich muss nun gemacht werden
-\end{center}     
-\uncover<2-> {Quicksort : wo ist das Pivot Element ?\\ Mit welchem Element müssen wir nun vergleichen?}\\
-\uncover<3-> {Mergesort : Wo ist nun das größte Element ? \\welcher Vergleich kommt nun?)}
-\end{frame}
-
-%26
-\section{Gegenüberstellung}
-\begin{frame}{Gegenüberstellung}
-    \begin{itemize}
-        \item Geschwindigkeit vs Variabilität
-        \begin{itemize}
-            \item hohe Geschwindigkeit durch direkte Hardware Implementriegung
-            \item starre Struktur , bildet Rahmen der Möglichkeiten
-            \item stark typisierte Eingabe
-        \end{itemize}
-    \item Hardwareaufwand vs Softwareaufwand
-        \begin{itemize}
-            \item Software zur Auswertung keine zum sortieren
-            \item geringe Skalierbarkeit
-            \item hoher Aufwand wenn Eingabelimit überschritten wird
-            \item nur lokal
-            \item Hardware Konzeption eventuell aufwendiger
-        \end{itemize}
-    \end{itemize}
-\end{frame}
-
-%27
+%31
 \section{Zusammenfassung}
 \begin{frame}{Zusammenfassung}
 \begin{itemize}
   \item paralleles sortieren ist schnell und effizient 
   \item problemabhängige Lösung
-  \item starr, nicht universell
 \end{itemize}
 \end{frame}
 
-%28
+%32
 \section{Ausblick}
 \begin{frame}{Ausblick}
 \begin{itemize}
-\item andere Arten von Netzwerken
+\item 2D Netzwerke
 \item Hypercubes
+\item Paketrouting
 \item Simulation von Maschinenmodellen
 \item …
 \end{itemize}
@@ -353,7 +452,7 @@ Mergesort Quicksort
 
 
 
-%29
+%33
 \subsection{Anhang}
 \appendix
 \section<presentation>*{\appendixname}
@@ -381,10 +480,10 @@ Mergesort Quicksort
   \beamertemplatearticlebibitems
   % Followed by interesting articles. Keep the list short. 
 
-  \bibitem{0,1-Prinzip}
+  %\bibitem{0,1-Prinzip}
     %\href{http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/networks/nulleins.htm}
-    \newblock zum 0,1-Prinzip
-    \newblock {http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/networks/nulleins.htm}
+   % \newblock zum 0,1-Prinzip
+   % \newblock {http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/networks/nulleins.htm}
     
   \end{thebibliography}
 \end{frame}
@@ -392,7 +491,6 @@ Mergesort Quicksort
 %Ende
 \begin{frame}{Ende}
     Fragen, Anregungen?\\
-    (keine Liederwünsche)
 \end{frame}
 
 \end{document}
