@@ -146,9 +146,17 @@ Sortieren \\
 
 %10
 \begin{frame}{naiv : grundlegendes Prinzip}
+\begin{minipage}[l]{2cm}
+Input
+\end{minipage}
+\begin{minipage}[c]{7cm}
 \begin{center}
     \includegraphics[scale=0.8]{bild2Komparatornetzwerk.eps}
 \end{center}
+\end{minipage}
+\begin{minipage}[r]{2cm}
+Output
+\end{minipage}
 \end{frame}
 
 %11
@@ -333,6 +341,7 @@ Beipiel : an der Tafel\\
 \item[worst : ] $O(n^2)$
 \item[best  : ] $O(n)$
 \end{itemize}
+
 \end{itemize}
 \end{frame}
 
@@ -394,42 +403,33 @@ N & Anzahl der Schritte \\
 %29
 % 
 \subsection{Vergleich mit Software sortieren}
-\begin{frame}{Vergleich zu Softwareansätzen}
+\begin{frame}{Vergleich zu bekannten Softwareansätzen}
 	\begin{itemize}
 		\item Schritte gegen Vergleiche
 			\begin{itemize}
 				\item in jedem Schritt $\frac{n}{2}$ Komparatoren benötigt 
-				\item[] $\frac{n}{4}\; \cdot\;\log_2 n \;\; (\log_2 n\;+\;1)$ 
+				\item[] $\frac{n}{2}\;\left(\cdot \frac{1}{2} \cdot\;\log_2 n \;\; (\log_2 n\;+\;1)\right)$ 
 				\item 1 Vergleicher bei Software benötigt
 				\item Laufzeit konstant
 			\end{itemize}
 	 	\item Abhängigkeit von der Eingabe
 	 	\item Bezug zum vorherigen Vergleich
-	\end{itemize}
+	 	\item Andere Laufzeiten
+\end{itemize}
+\begin{center}
+	 	\begin{tabular}{c|c|c|c}
+	 	Algorithmus & \multicolumn{3}{c}{Laufzeit } \\ \hline
+	 	 & best & worst & \uncover<2-> {avarage / normiert}\\ \cline{2-4}
+	 	 & & & \\
+	 	 Bubblesort & O($n$) & O($n^2$)& \uncover<2-> {\tiny{$\frac{1}{2} \left( n^2 - n \cdot \text{ln} n - \left( \gamma + ln(2) - 1\right)\cdot n\right) + \text{O}\left(\sqrt{n}\right)  $}}\\
+	 	 Mergosort & O($n\log n$) &O($n \log n$) &  \uncover<2-> {$n \log n $}\\
+	 	 Quicksort & O($n\log n$) & O($n^2$) & \uncover<2-> {$n \log n $}\\
+	 	 Netzwerk & \multicolumn{2}{c|}{\tiny{$\frac{1}{2} \cdot\;\log_2 n \;\; (\log_2 n\;+\;1)$}} & \uncover<2-> {\tiny{$\frac{n}{2}\;\left(\cdot \frac{1}{2} \cdot\;\log_2 n \;\; (\log_2 n\;+\;1)\right)$}} \\
+	 	\end{tabular}
+	 	\end{center}
 \end{frame}
 
 %30
-%\section{Gegenüberstellung}
-%\begin{frame}{Gegenüberstellung}
-%    \begin{itemize}
-%        \item Geschwindigkeit vs Variabilität
-%        \begin{itemize}
-%            \item hohe Geschwindigkeit durch direkte Hardware Implementierung
-%            \item starre Struktur , bildet Rahmen der Möglichkeiten
-%            \item stark typisierte Eingabe
-%        \end{itemize}
-%    \item Hardwareaufwand vs Softwareaufwand
-%        \begin{itemize}
-%            \item Software zur Auswertung keine zum sortieren
-%            \item geringe Skalierbarkeit
-%            \item hoher Aufwand wenn Eingabelimit überschritten wird
-%            \item nur lokal
-%            \item Hardware Konzeption eventuell aufwendiger
-%        \end{itemize}
-%    \end{itemize}
-%\end{frame}
-
-%31
 \section{Zusammenfassung}
 \begin{frame}{Zusammenfassung}
 \begin{itemize}
@@ -438,7 +438,7 @@ N & Anzahl der Schritte \\
 \end{itemize}
 \end{frame}
 
-%32
+%31
 \section{Ausblick}
 \begin{frame}{Ausblick}
 \begin{itemize}
@@ -450,9 +450,7 @@ N & Anzahl der Schritte \\
 \end{itemize}
 \end{frame}
 
-
-
-%33
+%32
 \subsection{Anhang}
 \appendix
 \section<presentation>*{\appendixname}
@@ -478,12 +476,16 @@ N & Anzahl der Schritte \\
  
     
   \beamertemplatearticlebibitems
+	\bibitem{Sortieralgorithmen}
+		\newblock Laufzeiten Sortieralgorithmen
+		\newblock {www.wikipedia.de}  
+  
   % Followed by interesting articles. Keep the list short. 
 
-  %\bibitem{0,1-Prinzip}
-    %\href{http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/networks/nulleins.htm}
-   % \newblock zum 0,1-Prinzip
-   % \newblock {http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/networks/nulleins.htm}
+  \bibitem{0,1-Prinzip}
+%    \href{http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/networks/nulleins.htm}
+    \newblock Alternativer Ansatz zum Beweis des 0,1-Prinzip
+    \newblock {http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/networks/nulleins.htm}
     
   \end{thebibliography}
 \end{frame}
