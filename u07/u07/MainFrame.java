@@ -9,11 +9,9 @@ import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public class MainFrame extends JFrame {
-    MainFrame mainFrame;
     ArithmeticFunctions f;
 
     public MainFrame(){
-        mainFrame = this;
         f = new ArithmeticFunctions();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(600, 750);
