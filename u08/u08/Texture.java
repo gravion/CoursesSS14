@@ -18,6 +18,11 @@ public class Texture {
     }
     
     public Color colorAtPosition(double alpha, double beta){
+        System.out.println("alpha: " + alpha + " beta: " + beta);
+        System.out.println("w: " + (int)(texture.getWidth() * alpha) + " h: " + (int)(texture.getHeight() * beta));
+        if(alpha < 0 || beta < 0){
+            return null;
+        }
         return new Color(texture.getRGB((int)(texture.getWidth() * alpha), (int)(texture.getHeight() * beta)));
     }
 }

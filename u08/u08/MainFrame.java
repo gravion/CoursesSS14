@@ -22,14 +22,15 @@ public class MainFrame extends JFrame{
     
     public static void main(String[] args){
         Scene s = a24();
+        //s.printMatrices();
         new MainFrame(s);
     }
     
     private static Scene a24(){
         Vector3D camera = new Vector3D(4,5,3);
         Vector3D cameraDirection = new Vector3D(3,0,1);
-        double hFlareAngle = 20;
-        double vFlareAngle = 30;
+        double hFlareAngle = 30;
+        double vFlareAngle = 20;
         double near = 3;
         double far = 20;
         ArrayList<Vector3D> vertices = new ArrayList<Vector3D>();

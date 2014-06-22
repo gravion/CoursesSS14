@@ -26,6 +26,8 @@ public class Scene {
             this.setCameraProperties();
         }
         this.calculateANDC();this.calculateMWA();
+        this.horizontalPixel = 600;
+        this.verticalPixel = 400;
     }
     
     public boolean setMOW(int object, Matrix... matrices){
@@ -66,7 +68,7 @@ public class Scene {
     
     public boolean setCameraProperties(double near, double far, double hFlareAngle, double vFlareAngle){
         if(near < 0 || far <= 0 || hFlareAngle <= 0 || vFlareAngle <= 0
-                || near < far){
+                || near > far){
             return false;
         }
         this.near = near;
@@ -79,7 +81,7 @@ public class Scene {
     
     public Color colorInPoint(int x, int y){
         Plane pl = null;
-        Matrix q = null;
+        Matrix s = null;
         double z = 0;
         int i_save = 0;
         int j_save = 0;
@@ -90,7 +92,7 @@ public class Scene {
                                     this.fields[i].getVertices().get(this.fields[i].getFaces().get(j).get(2)));
                 Matrix a = this.getCompleteTransformation(i).inverse().transpose().times(pl_temp.planeVector());
                 // <a,Q>=0
-                double[][] p_array = {{1/(double)this.horizontalPixel}, {1/(double)this.verticalPixel}, {0}, {1}}; 
+                double[][] p_array = {{(double)x/this.horizontalPixel}, {(double)y/this.verticalPixel}, {0}, {1}}; 
                 Matrix p = new Matrix(p_array);
                 double[][] v_array = {{0},{1},{0},{1}};
                 Matrix v = new Matrix(v_array);
@@ -100,24 +102,27 @@ public class Scene {
                 }
                 double t = -(a.get(0, 0) * p.get(0, 0) + a.get(1, 0) * p.get(1, 0))/(a.get(2, 0) + a.get(3, 0));
                 Matrix q_temp = p.plus(v.times(t));
-                if(j == 0 || z > q.get(2, 0)){
+                // TODO is this rly working?
+                // should be
+                pl = pl_temp;
+                Matrix q = q_temp;
+                Matrix q_strich = (this.getCompleteTransformation(i_save)).times(q);
+                double[][] b_array = {  {pl.getR().x, pl.getS().x}, 
+                                        {pl.getR().y, pl.getS().y}, 
+                                        {pl.getR().z, pl.getS().z},
+                                        {1, 1}};
+                Matrix b = new Matrix(b_array);
+                double[][] a_array = {{pl.positionVector().x}, {pl.positionVector().y}, {pl.positionVector().z}, {1}};
+                s = b.qr().solve(q_strich.minus(new Matrix(a_array)));
+                if(z < q.get(2, 0) && s.get(0, 0) >= 0 && s.get(0, 0) <= 1
+                                                && s.get(1, 0) >= 0 && s.get(1, 0) <= 1){
                     z = q_temp.get(2, 0);
                     i_save = i;
                     j_save = j;
-                    pl = pl_temp;
                     q = q_temp;
                 }
             }
         }
-        // TODO is this rly working?
-        Matrix q_strich = (this.getCompleteTransformation(i_save)).times(q);
-        double[][] b_array = {  {pl.getR().x, pl.getS().x}, 
-                                {pl.getR().y, pl.getS().y}, 
-                                {pl.getR().z, pl.getS().z},
-                                {1, 1}};
-        Matrix b = new Matrix(b_array);
-        double[][] a_array = {{pl.positionVector().x}, {pl.positionVector().y}, {pl.positionVector().z}, {1}};
-        Matrix s = b.qr().solve(q_strich.minus(new Matrix(a_array)));
         return this.fields[j_save].getTextures().get(i_save).colorAtPosition(s.get(0, 0), s.get(1, 0));
     }
     
@@ -128,23 +133,29 @@ public class Scene {
         double[] u = this.normalise(this.cartesianProduct3(minusN, temp));
         double[] v = this.normalise(this.cartesianProduct3(u, minusN));
         
-        double[][] baseChange = {{u[0], u[1], u[2], 0},
-                            {v[0], v[1], v[2], 0},
-                            {minusN[0], minusN[1], minusN[2], 0},
-                            {0, 0, 0, 1}};
+        double[][] baseChange = {{u[0], v[0], -minusN[0], camera.x},
+                {u[1], v[1], -minusN[1], camera.y},
+                {u[2], v[2], -minusN[2], camera.z},
+                {0, 0, 0, 1}};
         
-        this.mWA = (new Matrix(baseChange)).times(new Matrix(StandardMatrices.translate(-camera.x, -camera.y, -camera.z)));
+        this.mWA = (new Matrix(baseChange)).inverse();
+//        double[][] baseChange = {{u[0], u[1], u[2], 0},
+//                            {v[0], v[1], v[2], 0},
+//                            {minusN[0], minusN[1], minusN[2], 0},
+//                            {0, 0, 0, 1}};
+        
+//        this.mWA = (new Matrix(baseChange)).times(new Matrix(StandardMatrices.translate(-camera.x, -camera.y, -camera.z)));
     }
     
     private void calculateANDC(){
-        double r = this.near * Math.tan(this.hFlareAngle/2);
+        double r = this.near * Math.tan(this.hFlareAngle/360*Math.PI);
         double l = -r;
-        double t = this.near * Math.tan(this.vFlareAngle/2);
+        double t = this.near * Math.tan(this.vFlareAngle/360*Math.PI);
         double b = -t;
         
         double[][] m = {{(2*this.near)/(r-l), 0, (r+l)/(r-l), 0},
                         {0, (2*this.near)/(t-b), (t+b)/(t-b), 0},
-                        {0, 0, -(this.far+this.near)/(this.far-this.near), (-2*this.far*this.near)/(this.far = this.near)},
+                        {0, 0, -(this.far+this.near)/(this.far-this.near), (-2*this.far*this.near)/(this.far - this.near)},
                         {0, 0, -1, 0}
                         };
         this.mANDC = new Matrix(m);
@@ -175,5 +186,13 @@ public class Scene {
             res[i] = vector[i] / length;
         }
         return res;
+    }
+    
+    public void printMatrices(){
+        this.mOWs[0].print(4, 4);
+        this.mWA.print(4,4);
+        this.mANDC.print(4, 4);
+        this.getCompleteTransformation(0).print(4, 4);
+        
     }
 }

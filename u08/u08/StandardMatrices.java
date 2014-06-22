@@ -3,23 +3,23 @@ package u08;
 public class StandardMatrices {
     public static double[][] xTurn(double degree){
         double[][] ret = {  {1, 0, 0, 0},
-                            {0, Math.cos(degree), -Math.sin(degree), 0},
-                            {0, Math.sin(degree), Math.cos(degree), 0},
+                            {0, Math.cos(degree/180*Math.PI), -Math.sin(degree/180*Math.PI), 0},
+                            {0, Math.sin(degree/180*Math.PI), Math.cos(degree/180*Math.PI), 0},
                             {0, 0, 0, 1}};
         return ret;
     }
     
     public static double[][] yTurn(double degree){
-        double[][] ret = {  {Math.cos(degree), 0, Math.sin(degree), 0},
+        double[][] ret = {  {Math.cos(degree/180*Math.PI), 0, Math.sin(degree/180*Math.PI), 0},
                             {0, 1, 0, 0},
-                            {-Math.sin(degree), 0, Math.cos(degree), 0},
+                            {-Math.sin(degree/180*Math.PI), 0, Math.cos(degree/180*Math.PI), 0},
                             {0, 0, 0, 1}};
         return ret;
     }
     
     public static double[][] zTurn(double degree){
-        double[][] ret = {  {Math.cos(degree), -Math.sin(degree), 0, 0},
-                            {Math.sin(degree), Math.cos(degree), 0, 0},
+        double[][] ret = {  {Math.cos(degree/180*Math.PI), -Math.sin(degree/180*Math.PI), 0, 0},
+                            {Math.sin(degree/180*Math.PI), Math.cos(degree/180*Math.PI), 0, 0},
                             {0, 0, 1, 0},
                             {0, 0, 0, 1}};
         return ret;
