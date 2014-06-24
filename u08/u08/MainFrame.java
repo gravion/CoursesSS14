@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 
 import Jama.Matrix;
 
+@SuppressWarnings("serial")
 public class MainFrame extends JFrame{
 
     public MainFrame(Scene s){
@@ -22,7 +23,22 @@ public class MainFrame extends JFrame{
     
     public static void main(String[] args){
         Scene s = a24();
-        //s.printMatrices();
+//        s.printMatrices();
+        
+//        double[][] point = {{-1.0d},{-1.0d},{-1.0d},{-1.0d}};
+//        Matrix p = new Matrix(point);
+//        s.getCompleteTransformation(0).print(4, 20);
+//        Matrix p_strich = s.getCompleteTransformation(0).times(p);
+//        p_strich.timesEquals(1/p_strich.get(3, 0));
+//        p_strich.print(4, 20);
+//        
+//        int x = (int)(p_strich.get(0, 0) * 300) + 300;
+//        int y = (int)(p_strich.get(1, 0) * 200) + 200;
+//        
+//        System.out.println(x);
+//        System.out.println(y);
+//        
+//        System.out.println(s.colorInPoint(x, y));
         new MainFrame(s);
     }
     

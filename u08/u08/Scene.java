@@ -81,49 +81,57 @@ public class Scene {
     
     public Color colorInPoint(int x, int y){
         Plane pl = null;
-        Matrix s = null;
-        double z = 0;
-        int i_save = 0;
-        int j_save = 0;
+        Matrix s_save = null;
+        Double z = null;
+        int i_save = -1;
+        int j_save = -1;
         for(int i = 0; i < this.fields.length; i++){
+            i_save = -1;
+            j_save = -1;
             for(int j = 0; j < this.fields[i].getFaces().size(); j++){
-                Plane pl_temp = new Plane(this.fields[i].getVertices().get(this.fields[i].getFaces().get(j).get(0)),
+                // 1
+                pl = new Plane(this.fields[i].getVertices().get(this.fields[i].getFaces().get(j).get(0)),
                                     this.fields[i].getVertices().get(this.fields[i].getFaces().get(j).get(1)),
                                     this.fields[i].getVertices().get(this.fields[i].getFaces().get(j).get(2)));
-                Matrix a = this.getCompleteTransformation(i).inverse().transpose().times(pl_temp.planeVector());
-                // <a,Q>=0
-                double[][] p_array = {{(double)x/this.horizontalPixel}, {(double)y/this.verticalPixel}, {0}, {1}}; 
+                Matrix a = this.getCompleteTransformation(i).inverse().transpose().times(pl.planeVector());
+                // 2
+                double[][] p_array = {{(double)(x-(this.horizontalPixel/2))/(this.horizontalPixel/2)}, {(double)(y-(this.verticalPixel/2))/(this.verticalPixel/2)}, {0}, {1}}; 
                 Matrix p = new Matrix(p_array);
-                double[][] v_array = {{0},{1},{0},{1}};
+                double[][] v_array = {{0},{0},{1},{0}};
                 Matrix v = new Matrix(v_array);
-                // t = -(a_x*p_x+a_y*p_y)/(a_y+a_w)
-                if(a.get(2, 0) + a.get(3, 0) == 0){
-                    continue; // TODO
+                // t = -(a_x*p_x+a_y*p_y+a_z*p_z+a_w*p_w)/(a_z)
+                if(a.get(2, 0)  == 0){
+                    continue;
                 }
-                double t = -(a.get(0, 0) * p.get(0, 0) + a.get(1, 0) * p.get(1, 0))/(a.get(2, 0) + a.get(3, 0));
-                Matrix q_temp = p.plus(v.times(t));
-                // TODO is this rly working?
-                // should be
-                pl = pl_temp;
-                Matrix q = q_temp;
-                Matrix q_strich = (this.getCompleteTransformation(i_save)).times(q);
-                double[][] b_array = {  {pl.getR().x, pl.getS().x}, 
-                                        {pl.getR().y, pl.getS().y}, 
-                                        {pl.getR().z, pl.getS().z},
-                                        {1, 1}};
+                double t = -(a.get(0, 0) * p.get(0, 0) + a.get(1, 0) * p.get(1, 0)
+                                + a.get(2, 0) * p.get(2, 0) + a.get(3, 0) * p.get(3, 0))
+                                /(a.get(2, 0));
+                Matrix q = p.plus(v.times(t));
+                
+                Matrix q_strich = (this.getCompleteTransformation(i).inverse()).times(q);
+                q_strich.timesEquals((double)1/q_strich.get(3, 0));
+                
+                double[][] q_strich_temp = {{q_strich.get(0, 0)},{q_strich.get(1, 0)},{q_strich.get(2, 0)}};
+                q_strich = new Matrix(q_strich_temp);
+                double[][] b_array = {  {pl.getS().x, pl.getR().x}, 
+                                        {pl.getS().y, pl.getR().y}, 
+                                        {pl.getS().z, pl.getR().z}};
                 Matrix b = new Matrix(b_array);
-                double[][] a_array = {{pl.positionVector().x}, {pl.positionVector().y}, {pl.positionVector().z}, {1}};
-                s = b.qr().solve(q_strich.minus(new Matrix(a_array)));
-                if(z < q.get(2, 0) && s.get(0, 0) >= 0 && s.get(0, 0) <= 1
+                double[][] a_array = {{pl.positionVector().x}, {pl.positionVector().y}, {pl.positionVector().z}};
+                Matrix  s = b.solve(q_strich.minus(new Matrix(a_array)));
+                if((z == null || z < q.get(2, 0)) && s.get(0, 0) >= 0 && s.get(0, 0) <= 1
                                                 && s.get(1, 0) >= 0 && s.get(1, 0) <= 1){
-                    z = q_temp.get(2, 0);
+                    z = q.get(2, 0);
                     i_save = i;
                     j_save = j;
-                    q = q_temp;
+                    s_save = s;
                 }
             }
         }
-        return this.fields[j_save].getTextures().get(i_save).colorAtPosition(s.get(0, 0), s.get(1, 0));
+        if(i_save >= 0 && j_save >= 0){
+            return this.fields[i_save].getTextures().get(j_save).colorAtPosition(s_save.get(0, 0), s_save.get(1, 0));
+        }
+        return Color.WHITE;
     }
     
     private void calculateMWA(){
@@ -161,7 +169,7 @@ public class Scene {
         this.mANDC = new Matrix(m);
     }
     
-    private Matrix getCompleteTransformation(int field){
+    public Matrix getCompleteTransformation(int field){
         return this.mANDC.times(this.mWA.times(this.mOWs[field]));
     }
     

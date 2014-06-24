@@ -6,6 +6,6 @@
 	<classpathentry kind="src" path="u07"/>
 	<classpathentry kind="src" path="u08"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/home/gravion/.myeclipse/jarfiles/Jama-1.0.3.jar"/>
+	<classpathentry kind="lib" path="/home/patrick/Downloads/Jama-1.0.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
