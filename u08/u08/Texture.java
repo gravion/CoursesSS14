@@ -21,7 +21,6 @@ public class Texture {
         if(alpha < 0 || beta < 0 || alpha > 1 || beta > 1){
             return null;
         }
-        //return Color.YELLOW;
         return new Color(texture.getRGB((int)(texture.getWidth() * alpha), (int)(texture.getHeight() * beta)));
     }
 }
