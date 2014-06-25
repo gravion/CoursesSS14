@@ -33,7 +33,7 @@ public class Vector3D {
     }
     
     public double scalarProduct(Vector3D v){
-        return this.x * v.x + this.y + v.y + this.z + v.z;
+        return this.x * v.x + this.y * v.y + this.z * v.z;
     }
     
     public Vector3D cartesianProduct(Vector3D v){

@@ -15,7 +15,8 @@ public class Scene {
     private double near, far;
     private int verticalPixel, horizontalPixel;
     
-    public Scene(Vector3D camera, Vector3D cameraDirection, double hFlareAngle, double vFlareAngle, double near, double far, Field... fields){
+    public Scene(Vector3D camera, Vector3D cameraDirection, double hFlareAngle, double vFlareAngle,
+                    double near, double far, int horizontalPixel, int verticalPixel, Field... fields){
         this.mOWs = new Matrix[fields.length];
         this.mWA = new Matrix(4,4);
         this.mANDC = new Matrix(4,4);
@@ -26,8 +27,8 @@ public class Scene {
             this.setCameraProperties();
         }
         this.calculateANDC();this.calculateMWA();
-        this.horizontalPixel = 600;
-        this.verticalPixel = 400;
+        this.horizontalPixel = horizontalPixel;
+        this.verticalPixel = verticalPixel;
     }
     
     public boolean setMOW(int object, Matrix... matrices){
@@ -95,7 +96,7 @@ public class Scene {
                                     this.fields[i].getVertices().get(this.fields[i].getFaces().get(j).get(2)));
                 Matrix a = this.getCompleteTransformation(i).inverse().transpose().times(pl.planeVector());
                 // 2
-                double[][] p_array = {{(double)(x-(this.horizontalPixel/2))/(this.horizontalPixel/2)}, {(double)(y-(this.verticalPixel/2))/(this.verticalPixel/2)}, {0}, {1}}; 
+                double[][] p_array = {{(double)(x-(this.horizontalPixel/2))/(this.horizontalPixel/2)}, {(double)((this.verticalPixel/2)-y)/(this.verticalPixel/2)}, {0}, {1}}; 
                 Matrix p = new Matrix(p_array);
                 double[][] v_array = {{0},{0},{1},{0}};
                 Matrix v = new Matrix(v_array);
@@ -113,13 +114,14 @@ public class Scene {
                 
                 double[][] q_strich_temp = {{q_strich.get(0, 0)},{q_strich.get(1, 0)},{q_strich.get(2, 0)}};
                 q_strich = new Matrix(q_strich_temp);
+                // 3
                 double[][] b_array = {  {pl.getS().x, pl.getR().x}, 
                                         {pl.getS().y, pl.getR().y}, 
                                         {pl.getS().z, pl.getR().z}};
                 Matrix b = new Matrix(b_array);
                 double[][] a_array = {{pl.positionVector().x}, {pl.positionVector().y}, {pl.positionVector().z}};
                 Matrix  s = b.solve(q_strich.minus(new Matrix(a_array)));
-                if((z == null || z < q.get(2, 0)) && s.get(0, 0) >= 0 && s.get(0, 0) <= 1
+                if((z == null || z > q.get(2, 0)) && s.get(0, 0) >= 0 && s.get(0, 0) <= 1
                                                 && s.get(1, 0) >= 0 && s.get(1, 0) <= 1){
                     z = q.get(2, 0);
                     i_save = i;
@@ -128,10 +130,11 @@ public class Scene {
                 }
             }
         }
+        // 4
         if(i_save >= 0 && j_save >= 0){
             return this.fields[i_save].getTextures().get(j_save).colorAtPosition(s_save.get(0, 0), s_save.get(1, 0));
         }
-        return Color.WHITE;
+        return Color.CYAN;
     }
     
     private void calculateMWA(){
@@ -147,12 +150,6 @@ public class Scene {
                 {0, 0, 0, 1}};
         
         this.mWA = (new Matrix(baseChange)).inverse();
-//        double[][] baseChange = {{u[0], u[1], u[2], 0},
-//                            {v[0], v[1], v[2], 0},
-//                            {minusN[0], minusN[1], minusN[2], 0},
-//                            {0, 0, 0, 1}};
-        
-//        this.mWA = (new Matrix(baseChange)).times(new Matrix(StandardMatrices.translate(-camera.x, -camera.y, -camera.z)));
     }
     
     private void calculateANDC(){
