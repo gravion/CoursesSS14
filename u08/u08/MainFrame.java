@@ -75,12 +75,12 @@ public class MainFrame extends JFrame{
         faces.add(f1);faces.add(f2);faces.add(f3);faces.add(f4);faces.add(f5);faces.add(f6);
 
         ArrayList<Texture> textures = new ArrayList<Texture>();
-        textures.add(new Texture("/home/patrick/Desktop/test.jpg"));
-        textures.add(new Texture("/home/patrick/Desktop/test.jpg"));
-        textures.add(new Texture("/home/patrick/Desktop/test.jpg"));
-        textures.add(new Texture("/home/patrick/Desktop/test.jpg"));
-        textures.add(new Texture("/home/patrick/Desktop/test.jpg"));
-        textures.add(new Texture("/home/patrick/Desktop/test.jpg"));
+        textures.add(new Texture("/home/gravion/test.jpeg"));
+        textures.add(new Texture("/home/gravion/test.jpeg"));
+        textures.add(new Texture("/home/gravion/test.jpeg"));
+        textures.add(new Texture("/home/gravion/test.jpeg"));
+        textures.add(new Texture("/home/gravion/test.jpeg"));
+        textures.add(new Texture("/home/gravion/test.jpeg"));
         
         Field cube = new Field(vertices, faces, textures);
         
@@ -104,6 +104,7 @@ public class MainFrame extends JFrame{
             this.s = s;
         }
         
+        @Override
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
             for(int i = 0; i < this.getWidth(); i++){

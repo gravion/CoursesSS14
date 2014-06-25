@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.WindowConstants;
 
 @SuppressWarnings("serial")
 public class Options extends JFrame implements ActionListener {
@@ -22,7 +23,7 @@ public class Options extends JFrame implements ActionListener {
     public Options(MainFrame mainFrame){
         this.mainFrame = mainFrame;
         
-        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         this.setSize(160,520);
         this.setLocation((int)mainFrame.getLocation().getX() + mainFrame.getWidth(),
                             (int)mainFrame.getLocation().getY());

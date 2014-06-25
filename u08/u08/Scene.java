@@ -109,7 +109,7 @@ public class Scene {
                 Matrix q = p.plus(v.times(t));
                 
                 Matrix q_strich = (this.getCompleteTransformation(i).inverse()).times(q);
-                q_strich.timesEquals((double)1/q_strich.get(3, 0));
+                q_strich.timesEquals(1/q_strich.get(3, 0));
                 
                 double[][] q_strich_temp = {{q_strich.get(0, 0)},{q_strich.get(1, 0)},{q_strich.get(2, 0)}};
                 q_strich = new Matrix(q_strich_temp);

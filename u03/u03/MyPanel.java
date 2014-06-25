@@ -28,7 +28,8 @@ public class MyPanel extends JPanel implements MouseListener {
 	
 	
 	
-	public void paintComponent(Graphics g){
+	@Override
+    public void paintComponent(Graphics g){
 		g.setColor(Color.green); // setzt die Hintergrundfarbe
 		//bekommt die Größe des Fensters
 		Dimension d = getSize();
