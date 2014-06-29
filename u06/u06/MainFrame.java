@@ -40,6 +40,7 @@ public class MainFrame extends JFrame {
     }
     
     class PaintPanel extends JPanel{
+        @Override
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
             if(e != null){
@@ -47,7 +48,7 @@ public class MainFrame extends JFrame {
 //                Dimension d = getSize(); // loesche die Anzeige
                 for(int i = 0; i < mainFrame.getWidth(); i++){
                     for(int j = 0; j < mainFrame.getHeight(); j++){
-                        if(e.pointInEllipsoid(((double)i-(int)(mainFrame.getWidth()/2))/10, ((double)j-(int)(mainFrame.getHeight()/2))/10)){
+                        if(e.pointInEllipsoid(((double)i-mainFrame.getWidth()/2)/10, ((double)j-mainFrame.getHeight()/2)/10)){
                             g.setColor(Color.white);
                         }else{
                             g.setColor(Color.gray);

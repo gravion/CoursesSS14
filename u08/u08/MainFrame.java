@@ -90,6 +90,7 @@ public class MainFrame extends JFrame{
             this.s = s;
         }
         
+        @Override
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
             for(int i = 0; i < this.getWidth(); i++){

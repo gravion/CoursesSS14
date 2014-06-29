@@ -20,6 +20,7 @@ public class GrafikDemoProgramm {
 
     public static void main(String[] args) {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 createAndShowGUI();
             }
@@ -36,6 +37,7 @@ class TestPanel extends JPanel implements MouseListener {
     Point eins = new Point(); // linker mouse knopf
     Point zwei = new Point(); // rechter mouse knopf
 
+    @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.setColor(Color.gray);
@@ -114,13 +116,18 @@ class TestPanel extends JPanel implements MouseListener {
     // Eingabe (Maus) //
     ////////////////////
 
+    @Override
     public void mouseReleased(MouseEvent e) { ; }
+    @Override
     public void mouseEntered(MouseEvent e) { ; }
+    @Override
     public void mouseExited(MouseEvent e) { ; }
+    @Override
     public void mouseClicked(MouseEvent e) { ; }
     public void mouseMoved(MouseEvent e) { ; }
     public void mouseDragged(MouseEvent e) { ; }
     
+    @Override
     public void mousePressed(MouseEvent e) {
         if (e.getButton() == MouseEvent.BUTTON1) {
             eins.setLocation(e.getX(), e.getY());

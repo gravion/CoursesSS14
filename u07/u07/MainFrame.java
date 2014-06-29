@@ -121,12 +121,13 @@ public class MainFrame extends JFrame {
             this.n = n;
         }
         
+        @Override
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
             for(int i = 0; i < this.getWidth(); i++){
                 for(int j = 0; j < this.getHeight(); j++){
-                    double x = (double)i/(((double)this.getWidth()-1)/2) - 1;
-                    double y = (double)j/(((double)this.getHeight()-1)/2) - 1;
+                    double x = i/(((double)this.getWidth()-1)/2) - 1;
+                    double y = j/(((double)this.getHeight()-1)/2) - 1;
                     Color c = pg.calculateColorInPoint(I_a, k_ambient, I_in, k_diffus, f.calculateNormalvector(x, y), f.calculateL(x, y, light), k_specular, f.calculateReflectiondirection(x, y, light), V, n);
                     g.setColor(c);
                     g.fillRect(i, j, 1, 1);

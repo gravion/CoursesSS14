@@ -11,6 +11,7 @@ class TestPanel extends JPanel implements MouseListener {
     int x = 10;
     int y = 10;
 
+    @Override
     public void paintComponent(Graphics g) {
       super.paintComponent(g);
       g.setColor(Color.gray);
@@ -30,16 +31,21 @@ class TestPanel extends JPanel implements MouseListener {
 //////////////////////
 
 
+    @Override
     public void mouseReleased(MouseEvent e) {
     	repaint();
     }
+    @Override
     public void mouseEntered(MouseEvent e) {}
+    @Override
     public void mouseExited(MouseEvent e) {}
+    @Override
     public void mouseClicked(MouseEvent e) {}
     public void mouseMoved(MouseEvent e) {}
     public void mouseDragged(MouseEvent e) {}
     // mousePressed(): Mausknopf wurde betaetigt
     // Hier: neue Punktkoordinaten aufnehmen
+    @Override
     public void mousePressed(MouseEvent e) {
 	  x = e.getX();
 	  y = e.getY();
