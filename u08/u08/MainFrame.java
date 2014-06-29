@@ -71,8 +71,8 @@ public class MainFrame extends JFrame{
         Field cube = new Field(vertices, faces, textures);
         
         Scene s = new Scene(camera, cameraDirection, hFlareAngle, vFlareAngle, near, far, x, y, cube);
-        s.setMOW(0, new Matrix(StandardMatrices.linearScaling(0.2)),
-                    new Matrix(StandardMatrices.zTurn(60)),
+        s.setMOW(0, new Matrix(StandardMatrices.linearScaling(0.4)),
+                    new Matrix(StandardMatrices.zTurn(80)),
                     new Matrix(StandardMatrices.translate(9, 6, 5)));
         
         return s;
