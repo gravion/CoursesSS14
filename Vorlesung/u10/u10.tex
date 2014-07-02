@@ -1,0 +1,161 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{color,graphicx,framed}
+\usepackage{amsmath,amsfonts,amssymb,nicefrac}
+\usepackage{listings}
+\usepackage[section]{placeins}
+\usepackage{pstricks,pst-tree,pst-node}
+\usepackage{dsfont}
+\usepackage{ulem}
+
+
+\title{Computergrafik\\Übungsblatt 10}
+\author{Patrick Winterstein\\Björn Rathjen}
+\date{zum 04.July.14}
+
+\begin{document}
+\maketitle
+\newpage
+\section*{50. Fehler bei der Interpolation in Bildschirm- und Weltkoordinaten, 13 Punkte}
+
+Bei der Schattierung von ebenen Flächen werden die Intensitäten linear interpoliert, um vernünftige Werte der inneren Punkte zu erhalten. Diese Interpolation kann entweder in Weltkoordinaten oder in Bildschirmkoordinaten geschehen.
+
+Gegeben sei folgende Situation: Die Kamera ist am Ursprung platziert und schaut entlang der positiven z-Achse mit Aufwärtsrichtung $(0, 1, 0)$. Dabei ist $n_{nah} = 1$ und $n_{fern} = 100$ gewählt. Die Kamera soll einen horizontalen und vertikalen Öffnungswinkel von $60^\circ $ haben. 
+
+Die Szene enthält folgende drei Strecken:
+\begin{itemize}
+\item[•] von $(-10, 0, 20)$ nach $(0, 0, 20)$
+\item[•] von $(-1, 0, 18)$ nach $(5, 0, 26)$
+\item[•] von $(7, 0, 20)$ nach $(7, 0, 30)$
+\end{itemize}
+Der erste Punkt jeder Strecke hat Intensität 0 und der andere Punkt Intensität 1.
+
+Nehmen Sie den Mittelpunkt einer Strecke in Bildschirmkoordinaten und berechnen Sie durch lineare Interpolation in Bildschirmkoordinaten und in Weltkoordinaten die Intensität des Mittelpunktes. Berechnen Sie den Unterschied der beiden Interpolationen (Interpolationsfehler), und vergleichen Sie den Fehler für die drei Strecken.
+
+Unter welchen Bedingungen verschwindet der Fehler? Unter welchen Bedingungen wird der Fehler maximiert? Finden Sie Strecken, bei denen der Interpolationsfehler wesentlich größer ist.
+
+\newpage
+
+\section*{51. Formfaktoren, 17 Punkte}
+Betrachten Sie zwei rechteckige Flächenstücke $A = [1, 2] \times \{0\} \times [-0.01, 0.01]$ und $B = \{0\} \times [2, 3] \times [-0.01, 0.01]$. Berechnen Sie den Formfaktor $F_{AB}$ exakt oder genähert mit hoher Genauigkeit. Die Flächen sind sehr schmale Streifen; daher können Sie die Breitenausdehnung in $z-$Richtung ignorieren und das Flächenintegral durch ein eindimensionales Integral ersetzen.
+$$ A = 
+\begin{pmatrix}
+[1, 2] \\
+\{0\} \\
+[-0.01, 0.01]
+\end{pmatrix} \;\;
+N_{A} = 
+\begin{pmatrix}
+0 \\ 1 \\ 0
+\end{pmatrix}
+$$
+$$B = \begin{pmatrix}
+\{0\} \\ [2, 3] \\ [-0.01, 0.01]
+\end{pmatrix}
+\;\; 
+N_{B} = 
+\begin{pmatrix}
+1 \\ 0 \\ 0
+\end{pmatrix}
+$$
+
+Winkel zwischen den Normalen :
+
+\begin{eqnarray*}
+\cos \gamma &=& \frac{ 
+\begin{pmatrix}
+1 \\ 0 \\ 0
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+0 \\ 1 \\ 0
+\end{pmatrix}
+}{
+\left|\begin{pmatrix}
+1 \\ 0 \\ 0
+\end{pmatrix}
+\right|
+\cdot 
+\left|
+\begin{pmatrix}
+0 \\ 1 \\ 0
+\end{pmatrix}
+\right|}  \\
+&=& 0 \;\; \left| \cos^{-1}\right.\\
+ \gamma &=& 90^\circ  \\
+\end{eqnarray*}
+Die Vector zwischen den beiden Mittelpunkten :
+\begin{eqnarray*}
+M_A &=& \begin{pmatrix}
+1.5 \\ 0 \\ 0
+\end{pmatrix} \\
+M_B &=& 
+\begin{pmatrix}
+0 \\ 2.5 \\ 0
+\end{pmatrix} \\
+D_{AB} =
+\begin{pmatrix}
+1.5 \\ 0 \\ 0
+\end{pmatrix} - 
+\begin{pmatrix}
+0 \\ 2.5 \\ 0
+\end{pmatrix}
+&=&  
+\begin{pmatrix}
+1.5 \\ -2.5 \\ 0
+\end{pmatrix}
+\end{eqnarray*}
+Winkel zwischen N und D :
+\begin{eqnarray*}
+\cos \gamma_{N_A} &=& \frac{ 
+\begin{pmatrix}
+1.5 \\ 0 \\ 0
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+1.5 \\ -2.5 \\ 0
+\end{pmatrix}
+}{
+\left| \begin{pmatrix}
+1.5 \\ 0 \\ 0
+\end{pmatrix} \right|
+\cdot 
+\left| \begin{pmatrix}
+1.5 \\ -2.5 \\ 0
+\end{pmatrix} \right|} \\
+&=&  \;\; \left| \cos^{-1}\right.\\
+&=& \frac{1.5 * 1.5 }{ \left|\sqrt{1.5^2}\right|\cdot \left|\sqrt{1.5^2 + -2.5^2}\right| }\\
+&=& \frac{1.5^2}{1.5 \cdot \sqrt{2.25 + 6.25}}\\
+&=& \frac{1.5}{\sqrt{8.5}} \\
+& & \\ 
+\gamma_{N_A} &=& \cos^{-1} \frac{1.5}{\sqrt{8.5}} \\
+ &=& 59,036243467926^\circ \\
+ & & \\
+ \cos \gamma_{N_B} &=& \frac{ 
+\begin{pmatrix}
+0 \\ -2.5 \\ 0
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+1.5 \\ -2.5 \\ 0
+\end{pmatrix}
+}{
+\left| \begin{pmatrix}
+0 \\ -2.5 \\ 0
+\end{pmatrix} \right|
+\cdot 
+\left| \begin{pmatrix}
+1.5 \\ -2.5 \\ 0
+\end{pmatrix} \right|} \\
+&=&  \;\; \left| \cos^{-1}\right.\\
+&=& \frac{-2.5 * -2.5 }{ \left|\sqrt{-2.5^2}\right|\cdot \left|\sqrt{1.5^2 + -2.5^2}\right| }\\
+&=& \frac{2.5^2}{2.5 \cdot \sqrt{2.25 + 6.25}}\\
+&=& \frac{2.5}{\sqrt{8.5}} \\
+& & \\ 
+\gamma_{N_B} &=& \cos^{-1} \frac{2.5}{\sqrt{8.5}} \\
+&=&  30,963756532074^\circ
+\end{eqnarray*}
+Vergleichen Sie das Ergebnis mit der Näherungsmethode, bei der Sie jede Fläche durch ihren Mittelpunkt ersetzen und den Formfaktor nur durch dieses Punktepaar bestimmen.
+\end{document}
