@@ -15,6 +15,7 @@ public class Scene {
     private double near, far;
     private int verticalPixel, horizontalPixel;
     
+    
     public Scene(Vector3D camera, Vector3D cameraDirection, double hFlareAngle, double vFlareAngle,
                     double near, double far, int horizontalPixel, int verticalPixel, Field... fields){
         this.mOWs = new Matrix[fields.length];
@@ -79,11 +80,14 @@ public class Scene {
         this.calculateANDC();
         return true;
     }
-    
+    /**
+     * calculates a color in b
+    */
     public Color colorInPoint(int x, int y){
         Plane pl = null;
         Matrix s_save = null;
-        Double z = null;
+        Double z = null; // its a motherfucking object
+        
         int i_save = -1;
         int j_save = -1;
         for(int i = 0; i < this.fields.length; i++){
@@ -92,8 +96,8 @@ public class Scene {
             for(int j = 0; j < this.fields[i].getFaces().size(); j++){
                 // 1
                 pl = new Plane(this.fields[i].getVertices().get(this.fields[i].getFaces().get(j).get(0)),
-                                    this.fields[i].getVertices().get(this.fields[i].getFaces().get(j).get(1)),
-                                    this.fields[i].getVertices().get(this.fields[i].getFaces().get(j).get(2)));
+                               this.fields[i].getVertices().get(this.fields[i].getFaces().get(j).get(1)),
+                               this.fields[i].getVertices().get(this.fields[i].getFaces().get(j).get(2)));
                 Matrix a = this.getCompleteTransformation(i).inverse().transpose().times(pl.planeVector());
                 // 2
                 double[][] p_array = {{(double)(x-(this.horizontalPixel/2))/(this.horizontalPixel/2)}, {(double)((this.verticalPixel/2)-y)/(this.verticalPixel/2)}, {0}, {1}}; 

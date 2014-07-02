@@ -2,11 +2,18 @@ package u08;
 
 import java.util.ArrayList;
 
+
+// cube structure
 public class Field {
+    
+    // Points of the cube 
     private ArrayList<Vector3D> vertices;
+    // points for each surface
     private ArrayList<ArrayList<Integer>> faces;
+    // textures
     private ArrayList<Texture> textures;
     
+    /*------------------ constructors --------------------------------------*/
     public Field(){
         vertices = new ArrayList<Vector3D>();
         faces = new ArrayList<ArrayList<Integer>>();
@@ -19,6 +26,7 @@ public class Field {
         this.setTextures(textures);
     }
     
+    /*------------------ methods --------------------------------------------*/
     private void checkPointsInPlane(ArrayList<Integer> face){
         Plane p = new Plane(vertices.get(face.get(0)), vertices.get(face.get(1)), vertices.get(face.get(2)));
         Vector3D normalvector = p.normalVector();
