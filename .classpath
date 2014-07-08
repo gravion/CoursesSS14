@@ -5,7 +5,15 @@
 	<classpathentry kind="src" path="u06"/>
 	<classpathentry kind="src" path="u07"/>
 	<classpathentry kind="src" path="u08"/>
+	<classpathentry kind="src" path="u11"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/home/gravion/.myeclipse/jarfiles/Jama-1.0.3.jar"/>
+	<classpathentry kind="lib" path="/home/patrick/Downloads/Jama-1.0.3.jar"/>
+	<classpathentry kind="lib" path="/home/patrick/Documents/Computergrafik/CoursesSS14/u11/jogl/gluegen-java-src.zip"/>
+	<classpathentry kind="lib" path="/home/patrick/Documents/Computergrafik/CoursesSS14/u11/jogl/gluegen-rt.jar"/>
+	<classpathentry kind="lib" path="/home/patrick/Documents/Computergrafik/CoursesSS14/u11/jogl/gluegen-rt-natives-linux-amd64.jar"/>
+	<classpathentry kind="lib" path="/home/patrick/Documents/Computergrafik/CoursesSS14/u11/jogl/jogl-all.jar"/>
+	<classpathentry kind="lib" path="/home/patrick/Documents/Computergrafik/CoursesSS14/u11/jogl/jogl-all-natives-linux-amd64.jar"/>
+	<classpathentry kind="lib" path="/home/patrick/Documents/Computergrafik/CoursesSS14/u11/jogl/jogl-java-src.zip"/>
+	<classpathentry kind="lib" path="/home/patrick/Documents/Computergrafik/CoursesSS14/u11/jogl/jogl-2.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
