@@ -1,0 +1,24 @@
+\contentsline {section}{\numberline {1}Einf\IeC {\"u}hrung}{3}
+\contentsline {section}{\numberline {2}Grundlagen}{4}
+\contentsline {subsection}{\numberline {2.1}Sortieren}{4}
+\contentsline {subsection}{\numberline {2.2}Komparator}{4}
+\contentsline {section}{\numberline {3}Sortiernetzwerk}{5}
+\contentsline {subsection}{\numberline {3.1}Aufbau}{5}
+\contentsline {subsection}{\numberline {3.2}Korrektheit}{7}
+\contentsline {subsubsection}{\numberline {3.2.1}Betrachtung der Analyse}{7}
+\contentsline {subsubsection}{\numberline {3.2.2}0,1-Prinzip}{7}
+\contentsline {paragraph}{Lemma}{7}
+\contentsline {paragraph}{Beweis}{7}
+\contentsline {paragraph}{Vorteile}{8}
+\contentsline {subsection}{\numberline {3.3}\IeC {\"U}bertragung von Sortieralgorithmen auf ein Sortiernetzwerk}{8}
+\contentsline {subsubsection}{\numberline {3.3.1}Bubblesort}{8}
+\contentsline {subsubsection}{\numberline {3.3.2}Quicksort , Mergesort}{10}
+\contentsline {subsection}{\numberline {3.4}Biton-Sortierer}{10}
+\contentsline {subsection}{\numberline {3.5}Odd-Even-Mergesort}{10}
+\contentsline {section}{\numberline {4}Laufzeit}{11}
+\contentsline {subsection}{\numberline {4.1}Herleitung}{11}
+\contentsline {section}{\numberline {5}Resultat}{11}
+\contentsline {subsection}{\numberline {5.1}Vergleich zu Softwaresortierung}{11}
+\contentsline {section}{\numberline {6}Anhang}{11}
+\contentsline {subsection}{\numberline {6.1}Text-Quellen}{11}
+\contentsline {subsection}{\numberline {6.2}Bild-Quellen}{11}
