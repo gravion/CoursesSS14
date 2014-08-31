@@ -14,11 +14,16 @@
 \contentsline {subsubsection}{\numberline {3.3.1}Bubblesort}{8}
 \contentsline {subsubsection}{\numberline {3.3.2}Quicksort , Mergesort}{10}
 \contentsline {subsection}{\numberline {3.4}Biton-Sortierer}{10}
-\contentsline {subsection}{\numberline {3.5}Odd-Even-Mergesort}{10}
-\contentsline {section}{\numberline {4}Laufzeit}{11}
-\contentsline {subsection}{\numberline {4.1}Herleitung}{11}
-\contentsline {section}{\numberline {5}Resultat}{11}
-\contentsline {subsection}{\numberline {5.1}Vergleich zu Softwaresortierung}{11}
-\contentsline {section}{\numberline {6}Anhang}{11}
-\contentsline {subsection}{\numberline {6.1}Text-Quellen}{11}
-\contentsline {subsection}{\numberline {6.2}Bild-Quellen}{11}
+\contentsline {subsubsection}{\numberline {3.4.1}Das Verfahren}{11}
+\contentsline {subsubsection}{\numberline {3.4.2}Korrektheit}{12}
+\contentsline {subsection}{\numberline {3.5}Odd-Even-Mergesort}{13}
+\contentsline {subsubsection}{\numberline {3.5.1}Merge-Verfahren}{13}
+\contentsline {subsubsection}{\numberline {3.5.2}Sortier-Verfahren}{13}
+\contentsline {subsubsection}{\numberline {3.5.3}Korrektheit}{13}
+\contentsline {section}{\numberline {4}Laufzeit}{15}
+\contentsline {subsection}{\numberline {4.1}Herleitung}{15}
+\contentsline {section}{\numberline {5}Resultat}{15}
+\contentsline {subsection}{\numberline {5.1}Vergleich zu Softwaresortierung}{15}
+\contentsline {section}{\numberline {6}Anhang}{15}
+\contentsline {subsection}{\numberline {6.1}Text-Quellen}{15}
+\contentsline {subsection}{\numberline {6.2}Bild-Quellen}{15}

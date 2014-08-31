@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.6.6)  28 JUL 2014 19:56
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.27)  31 AUG 2014 14:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **abschlussbericht.tex
 (./abschlussbericht.tex
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 9 languages loaded.
+Babel <3.9h> and hyphenation patterns for 4 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
@@ -582,21 +582,24 @@ Package: nicefrac 1998/08/04 v0.9b Nice fractions
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen160
+)
 (./abschlussbericht.aux)
 \openout1 = `abschlussbericht.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -635,13 +638,13 @@ LaTeX Font Info:    ... okay on input line 18.
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count146
-\scratchdimen=\dimen160
+\scratchdimen=\dimen161
 \scratchbox=\box38
 \nofMPsegments=\count147
 \nofMParguments=\count148
 \everyMPshowfont=\toks36
 \MPscratchCnt=\count149
-\MPscratchDim=\dimen161
+\MPscratchDim=\dimen162
 \MPnumerator=\count150
 \makeMPintoPDFobject=\count151
 \everyMPtoPDFconversion=\toks37
@@ -690,12 +693,12 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \c@lstlisting=\count152
-LaTeX Font Info:    Try loading font information for U+msa on input line 19.
+LaTeX Font Info:    Try loading font information for U+msa on input line 20.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 19.
+LaTeX Font Info:    Try loading font information for U+msb on input line 20.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -736,27 +739,27 @@ Overfull \hbox (9.6993pt too wide) in paragraph at lines 4--4
 \openout5 = `abschlussbericht.lot'.
 
 
-Overfull \hbox (12.13261pt too wide) in paragraph at lines 26--27
-\OT1/cmr/m/n/10.95 mierung von Netzwerk- (haupts^^?achlich Rout-ing)und Daten-s
-truck-turen (Lis-ten, W^^?orterb^^?ucher,
+Overfull \hbox (10.00346pt too wide) in paragraph at lines 27--28
+\OT1/cmr/m/n/10.95 mierung von Netzwerk- (haupts^^?achlich Rout-ing) und Daten-
+struk-turen (Lis-ten, W^^?orterb^^?ucher,
  []
 
 [3]
 Package epstopdf Info: Source file: <Komparator1.eps>
-(epstopdf)                    date: 2014-07-28 16:08:35
+(epstopdf)                    date: 2014-08-11 13:59:26
 (epstopdf)                    size: 35373 bytes
 (epstopdf)             Output file: <Komparator1-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-07-28 16:09:07
+(epstopdf)                    date: 2014-08-11 13:59:26
 (epstopdf)                    size: 5421 bytes
 (epstopdf)             Command: <repstopdf --outfile=Komparator1-eps-converted-
 to.pdf Komparator1.eps>
-(epstopdf)             \includegraphics on input line 49.
+(epstopdf)             \includegraphics on input line 50.
 Package epstopdf Info: Output file is already uptodate.
  <Komparator1-eps-converted-to.pdf, id=17, 298.11375pt x 120.45pt>
 File: Komparator1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Komparator1-eps-converted-to.pdf>
-Package pdftex.def Info: Komparator1-eps-converted-to.pdf used on input line 49
+Package pdftex.def Info: Komparator1-eps-converted-to.pdf used on input line 50
 .
 (pdftex.def)             Requested size: 238.49132pt x 96.3601pt.
 
@@ -766,33 +769,33 @@ File: lstlang1.sty 2013/08/26 1.5b listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
 )
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 56.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 57.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 56.
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 57.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 57.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 58.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 57.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 58.
 
-Overfull \hbox (14.10966pt too wide) in paragraph at lines 46--73
+Overfull \hbox (14.10966pt too wide) in paragraph at lines 47--74
 \OT1/cmr/m/n/10.95 Ein Kom-para-tor stellt den kle-in-sten Baustein dar, der ei
 ne zweiele-mentige Menge entsprechend
  []
 
 [4 <./Komparator1-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <bild2Komparatornetzwerk.eps>
-(epstopdf)                    date: 2014-07-28 16:08:35
+(epstopdf)                    date: 2014-08-11 13:59:26
 (epstopdf)                    size: 5966 bytes
 (epstopdf)             Output file: <bild2Komparatornetzwerk-eps-converted-to.p
 df>
-(epstopdf)                    date: 2014-07-28 17:22:23
+(epstopdf)                    date: 2014-08-11 13:59:26
 (epstopdf)                    size: 2988 bytes
 (epstopdf)             Command: <repstopdf --outfile=bild2Komparatornetzwerk-ep
 s-converted-to.pdf bild2Komparatornetzwerk.eps>
@@ -806,10 +809,10 @@ Package pdftex.def Info: bild2Komparatornetzwerk-eps-converted-to.pdf used on i
 nput line 92.
 (pdftex.def)             Requested size: 130.08617pt x 185.49324pt.
 Package epstopdf Info: Source file: <bild2beispiel.eps>
-(epstopdf)                    date: 2014-07-28 16:08:35
+(epstopdf)                    date: 2014-08-11 13:59:26
 (epstopdf)                    size: 53767 bytes
 (epstopdf)             Output file: <bild2beispiel-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-07-28 17:37:32
+(epstopdf)                    date: 2014-08-11 13:59:26
 (epstopdf)                    size: 7680 bytes
 (epstopdf)             Command: <repstopdf --outfile=bild2beispiel-eps-converte
 d-to.pdf bild2beispiel.eps>
@@ -832,10 +835,10 @@ ie gro^^Ye An-zahl an der zu ^^?uberpr^^?ufenden
 
 [7]
 Package epstopdf Info: Source file: <01beispiel.eps>
-(epstopdf)                    date: 2014-07-28 16:08:35
+(epstopdf)                    date: 2014-08-11 13:59:26
 (epstopdf)                    size: 41361 bytes
 (epstopdf)             Output file: <01beispiel-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-07-28 18:49:17
+(epstopdf)                    date: 2014-08-11 13:59:26
 (epstopdf)                    size: 7038 bytes
 (epstopdf)             Command: <repstopdf --outfile=01beispiel-eps-converted-t
 o.pdf 01beispiel.eps>
@@ -850,10 +853,10 @@ Package pdftex.def Info: 01beispiel-eps-converted-to.pdf used on input line 157
 (pdftex.def)             Requested size: 246.92189pt x 179.16893pt.
  [8]
 Package epstopdf Info: Source file: <bubblesort.eps>
-(epstopdf)                    date: 2014-07-28 16:08:35
+(epstopdf)                    date: 2014-08-11 13:59:26
 (epstopdf)                    size: 16901 bytes
 (epstopdf)             Output file: <bubblesort-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-07-28 19:23:49
+(epstopdf)                    date: 2014-08-11 13:59:26
 (epstopdf)                    size: 5420 bytes
 (epstopdf)             Command: <repstopdf --outfile=bubblesort-eps-converted-t
 o.pdf bubblesort.eps>
@@ -869,10 +872,10 @@ Package pdftex.def Info: bubblesort-eps-converted-to.pdf used on input line 168
 (pdftex.def)             Requested size: 207.17426pt x 211.99228pt.
  [9 <./01beispiel-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <mergesort.eps>
-(epstopdf)                    date: 2014-07-28 16:08:35
+(epstopdf)                    date: 2014-08-11 13:59:26
 (epstopdf)                    size: 38787 bytes
 (epstopdf)             Output file: <mergesort-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-07-28 19:25:34
+(epstopdf)                    date: 2014-08-11 13:59:26
 (epstopdf)                    size: 5737 bytes
 (epstopdf)             Command: <repstopdf --outfile=mergesort-eps-converted-to
 .pdf mergesort.eps>
@@ -886,31 +889,136 @@ File: mergesort-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: mergesort-eps-converted-to.pdf used on input line 183.
 
 (pdftex.def)             Requested size: 347.69946pt x 114.82915pt.
- [10 <./bubblesort-eps-converted-to.pdf>]
-[11 <./mergesort-eps-converted-to.pdf>] (./abschlussbericht.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--192
+
+ []
+
+[10 <./bubblesort-eps-converted-to.pdf>]
+Overfull \hbox (17.77313pt too wide) in paragraph at lines 193--194
+\OT1/cmr/m/n/10.95 Zuerst wird Eingabe-menge in die 2 H^^?alften $\OML/cmm/m/it
+/10.95 m[]; m[]; :::; m[]$ \OT1/cmr/m/n/10.95 und $\OML/cmm/m/it/10.95 m[]; m[]
+; :::; m[]$
+ []
+
+
+Overfull \hbox (14.45288pt too wide) in paragraph at lines 194--196
+\OT1/cmr/m/n/10.95 Wiederhole f^^?ur die Teil-men-gen $\OML/cmm/m/it/10.95 m[]$
+\OT1/cmr/m/n/10.95 ,$\OML/cmm/m/it/10.95 m[]$\OT1/cmr/m/n/10.95 ,...,$\OML/cmm/
+m/it/10.95 m[]$ \OT1/cmr/m/n/10.95 und $\OML/cmm/m/it/10.95 m[]$\OT1/cmr/m/n/10
+.95 ,$\OML/cmm/m/it/10.95 m[]$\OT1/cmr/m/n/10.95 ,...,$\OML/cmm/m/it/10.95 m[]$
+ \OT1/cmr/m/n/10.95 In einem Sortiert-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--196
+
+ []
+
+Package epstopdf Info: Source file: <bitonmischer.eps>
+(epstopdf)                    date: 2014-08-11 13:59:26
+(epstopdf)                    size: 86161 bytes
+(epstopdf)             Output file: <bitonmischer-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-08-23 11:33:23
+(epstopdf)                    size: 8684 bytes
+(epstopdf)             Command: <repstopdf --outfile=bitonmischer-eps-converted
+-to.pdf bitonmischer.eps>
+(epstopdf)             \includegraphics on input line 197.
+Package epstopdf Info: Output file is already uptodate.
+<bitonmischer-eps-converted-to.pdf, id=75, 257.96375pt x 291.0875pt>
+File: bitonmischer-eps-converted-to.pdf Graphic file (type pdf)
+
+<use bitonmischer-eps-converted-to.pdf>
+Package pdftex.def Info: bitonmischer-eps-converted-to.pdf used on input line 1
+97.
+(pdftex.def)             Requested size: 206.37126pt x 232.8703pt.
+ [11 <./mergesort-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
+
+ []
+
+Package epstopdf Info: Source file: <korrektheitBS.eps>
+(epstopdf)                    date: 2014-08-31 14:52:15
+(epstopdf)                    size: 32657 bytes
+(epstopdf)             Output file: <korrektheitBS-eps-converted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=korrektheitBS-eps-converte
+d-to.pdf korrektheitBS.eps>
+(epstopdf)             \includegraphics on input line 207.
+runsystem(repstopdf --outfile=korrektheitBS-eps-converted-to.pdf korrektheitBS.
+eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <korrektheitBS-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-08-31 14:53:13
+(epstopdf)                    size: 5130 bytes.
+<korrektheitBS-eps-converted-to.pdf, id=86, 548.0475pt x 162.6075pt>
+File: korrektheitBS-eps-converted-to.pdf Graphic file (type pdf)
+
+<use korrektheitBS-eps-converted-to.pdf>
+Package pdftex.def Info: korrektheitBS-eps-converted-to.pdf used on input line 
+207.
+(pdftex.def)             Requested size: 219.2151pt x 65.04184pt.
+ [12 <./bitonmischer-eps-converted-to.pdf> <./korrektheitBS-eps-converted-to.pd
+f>]
+Overfull \hbox (67.9302pt too wide) in paragraph at lines 214--215
+\OT1/cmr/m/n/10.95 Das Merge-Verfahren setzt vor-raus, dass die bei-den H^^?alf
+ten $\OML/cmm/m/it/10.95 m[]; m[]; :::; m[]$ \OT1/cmr/m/n/10.95 und $\OML/cmm/m
+/it/10.95 m[]; m[]; :::; m[]$
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 232--234
+
+ []
+
+Package epstopdf Info: Source file: <korrektheitOEM.eps>
+(epstopdf)                    date: 2014-08-31 14:27:16
+(epstopdf)                    size: 26723 bytes
+(epstopdf)             Output file: <korrektheitOEM-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-08-31 14:28:36
+(epstopdf)                    size: 5058 bytes
+(epstopdf)             Command: <repstopdf --outfile=korrektheitOEM-eps-convert
+ed-to.pdf korrektheitOEM.eps>
+(epstopdf)             \includegraphics on input line 235.
+Package epstopdf Info: Output file is already uptodate.
+<korrektheitOEM-eps-converted-to.pdf, id=119, 355.3275pt x 258.9675pt>
+File: korrektheitOEM-eps-converted-to.pdf Graphic file (type pdf)
+
+<use korrektheitOEM-eps-converted-to.pdf>
+Package pdftex.def Info: korrektheitOEM-eps-converted-to.pdf used on input line
+ 235.
+(pdftex.def)             Requested size: 142.12846pt x 103.58514pt.
+ [14 <./korrektheitOEM-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 242--243
+
+ []
+
+[15] (./abschlussbericht.aux) ) 
 Here is how much of TeX's memory you used:
- 8566 strings out of 494935
- 120327 string characters out of 6178123
- 245215 words of memory out of 5000000
- 11617 multiletter control sequences out of 15000+600000
+ 8593 strings out of 494985
+ 121122 string characters out of 6180356
+ 245147 words of memory out of 5000000
+ 11621 multiletter control sequences out of 15000+600000
  11458 words of font info for 44 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 38i,10n,74p,733b,1485s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on abschlussbericht.pdf (11 pages, 161451 bytes).
+ 38i,10n,74p,1339b,1485s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy8.pfb>
+Output written on abschlussbericht.pdf (15 pages, 204832 bytes).
 PDF statistics:
- 118 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
+ 169 PDF objects out of 1000 (max. 8388607)
+ 127 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

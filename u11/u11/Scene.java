@@ -12,7 +12,6 @@ import javax.media.opengl.awt.GLCanvas;
 import javax.media.opengl.glu.GLU;
 
 import com.jogamp.opengl.util.FPSAnimator;
-import com.sun.opengl.util.Animator;
 
 class Scene implements GLEventListener {
 
@@ -53,7 +52,7 @@ class Scene implements GLEventListener {
         theta += 0.5f;
         if(theta == 360.0f) theta = 0.0f;
         gl.glTranslatef(0.0f, 0.0f, -4.5f);
-        gl.glRotatef(theta, 0.0f, 1.0f, 0.0f);
+        gl.glRotatef(theta, 1.0f, 1.0f, 0.0f);
         gl.glBegin(GL2.GL_TRIANGLES);
             //Triangle 1
             gl.glColor3f(1.0f,0.0f,0.0f); gl.glVertex3f( 0.0f, 1.0f, 0.0f);   //V0(red)
@@ -73,10 +72,10 @@ class Scene implements GLEventListener {
             gl.glColor3f(0.0f,1.0f,0.0f); gl.glVertex3f(-1.0f,-1.0f, 1.0f);   //V1(green)
         gl.glEnd();
         gl.glBegin(GL2.GL_QUADS);
-            gl.glVertex3f(-1.0f,-1.0f, 1.0f);   //V2
-            gl.glVertex3f( 1.0f,-1.0f, 1.0f);   //V1
-            gl.glVertex3f( 1.0f,-1.0f,-1.0f);   //V3
-            gl.glVertex3f(-1.0f,-1.0f,-1.0f);   //V4
+            gl.glColor3f(0.0f,1.0f,0.0f); gl.glVertex3f(-1.0f,-1.0f, 1.0f);   //V2
+            gl.glColor3f(0.0f,0.0f,1.0f); gl.glVertex3f( 1.0f,-1.0f, 1.0f);   //V1
+            gl.glColor3f(0.0f,1.0f,0.0f); gl.glVertex3f( 1.0f,-1.0f,-1.0f);   //V3
+            gl.glColor3f(0.0f,0.0f,1.0f); gl.glVertex3f(-1.0f,-1.0f,-1.0f);   //V4
         gl.glEnd();
         gl.glPopMatrix();
     }
