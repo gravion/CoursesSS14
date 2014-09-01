@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.27)  31 AUG 2014 14:53
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.4.24)  1 SEP 2014 12:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **abschlussbericht.tex
 (./abschlussbericht.tex
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 4 languages loaded.
+Babel <3.9h> and hyphenation patterns for 9 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
@@ -730,11 +730,18 @@ Overfull \hbox (9.6993pt too wide) in paragraph at lines 4--4
 -tweisen Ver-lauf des sortierens 
  []
 
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 8.
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 8.
 )
 \tf@lof=\write4
 \openout4 = `abschlussbericht.lof'.
 
- (./abschlussbericht.lot)
+
+(./abschlussbericht.lot)
 \tf@lot=\write5
 \openout5 = `abschlussbericht.lot'.
 
@@ -746,16 +753,16 @@ struk-turen (Lis-ten, W^^?orterb^^?ucher,
 
 [3]
 Package epstopdf Info: Source file: <Komparator1.eps>
-(epstopdf)                    date: 2014-08-11 13:59:26
+(epstopdf)                    date: 2014-07-29 07:19:12
 (epstopdf)                    size: 35373 bytes
 (epstopdf)             Output file: <Komparator1-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-08-11 13:59:26
+(epstopdf)                    date: 2014-07-29 07:19:12
 (epstopdf)                    size: 5421 bytes
 (epstopdf)             Command: <repstopdf --outfile=Komparator1-eps-converted-
 to.pdf Komparator1.eps>
 (epstopdf)             \includegraphics on input line 50.
 Package epstopdf Info: Output file is already uptodate.
- <Komparator1-eps-converted-to.pdf, id=17, 298.11375pt x 120.45pt>
+ <Komparator1-eps-converted-to.pdf, id=18, 298.11375pt x 120.45pt>
 File: Komparator1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Komparator1-eps-converted-to.pdf>
@@ -769,13 +776,6 @@ File: lstlang1.sty 2013/08/26 1.5b listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
 )
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 57.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 57.
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 58.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
@@ -789,100 +789,100 @@ Overfull \hbox (14.10966pt too wide) in paragraph at lines 47--74
 ne zweiele-mentige Menge entsprechend
  []
 
-[4 <./Komparator1-eps-converted-to.pdf>]
+[4] [5 <./Komparator1-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <bild2Komparatornetzwerk.eps>
-(epstopdf)                    date: 2014-08-11 13:59:26
+(epstopdf)                    date: 2014-07-29 07:19:12
 (epstopdf)                    size: 5966 bytes
 (epstopdf)             Output file: <bild2Komparatornetzwerk-eps-converted-to.p
 df>
-(epstopdf)                    date: 2014-08-11 13:59:26
+(epstopdf)                    date: 2014-07-29 07:19:12
 (epstopdf)                    size: 2988 bytes
 (epstopdf)             Command: <repstopdf --outfile=bild2Komparatornetzwerk-ep
 s-converted-to.pdf bild2Komparatornetzwerk.eps>
 (epstopdf)             \includegraphics on input line 92.
 Package epstopdf Info: Output file is already uptodate.
 
-<bild2Komparatornetzwerk-eps-converted-to.pdf, id=33, 162.6075pt x 231.86626pt>
+<bild2Komparatornetzwerk-eps-converted-to.pdf, id=36, 162.6075pt x 231.86626pt>
 File: bild2Komparatornetzwerk-eps-converted-to.pdf Graphic file (type pdf)
 <use bild2Komparatornetzwerk-eps-converted-to.pdf>
 Package pdftex.def Info: bild2Komparatornetzwerk-eps-converted-to.pdf used on i
 nput line 92.
 (pdftex.def)             Requested size: 130.08617pt x 185.49324pt.
 Package epstopdf Info: Source file: <bild2beispiel.eps>
-(epstopdf)                    date: 2014-08-11 13:59:26
+(epstopdf)                    date: 2014-07-29 07:19:12
 (epstopdf)                    size: 53767 bytes
 (epstopdf)             Output file: <bild2beispiel-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-08-11 13:59:26
+(epstopdf)                    date: 2014-07-29 07:19:12
 (epstopdf)                    size: 7680 bytes
 (epstopdf)             Command: <repstopdf --outfile=bild2beispiel-eps-converte
 d-to.pdf bild2beispiel.eps>
 (epstopdf)             \includegraphics on input line 104.
 Package epstopdf Info: Output file is already uptodate.
 
-<bild2beispiel-eps-converted-to.pdf, id=34, 298.11375pt x 238.8925pt>
+<bild2beispiel-eps-converted-to.pdf, id=37, 298.11375pt x 238.8925pt>
 File: bild2beispiel-eps-converted-to.pdf Graphic file (type pdf)
 
 <use bild2beispiel-eps-converted-to.pdf>
 Package pdftex.def Info: bild2beispiel-eps-converted-to.pdf used on input line 
 104.
 (pdftex.def)             Requested size: 298.11302pt x 238.8919pt.
- [5] [6 <./bild2Komparatornetzwerk-eps-converted-to.pdf> <./bild2beispiel-eps-c
+ [6] [7 <./bild2Komparatornetzwerk-eps-converted-to.pdf> <./bild2beispiel-eps-c
 onverted-to.pdf>]
 Overfull \hbox (21.53136pt too wide) in paragraph at lines 112--113
 \OT1/cmr/m/n/10.95 Problematisch bei der []Uberpr^^?ufung durch Beispiele ist d
 ie gro^^Ye An-zahl an der zu ^^?uberpr^^?ufenden
  []
 
-[7]
+[8]
 Package epstopdf Info: Source file: <01beispiel.eps>
-(epstopdf)                    date: 2014-08-11 13:59:26
+(epstopdf)                    date: 2014-07-29 07:19:12
 (epstopdf)                    size: 41361 bytes
 (epstopdf)             Output file: <01beispiel-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-08-11 13:59:26
+(epstopdf)                    date: 2014-07-29 07:19:12
 (epstopdf)                    size: 7038 bytes
 (epstopdf)             Command: <repstopdf --outfile=01beispiel-eps-converted-t
 o.pdf 01beispiel.eps>
 (epstopdf)             \includegraphics on input line 157.
 Package epstopdf Info: Output file is already uptodate.
- <01beispiel-eps-converted-to.pdf, id=57, 329.23pt x 238.8925pt>
+ <01beispiel-eps-converted-to.pdf, id=60, 329.23pt x 238.8925pt>
 File: 01beispiel-eps-converted-to.pdf Graphic file (type pdf)
 
 <use 01beispiel-eps-converted-to.pdf>
 Package pdftex.def Info: 01beispiel-eps-converted-to.pdf used on input line 157
 .
 (pdftex.def)             Requested size: 246.92189pt x 179.16893pt.
- [8]
+ [9]
 Package epstopdf Info: Source file: <bubblesort.eps>
-(epstopdf)                    date: 2014-08-11 13:59:26
+(epstopdf)                    date: 2014-07-29 07:19:12
 (epstopdf)                    size: 16901 bytes
 (epstopdf)             Output file: <bubblesort-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-08-11 13:59:26
+(epstopdf)                    date: 2014-07-29 07:19:12
 (epstopdf)                    size: 5420 bytes
 (epstopdf)             Command: <repstopdf --outfile=bubblesort-eps-converted-t
 o.pdf bubblesort.eps>
 (epstopdf)             \includegraphics on input line 168.
 Package epstopdf Info: Output file is already uptodate.
 
-<bubblesort-eps-converted-to.pdf, id=61, 258.9675pt x 264.99pt>
+<bubblesort-eps-converted-to.pdf, id=64, 258.9675pt x 264.99pt>
 File: bubblesort-eps-converted-to.pdf Graphic file (type pdf)
 
 <use bubblesort-eps-converted-to.pdf>
 Package pdftex.def Info: bubblesort-eps-converted-to.pdf used on input line 168
 .
 (pdftex.def)             Requested size: 207.17426pt x 211.99228pt.
- [9 <./01beispiel-eps-converted-to.pdf>]
+ [10 <./01beispiel-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <mergesort.eps>
-(epstopdf)                    date: 2014-08-11 13:59:26
+(epstopdf)                    date: 2014-07-29 07:19:12
 (epstopdf)                    size: 38787 bytes
 (epstopdf)             Output file: <mergesort-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-08-11 13:59:26
+(epstopdf)                    date: 2014-07-29 07:19:12
 (epstopdf)                    size: 5737 bytes
 (epstopdf)             Command: <repstopdf --outfile=mergesort-eps-converted-to
 .pdf mergesort.eps>
 (epstopdf)             \includegraphics on input line 183.
 Package epstopdf Info: Output file is already uptodate.
 
-<mergesort-eps-converted-to.pdf, id=69, 434.62375pt x 143.53625pt>
+<mergesort-eps-converted-to.pdf, id=72, 434.62375pt x 143.53625pt>
 File: mergesort-eps-converted-to.pdf Graphic file (type pdf)
 
 <use mergesort-eps-converted-to.pdf>
@@ -894,7 +894,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 191--192
 
  []
 
-[10 <./bubblesort-eps-converted-to.pdf>]
+[11 <./bubblesort-eps-converted-to.pdf>]
 Overfull \hbox (17.77313pt too wide) in paragraph at lines 193--194
 \OT1/cmr/m/n/10.95 Zuerst wird Eingabe-menge in die 2 H^^?alften $\OML/cmm/m/it
 /10.95 m[]; m[]; :::; m[]$ \OT1/cmr/m/n/10.95 und $\OML/cmm/m/it/10.95 m[]; m[]
@@ -916,91 +916,83 @@ Underfull \hbox (badness 10000) in paragraph at lines 194--196
  []
 
 Package epstopdf Info: Source file: <bitonmischer.eps>
-(epstopdf)                    date: 2014-08-11 13:59:26
+(epstopdf)                    date: 2014-07-29 07:19:12
 (epstopdf)                    size: 86161 bytes
 (epstopdf)             Output file: <bitonmischer-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-08-23 11:33:23
+(epstopdf)                    date: 2014-09-01 10:26:37
 (epstopdf)                    size: 8684 bytes
 (epstopdf)             Command: <repstopdf --outfile=bitonmischer-eps-converted
 -to.pdf bitonmischer.eps>
 (epstopdf)             \includegraphics on input line 197.
 Package epstopdf Info: Output file is already uptodate.
-<bitonmischer-eps-converted-to.pdf, id=75, 257.96375pt x 291.0875pt>
+<bitonmischer-eps-converted-to.pdf, id=78, 257.96375pt x 291.0875pt>
 File: bitonmischer-eps-converted-to.pdf Graphic file (type pdf)
 
 <use bitonmischer-eps-converted-to.pdf>
 Package pdftex.def Info: bitonmischer-eps-converted-to.pdf used on input line 1
 97.
 (pdftex.def)             Requested size: 206.37126pt x 232.8703pt.
- [11 <./mergesort-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 205--206
-
- []
-
+ [12 <./mergesort-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <korrektheitBS.eps>
-(epstopdf)                    date: 2014-08-31 14:52:15
+(epstopdf)                    date: 2014-09-01 09:18:39
 (epstopdf)                    size: 32657 bytes
 (epstopdf)             Output file: <korrektheitBS-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-09-01 10:26:38
+(epstopdf)                    size: 5130 bytes
 (epstopdf)             Command: <repstopdf --outfile=korrektheitBS-eps-converte
 d-to.pdf korrektheitBS.eps>
-(epstopdf)             \includegraphics on input line 207.
-runsystem(repstopdf --outfile=korrektheitBS-eps-converted-to.pdf korrektheitBS.
-eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <korrektheitBS-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-08-31 14:53:13
-(epstopdf)                    size: 5130 bytes.
-<korrektheitBS-eps-converted-to.pdf, id=86, 548.0475pt x 162.6075pt>
+(epstopdf)             \includegraphics on input line 208.
+Package epstopdf Info: Output file is already uptodate.
+<korrektheitBS-eps-converted-to.pdf, id=89, 548.0475pt x 162.6075pt>
 File: korrektheitBS-eps-converted-to.pdf Graphic file (type pdf)
 
 <use korrektheitBS-eps-converted-to.pdf>
 Package pdftex.def Info: korrektheitBS-eps-converted-to.pdf used on input line 
-207.
+208.
 (pdftex.def)             Requested size: 219.2151pt x 65.04184pt.
- [12 <./bitonmischer-eps-converted-to.pdf> <./korrektheitBS-eps-converted-to.pd
-f>]
-Overfull \hbox (67.9302pt too wide) in paragraph at lines 214--215
+ [13 <./bitonmischer-eps-converted-to.pdf>]
+Overfull \hbox (67.9302pt too wide) in paragraph at lines 218--219
 \OT1/cmr/m/n/10.95 Das Merge-Verfahren setzt vor-raus, dass die bei-den H^^?alf
 ten $\OML/cmm/m/it/10.95 m[]; m[]; :::; m[]$ \OT1/cmr/m/n/10.95 und $\OML/cmm/m
 /it/10.95 m[]; m[]; :::; m[]$
  []
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 232--234
-
- []
-
+[14 <./korrektheitBS-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <korrektheitOEM.eps>
-(epstopdf)                    date: 2014-08-31 14:27:16
+(epstopdf)                    date: 2014-09-01 09:18:39
 (epstopdf)                    size: 26723 bytes
 (epstopdf)             Output file: <korrektheitOEM-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-08-31 14:28:36
+(epstopdf)                    date: 2014-09-01 10:26:38
 (epstopdf)                    size: 5058 bytes
 (epstopdf)             Command: <repstopdf --outfile=korrektheitOEM-eps-convert
 ed-to.pdf korrektheitOEM.eps>
-(epstopdf)             \includegraphics on input line 235.
+(epstopdf)             \includegraphics on input line 258.
 Package epstopdf Info: Output file is already uptodate.
-<korrektheitOEM-eps-converted-to.pdf, id=119, 355.3275pt x 258.9675pt>
+
+<korrektheitOEM-eps-converted-to.pdf, id=122, 355.3275pt x 258.9675pt>
 File: korrektheitOEM-eps-converted-to.pdf Graphic file (type pdf)
 
 <use korrektheitOEM-eps-converted-to.pdf>
 Package pdftex.def Info: korrektheitOEM-eps-converted-to.pdf used on input line
- 235.
+ 258.
 (pdftex.def)             Requested size: 142.12846pt x 103.58514pt.
- [14 <./korrektheitOEM-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 242--243
+ [15] [16 <./korrektheitOEM-eps-converted-to.pdf>] [17
 
+]
+Overfull \hbox (15.38718pt too wide) in paragraph at lines 310--311
+[]\OT1/cmr/m/n/10.95 http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/
+networks/nulleins.htm - 0,1-
  []
 
-[15] (./abschlussbericht.aux) ) 
+[18] (./abschlussbericht.aux) ) 
 Here is how much of TeX's memory you used:
- 8593 strings out of 494985
- 121122 string characters out of 6180356
- 245147 words of memory out of 5000000
- 11621 multiletter control sequences out of 15000+600000
- 11458 words of font info for 44 fonts, out of 8000000 for 9000
+ 8598 strings out of 494935
+ 121168 string characters out of 6178122
+ 245831 words of memory out of 5000000
+ 11640 multiletter control sequences out of 15000+600000
+ 12103 words of font info for 47 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 38i,10n,74p,1339b,1485s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,11n,74p,978b,1484s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
@@ -1015,10 +1007,10 @@ ts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy8.pfb>
-Output written on abschlussbericht.pdf (15 pages, 204832 bytes).
+Output written on abschlussbericht.pdf (18 pages, 207709 bytes).
 PDF statistics:
- 169 PDF objects out of 1000 (max. 8388607)
- 127 compressed objects within 2 object streams
+ 178 PDF objects out of 1000 (max. 8388607)
+ 133 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

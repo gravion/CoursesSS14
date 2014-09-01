@@ -2,28 +2,28 @@
 \contentsline {section}{\numberline {2}Grundlagen}{4}
 \contentsline {subsection}{\numberline {2.1}Sortieren}{4}
 \contentsline {subsection}{\numberline {2.2}Komparator}{4}
-\contentsline {section}{\numberline {3}Sortiernetzwerk}{5}
-\contentsline {subsection}{\numberline {3.1}Aufbau}{5}
-\contentsline {subsection}{\numberline {3.2}Korrektheit}{7}
-\contentsline {subsubsection}{\numberline {3.2.1}Betrachtung der Analyse}{7}
-\contentsline {subsubsection}{\numberline {3.2.2}0,1-Prinzip}{7}
-\contentsline {paragraph}{Lemma}{7}
-\contentsline {paragraph}{Beweis}{7}
-\contentsline {paragraph}{Vorteile}{8}
-\contentsline {subsection}{\numberline {3.3}\IeC {\"U}bertragung von Sortieralgorithmen auf ein Sortiernetzwerk}{8}
-\contentsline {subsubsection}{\numberline {3.3.1}Bubblesort}{8}
-\contentsline {subsubsection}{\numberline {3.3.2}Quicksort , Mergesort}{10}
-\contentsline {subsection}{\numberline {3.4}Biton-Sortierer}{10}
-\contentsline {subsubsection}{\numberline {3.4.1}Das Verfahren}{11}
-\contentsline {subsubsection}{\numberline {3.4.2}Korrektheit}{12}
-\contentsline {subsection}{\numberline {3.5}Odd-Even-Mergesort}{13}
-\contentsline {subsubsection}{\numberline {3.5.1}Merge-Verfahren}{13}
-\contentsline {subsubsection}{\numberline {3.5.2}Sortier-Verfahren}{13}
-\contentsline {subsubsection}{\numberline {3.5.3}Korrektheit}{13}
-\contentsline {section}{\numberline {4}Laufzeit}{15}
-\contentsline {subsection}{\numberline {4.1}Herleitung}{15}
-\contentsline {section}{\numberline {5}Resultat}{15}
-\contentsline {subsection}{\numberline {5.1}Vergleich zu Softwaresortierung}{15}
-\contentsline {section}{\numberline {6}Anhang}{15}
-\contentsline {subsection}{\numberline {6.1}Text-Quellen}{15}
-\contentsline {subsection}{\numberline {6.2}Bild-Quellen}{15}
+\contentsline {section}{\numberline {3}Sortiernetzwerk}{6}
+\contentsline {subsection}{\numberline {3.1}Aufbau}{6}
+\contentsline {subsection}{\numberline {3.2}Korrektheit}{8}
+\contentsline {subsubsection}{\numberline {3.2.1}Betrachtung der Analyse}{8}
+\contentsline {subsubsection}{\numberline {3.2.2}0,1-Prinzip}{8}
+\contentsline {paragraph}{Lemma}{8}
+\contentsline {paragraph}{Beweis}{8}
+\contentsline {paragraph}{Vorteile}{9}
+\contentsline {subsection}{\numberline {3.3}\IeC {\"U}bertragung von Sortieralgorithmen auf ein Sortiernetzwerk}{9}
+\contentsline {subsubsection}{\numberline {3.3.1}Bubblesort}{9}
+\contentsline {subsubsection}{\numberline {3.3.2}Quicksort , Mergesort}{11}
+\contentsline {subsection}{\numberline {3.4}Biton-Sortierer}{11}
+\contentsline {subsubsection}{\numberline {3.4.1}Das Verfahren}{12}
+\contentsline {subsubsection}{\numberline {3.4.2}Korrektheit}{13}
+\contentsline {subsection}{\numberline {3.5}Odd-Even-Mergesort}{14}
+\contentsline {subsubsection}{\numberline {3.5.1}Merge-Verfahren}{14}
+\contentsline {subsubsection}{\numberline {3.5.2}Sortier-Verfahren}{14}
+\contentsline {subsubsection}{\numberline {3.5.3}Korrektheit}{15}
+\contentsline {section}{\numberline {4}Laufzeit}{17}
+\contentsline {subsection}{\numberline {4.1}Herleitung}{17}
+\contentsline {section}{\numberline {5}Vergleich der Laufzeit}{17}
+\contentsline {section}{\numberline {6}Abschlussbetrachtung}{18}
+\contentsline {section}{\numberline {7}Anhang}{18}
+\contentsline {subsection}{\numberline {7.1}Text-Quellen}{18}
+\contentsline {subsection}{\numberline {7.2}Bild-Quellen}{18}

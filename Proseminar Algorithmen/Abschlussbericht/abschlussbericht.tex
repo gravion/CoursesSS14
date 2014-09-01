@@ -24,7 +24,7 @@
 \listoffigures
 \listoftables
 \section{Einführung}
-Der Titel Paralleles Sortieren beschreibt zwei grundsätzliche Bestrebungen bei der Optimierung von Netzwerk- (hauptsächlich Routing) und Datenstrukturen (Listen, Wörterbücher, \dots). Somit ist die Motivation dieses Thema zu behandeln groß, da sie für jene Projekt die Basis für deren Geschwindigkeit legen kann. Seperat betrachtet sind diese von folgender Bedeutung :
+Der Titel Paralleles Sortieren beschreibt zwei grundsätzliche Bestrebungen bei der Optimierung von Netzwerk- (hauptsächlich Routing) und Datenstrukturen (Listen, Wörterbücher, \dots). Somit ist die Motivation dieses Thema zu behandeln groß, da sie für jene Projekt die Basis für deren Geschwindigkeit legen kann. Separat betrachtet sind diese von folgender Bedeutung :
 \begin{description}
 \item[Sortierung] Sortierung ist die Basis für jede Suche auf Daten und Ressourcen. Wenn diese nicht wenigstens einer groben Ordnung unterliegen können effiziente Algorithmen nicht angewendet werden, da keine Annahmen über den Zustand getroffen werden können.
 \item[Parallelität] Durch den Aufwand von mehr Ressourcen kann ein Sortierprozess beschleunigt werden ohne die Korrektheit des Ergebnisses zu gefährden. Dabei ist Parallelität der Extremfall, der eine Maximierung des Datendurchsatzes erlaubt und somit in einer höheren Geschwindigkeit gegenüber sequentiellen Ansätzen resultiert.
@@ -203,9 +203,13 @@ Seien ($a_1$, $a_2$, ..., $a_{n/2}$) und ($b_1$, $b_2$, ..., $b_{n_2}$) die 2 H�
 \begin{description}
 \item[Schritt 1] Vorsortierung\\Im 1. Schritt werden die kleinereren Elemente nach "oben" und die größeren Elemente nach "unten" sortiert. Bei einer Eingabemenge von \{0, 1\} besteht entweder die "obere" Hälfte nur aus 0'en oder die "untere" Hälfte nur aus 1'en.\\ Die unsortierte Hälfte hat nun die Form 0...01...10...0 ("oben") oder 1...10...01...1 ("unten").
 \item[Schritt 2] "Rekursion"\\Im 2. Schritt wird das Prinzip aus dem 1. Schritt für die immer kleiner werden Hälften angewendet, d.h. wir sortieren die kleineren Elemente nach "oben" und die größeren nach "unten".\\
+\begin{figure}
 \begin{center}
 \includegraphics[scale=0.4]{korrektheitBS.eps}
+\caption{•}
 \end{center}
+\end{figure}
+\FloatBarrier
 Damit ist die Folge sortiert, wenn wir bei 1-elementigen Elementen angekommen sind. 
 \end{description}
 \subsection{Odd-Even-Mergesort}
@@ -228,18 +232,40 @@ Um die Korrektheit zu zeigen, beweisen wir das Merge-Verfahren für eine Eingabe
 \begin{description}
 \item[Beweis durch Induktion]
 \item[Induktionsanker] n = $2^1$\\ Es wird der Vergleich der "sonst"-Klausul ausgeführt. Damit ist die Folge offensichtlich sortiert.
-\item[Induktionsvorraussetzung] Das Sortierverfahren sei für n = $2^x$ korrekt
-\item[Induktionsschritt] $2^x \rightarrow 2^{x+1}$\\In Schritt 1 des Sortierverfahrens wird die Eingabemenge in hlabiert und die beiden Hälften mit Odd-Even-Mergesort sortiert. Nach IV sind die beiden Hälften danach korrekt sortiert. Nun wenden wir das Mergeverfahren auf diese Menge an.\\Um die Korrektheit des Mergeverfahrens zu zeigen, betrachten wir die Anzahl von 1'en und 0'en in den Mengen.\\Zuerst betrachten wir die beiden sortierten Hälften aus Schritt 1. Menge 1: $|$1'en$|$ sei $n_0$ und $|$0'en$|$ sei $p_0$.\\Menge 2: $|$1'en$|$ sei $n_1$ und $|$0'en$|$ sei $p_1$. Wenn wir diese beiden Mengen wieder zusammenfügen und dann in folgende Mengen aufteilen: \\$M_0$ = $m_0, m_2, m_4, ..., m_{n-2}$\\$M_1$ = $m_1, m_3, m_5, ..., m_{n-1}$\\Werden die 0'en und 1'en "gleichmäßig" aufgeteilt.\\$M_0$: $|$1'en$|$ = $\left\lfloor \frac{n_0}{2} \right\rfloor + \left\lfloor \frac{n_1}{2} \right\rfloor$ und $|$0'en$|$ = $\left\lceil \frac{p_0}{2} \right\rceil + \left\lceil \frac{p_1}{2} \right\rceil$.\\$M_1$: $|$1'en$|$ = $\left\lceil \frac{n_0}{2} \right\rceil + \left\lceil \frac{n_1}{2} \right\rceil$ und $|$0'en$|$ = $\left\lfloor \frac{p_0}{2} \right\rfloor + \left\lfloor \frac{p_1}{2} \right\rfloor$.\\Nun betrachten wir die Differenz von $|$1'en$|_{M_0}$ und $|$1'en$|_{M_1}$:\\
-Fall 1: Seien $n_0$ und $n_1$ gerade: $|$1'en$|_{M_0}$ = $|$1'en$|_{M_1}$.\\Fall 2: Sei $n_0$ oder $n_1$ ungerade: $|$1'en$|_{M_0}$ = $|$1'en$|_{M_1}$ - 1.\\Fall 3: Seien $n_0$ und $n_1$ ungerade: $|$1'en$|_{M_0}$ = $|$1'en$|_{M_1}$ - 2.\\Die beiden Teilmengen $M_0$ und $M_1$ werden nun wieder sortiert (da die Länge wiederrum $2^x$ ist, gilt IV), danach ergibt sich eines der folgenden Schemata:\\
+\item[Induktionsvoraussetzung (IV)] Das Sortierverfahren sei für n = $2^x$ korrekt
+\item[Induktionsschritt  $2^x \rightarrow 2^{x+1}$]
+In Schritt 1 des Sortierverfahrens wird die Eingabemenge in halbiert und die beiden Hälften mit Odd-Even-Mergesort sortiert. Nach Induktionsvoraussetzung sind die beiden Hälften danach korrekt sortiert. Nun wenden wir das Merge-verfahren auf diese Menge an.\\Um die Korrektheit des Mergeverfahrens zu zeigen, betrachten wir die Anzahl von 1'en und 0'en in den Mengen.\\Zuerst betrachten wir die beiden sortierten Hälften aus Schritt 1. 
+\begin{description}
+\item[Menge 1:] $|$1'en$|$ sei $n_0$ und $|$0'en$|$ sei $p_0$.
+\item[Menge 2:] $|$1'en$|$ sei $n_1$ und $|$0'en$|$ sei $p_1$.
+\end{description}
+ Wenn wir diese beiden Mengen wieder zusammenfügen und dann in folgende Mengen aufteilen: 
+$$M_0 \; = \; m_0, m_2, m_4, ..., m_{n-2}$$ 
+$$M_1 \; = \; m_1, m_3, m_5, ..., m_{n-1}$$ 
+Werden die 0'en und 1'en "gleichmäßig" aufgeteilt. 
+$$M_0 \; :\; | \text{1'en} | \; = \;\left\lfloor \frac{n_0}{2} \right\rfloor + \left\lfloor \frac{n_1}{2} \right\rfloor \text{und $|$0'en$|$} \;=\; \left\lceil \frac{p_0}{2} \right\rceil + \left\lceil \frac{p_1}{2} \right\rceil$$
+$$M_1 \;:\; \text{|1'en|}  = \left\lceil \frac{n_0}{2} \right\rceil + \left\lceil \frac{n_1}{2} \right\rceil  \text{und |0'en|} \;=\; \left\lfloor \frac{p_0}{2} \right\rfloor + \left\lfloor \frac{p_1}{2} \right\rfloor$$
+Nun betrachten wir die Differenz von $|$1'en$|_{M_0}$ und $|$1'en$|_{M_1}$:
+\begin{description}
+\item[Fall 1:] Seien $n_0$ und $n_1$ gerade: $|$1'en$|_{M_0}$ = $|$1'en$|_{M_1}$.
+\item[Fall 2:] Sei $n_0$ oder $n_1$ ungerade: $|$1'en$|_{M_0}$ = $|$1'en$|_{M_1}$ - 1.
+\item[Fall 3:] Seien $n_0$ und $n_1$ ungerade: $|$1'en$|_{M_0}$ = $|$1'en$|_{M_1}$ - 2.
+\end{description}
+Die beiden Teilmengen $M_0$ und $M_1$ werden nun wieder sortiert (da die Länge wiederrum $2^x$ ist, gilt IV), danach ergibt sich eines der folgenden Schemata:
+\end{description}
+\begin{figure}[!hb]
 \begin{center}
 \includegraphics[scale=0.4]{korrektheitOEM.eps}
+\caption{• uiae }
 \end{center}
+\end{figure}
 Wenden wir nun Schritt 2 des Mergeverfahrens an, ist die Liste sortiert.
-\end{description}
+\FloatBarrier
 \section{Laufzeit}
 Die Laufzeit von parallelen Algorithmen wird durch die Anzahl nacheinander ausgeführten Schritten bestimmt.
 \subsection{Herleitung}
 Die Laufzeit der beiden vorgestellten Sortieralgorithmen unterscheidet sich in O-Notation nicht, deshalb beschränken wir uns auf die Herleitung an einem Beispiel:\\
+\begin{table}[!hb]
 \begin{center}
 	\begin{tabular}{c | c}
 		Länge der Eingabe & Anzahl der Schritte \\ \hline
@@ -248,11 +274,14 @@ Die Laufzeit der beiden vorgestellten Sortieralgorithmen unterscheidet sich in O
 		$2^k$ & 1+2+3+...+k-1+k \\
 		& = $\sum_{i=1}^ki$ = $\frac{1}{2} * log_2n (log_2n +1) $
 	\end{tabular}
-\end{center} Damit ergibt sich eine Laufzeit von O($(log(n))^2$)
-\section{Resultat}
-Um die Laufzeit von parallelen Algorithmen mit der von sequentiellen zu Vergleichen, wir die Anzahl der Schritte in parallelen Algorithmen mit der maximalen Anzahl von Komponenten multipliert.\\
+\end{center}
+\caption{Entwicklung der Laufzeit}
+\end{table}
+Damit ergibt sich eine Laufzeit von O($(log(n))^2$)
+\section{Vergleich der Laufzeit}
+Um die Laufzeit von parallelen Algorithmen mit der von sequentiellen zu Vergleichen, wir die Anzahl der Schritte in parallelen Algorithmen mit der maximalen Anzahl von Komponenten multipliziert.\\
 Damit ergibt sich eine normalisierte Laufzeit von O($n*log^2$) für die vorgestellten parallelen Algorithmen.
-\subsection{Vergleich zu Softwaresortierung}
+\begin{table}[hb]
 \begin{center}
 	\begin{tabular}{c|c|c|c}
 		Algorithmus & \multicolumn{3}{|c}{Laufzeit} \\ \hline
@@ -262,12 +291,27 @@ Damit ergibt sich eine normalisierte Laufzeit von O($n*log^2$) für die vorgeste
 		Quicksort & {O($n * log(n)$} & O($n^2$) & {O($n * log(n)$)} \\
 		Netzwerk & \multicolumn{2}{|c|}{O($n * log(n)^2$)} & O($n * log(n)^2$) \\
 	\end{tabular}
-	
 \end{center}
+\caption{Vergleich zu Softwaresortierung}
+\end{table}
+\FloatBarrier
+\section{Abschlussbetrachtung}
+In diesem Bericht wurde unser Vortrag "Paralleles Sortieren" zusammengefasst. Wir zeigten aufbauend auf einem einfachen Komparator, wie ein Sortiernetzwerk erst naiv und dann an einen Algorithmus angelehnt aufgebaut werden kann. Dies war eine wichtige Erfahrung, da es abweichend vom Lehrplan der Grundvorlesung die reine Softwareanwendung eines bekannten Algorithmus um die Übertragung auf Systeme und Netzwerke erweitert und gleichzeitig den Verlauf der Entwicklung näher gebracht hat. Ein wichtiger Bestandteil ist das "0,1"-Prinzip, dass eine einfache und verlässliche Grundlage für die Überprüfung von Sortiernetzwerken darstellt. Wir haben außerdem gezeigt, dass das entstandene Netzwerk zwar schneller Arbeitet aber die Laufzeitverbesserung nur über einen Mehraufwand an Vergleichern erreicht wird.\\ Zur weiteren Vertiefung wären Hypercubes und AKS-Netzwerke, die entweder schneller oder flexibler als das gezeigte Netzwerk sind.
+ 
 \section{Anhang}
 \subsection{Text-Quellen}
+\begin{enumerate}
+\item[1] Taschenbuch der Algorithmen - Springer Verlag - 2008.
+    
+\item[2] Einführung in Parallele Algorithmen und Architekturen - Tom Leighton - Thomsom Publisching - 1997 - 3-8266-0248-X
+    
+\item[3] www.wikipedia.de - Laufzeiten der Sortieralgorithmen
+
+\item[4] http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/networks/nulleins.htm - 0,1-Prinzip - Beweis des 0,1-Prinzip
+\end{enumerate}
 \subsection{Bild-Quellen}
 \end{document}
+
 
 \begin{figure}
 \begin{center}
