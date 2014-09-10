@@ -119,8 +119,8 @@ Wenn es eine Folge A gibt, die ein Sor\-tier\-netz\-werk nicht sortiert, so exis
 \item[i)] Annahme : Wenn ein Sortiernetzwerk / Algorithmus eine Eingabe nicht sortiert, so sortiert er trotzdem alle 0,1-Folgen.
 \item[ii)] Voraussetzungen : \begin{itemize}
 \item Eingabefolge $E = e_0 \dots e_l$
-\item sortiere Eingabefolge $ S = s_1 \dots s_l$
-\item unsortierte Ausgabefolge von E $ U = u_1 \dots u_l $
+\item sortiere Eingabefolge $ S = s_0 \dots s_l$
+\item unsortierte Ausgabefolge von E $ U = u_0 \dots u_l $
 \item kleinster Index an dem $u_k \neq s_k$ 
 \end{itemize}
 \item[iii)] Folgerungen aus ii) :
@@ -194,10 +194,15 @@ Zur Vereinfachung betrachten wir Eingabemengen M der Länge $2^x$.\\
 \item[Schritt 1] Teilen\\Zuerst wird Eingabemenge in die 2 Hälften $m_0, m_1, ..., m_{n/2-1}$ und $m_{n/2}, m_{n/2+1}, ..., m_{n-1}$ aufgeteilt. Diese werden rekursiv mit einem Biton-Sortierer sortiert.
 \item[Schritt 2] Herschen\\Vergleiche [$m_i$:$m_{2^x-i}$] i = $\{0, 1, ..., 2^{x-1}\}$\\Solange n $<$ 1:\\ Vergleiche [$m_i$:$m_{n/4+i}$] und [$m_{n/2+i}$:$m_{3n/4+i}$] i = $\{0, 1, ..., 2^{x-2}\}$\\Wiederhole für die Teilmengen $m_0$,$m_1$,...,$m_{n/2}$ und $m_{n/2}$,$m_{n/2+1}$,...,$m_{n}$\\
 In einem Sortiertnetzwerk sieht das Herschen nun wie folgt aus:\\
+\begin{figure}
 \begin{center}
 \includegraphics[scale=0.8]{bitonmischer.eps}
 \end{center}
+\caption{Schematische Darstellung des "Herschens" eines Biton-Sortierers}
+\label{fig:bitonmischer}
+\end{figure}
 \end{description}
+\FloatBarrier
 \subsubsection{Korrektheit}
 Um die Korrektheit des Bitonen-Sortierers zu zeigen, benutzen wir das 0-1 Prinzip und beschränken die Eingabefolge auf 0'en und 1'en.\\
 Seien ($a_1$, $a_2$, ..., $a_{n/2}$) und ($b_1$, $b_2$, ..., $b_{n_2}$) die 2 Hälften der Eingabefolge, die beide sortiert sind.
@@ -252,7 +257,7 @@ Nun betrachten wir die Differenz von $|$1'en$|_{M_0}$ und $|$1'en$|_{M_1}$:
 \item[Fall 2:] Sei $n_0$ oder $n_1$ ungerade: $|$1'en$|_{M_0}$ = $|$1'en$|_{M_1}$ - 1.
 \item[Fall 3:] Seien $n_0$ und $n_1$ ungerade: $|$1'en$|_{M_0}$ = $|$1'en$|_{M_1}$ - 2.
 \end{description}
-\begin{figure}[]
+\begin{figure}
 \begin{center}
 \includegraphics[scale=0.4]{korrektheitOEM.eps}
 \caption{Schematische Darstellung der Fälle 1 (links) bis 3 (rechts)}
@@ -311,8 +316,11 @@ In diesem Bericht wurde unser Vortrag "Paralleles Sortieren" zusammengefasst. Wi
 \item[3] www.wikipedia.de - Laufzeiten der Sortieralgorithmen
 
 \item[4] http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/networks/nulleins.htm - 0,1-Prinzip - Beweis des 0,1-Prinzip
+
+\item[5] http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/networks/oem.htm - Odd-Even-Mergesort
+
+\item[6] http://www.imn.htwk-leipzig.de/\~jahn/Cprog/Alg\_Inf\_Jahr\_pdf/parallel\_sort.pdf - Beweis des Biton-Sortierers
 \end{enumerate}
-\subsection{Bild-Quellen}
 \end{document}
 
 

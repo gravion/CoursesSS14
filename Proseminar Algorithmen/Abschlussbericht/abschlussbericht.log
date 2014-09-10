@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.27)  10 SEP 2014 08:11
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.27)  10 SEP 2014 11:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -901,11 +901,6 @@ Overfull \hbox (17.77313pt too wide) in paragraph at lines 194--195
 ; :::; m[]$
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 195--197
-
- []
-
 Package epstopdf Info: Source file: <bitonmischer.eps>
 (epstopdf)                    date: 2014-08-11 13:59:26
 (epstopdf)                    size: 86161 bytes
@@ -914,14 +909,14 @@ Package epstopdf Info: Source file: <bitonmischer.eps>
 (epstopdf)                    size: 8684 bytes
 (epstopdf)             Command: <repstopdf --outfile=bitonmischer-eps-converted
 -to.pdf bitonmischer.eps>
-(epstopdf)             \includegraphics on input line 198.
+(epstopdf)             \includegraphics on input line 199.
 Package epstopdf Info: Output file is already uptodate.
 <bitonmischer-eps-converted-to.pdf, id=78, 257.96375pt x 291.0875pt>
 File: bitonmischer-eps-converted-to.pdf Graphic file (type pdf)
 
 <use bitonmischer-eps-converted-to.pdf>
 Package pdftex.def Info: bitonmischer-eps-converted-to.pdf used on input line 1
-98.
+99.
 (pdftex.def)             Requested size: 206.37126pt x 232.8703pt.
  [12 <./mergesort-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <korrektheitBS.eps>
@@ -932,27 +927,23 @@ Package epstopdf Info: Source file: <korrektheitBS.eps>
 (epstopdf)                    size: 5130 bytes
 (epstopdf)             Command: <repstopdf --outfile=korrektheitBS-eps-converte
 d-to.pdf korrektheitBS.eps>
-(epstopdf)             \includegraphics on input line 209.
+(epstopdf)             \includegraphics on input line 214.
 Package epstopdf Info: Output file is already uptodate.
 <korrektheitBS-eps-converted-to.pdf, id=89, 548.0475pt x 162.6075pt>
 File: korrektheitBS-eps-converted-to.pdf Graphic file (type pdf)
 
 <use korrektheitBS-eps-converted-to.pdf>
 Package pdftex.def Info: korrektheitBS-eps-converted-to.pdf used on input line 
-209.
+214.
 (pdftex.def)             Requested size: 219.2151pt x 65.04184pt.
  [13 <./bitonmischer-eps-converted-to.pdf>]
-Overfull \hbox (67.9302pt too wide) in paragraph at lines 219--220
+Overfull \hbox (67.9302pt too wide) in paragraph at lines 224--225
 \OT1/cmr/m/n/10.95 Das Merge-Verfahren setzt vor-raus, dass die bei-den H^^?alf
 ten $\OML/cmm/m/it/10.95 m[]; m[]; :::; m[]$ \OT1/cmr/m/n/10.95 und $\OML/cmm/m
 /it/10.95 m[]; m[]; :::; m[]$
  []
 
 [14 <./korrektheitBS-eps-converted-to.pdf>]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 255.
-
 Package epstopdf Info: Source file: <korrektheitOEM.eps>
 (epstopdf)                    date: 2014-08-31 14:27:16
 (epstopdf)                    size: 26723 bytes
@@ -961,50 +952,63 @@ Package epstopdf Info: Source file: <korrektheitOEM.eps>
 (epstopdf)                    size: 5058 bytes
 (epstopdf)             Command: <repstopdf --outfile=korrektheitOEM-eps-convert
 ed-to.pdf korrektheitOEM.eps>
-(epstopdf)             \includegraphics on input line 257.
+(epstopdf)             \includegraphics on input line 262.
 Package epstopdf Info: Output file is already uptodate.
+
 <korrektheitOEM-eps-converted-to.pdf, id=122, 355.3275pt x 258.9675pt>
 File: korrektheitOEM-eps-converted-to.pdf Graphic file (type pdf)
 
 <use korrektheitOEM-eps-converted-to.pdf>
 Package pdftex.def Info: korrektheitOEM-eps-converted-to.pdf used on input line
- 257.
+ 262.
 (pdftex.def)             Requested size: 142.12846pt x 103.58514pt.
  [15]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 287.
+               Default added (so using `tbp') on input line 292.
 
 [16 <./korrektheitOEM-eps-converted-to.pdf>]
-Overfull \hbox (15.38718pt too wide) in paragraph at lines 313--314
+Overfull \hbox (15.38718pt too wide) in paragraph at lines 318--319
 []\OT1/cmr/m/n/10.95 http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/
 networks/nulleins.htm - 0,1-
  []
 
-[17] [18] (./abschlussbericht.aux) ) 
+
+Overfull \hbox (5.59303pt too wide) in paragraph at lines 320--321
+[]\OT1/cmr/m/n/10.95 http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/
+networks/oem.htm - Odd-
+ []
+
+[17]
+Overfull \hbox (3.87143pt too wide) in paragraph at lines 322--323
+[]\OT1/cmr/m/n/10.95 http://www.imn.htwk-leipzig.de/[]jahn/Cprog/Alg[]Inf[]Jahr
+[]pdf/parallel[]sort.pdf - Be-
+ []
+
+[18] (./abschlussbericht.aux) ) 
 Here is how much of TeX's memory you used:
- 8598 strings out of 494985
- 121168 string characters out of 6180356
- 246466 words of memory out of 5000000
- 11624 multiletter control sequences out of 15000+600000
+ 8600 strings out of 494985
+ 121204 string characters out of 6180356
+ 246550 words of memory out of 5000000
+ 11626 multiletter control sequences out of 15000+600000
  12103 words of font info for 47 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 38i,11n,74p,978b,1485s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi1
-2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy8.pfb>
-Output written on abschlussbericht.pdf (18 pages, 207641 bytes).
+ 38i,11n,74p,1009b,1485s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy8.pfb>
+Output written on abschlussbericht.pdf (18 pages, 208359 bytes).
 PDF statistics:
  178 PDF objects out of 1000 (max. 8388607)
  133 compressed objects within 2 object streams

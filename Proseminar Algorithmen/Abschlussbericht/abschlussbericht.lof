@@ -5,5 +5,6 @@
 \contentsline {figure}{\numberline {5}{\ignorespaces Beispiel f\IeC {\"u}r das 0,1-Prinzip. Folge wird auf das Beispiel aus Abbildung 4\hbox {} (Seite 7\hbox {}) angewendet. Es zeigt, dass das Resultat f\IeC {\"u}r die gew\IeC {\"a}hlte Konstante sortiert ist. Genauso zeigt es auch, dass bis Schritt 5 die Folge nicht sortiert ist.}}{10}
 \contentsline {figure}{\numberline {6}{\ignorespaces Bubblesort: Bubblesort mit parallelen Vergleichen.}}{11}
 \contentsline {figure}{\numberline {7}{\ignorespaces Auf der linken Seite ist der Versuch Quicksort, auf der rechten Seite Mergesort zu implementieren zu sehen}}{12}
-\contentsline {figure}{\numberline {8}{\ignorespaces Beispiel eines Sortierschrittes des Biton-Sortierers und die sortierte Folge}}{14}
-\contentsline {figure}{\numberline {9}{\ignorespaces Schematische Darstellung der F\IeC {\"a}lle 1 (links) bis 3 (rechts)}}{16}
+\contentsline {figure}{\numberline {8}{\ignorespaces Schematische Darstellung des "Herschens" eines Biton-Sortierers}}{13}
+\contentsline {figure}{\numberline {9}{\ignorespaces Beispiel eines Sortierschrittes des Biton-Sortierers und die sortierte Folge}}{14}
+\contentsline {figure}{\numberline {10}{\ignorespaces Schematische Darstellung der F\IeC {\"a}lle 1 (links) bis 3 (rechts)}}{16}

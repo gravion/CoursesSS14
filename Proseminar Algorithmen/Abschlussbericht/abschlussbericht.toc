@@ -26,4 +26,3 @@
 \contentsline {section}{\numberline {6}Abschlussbetrachtung}{17}
 \contentsline {section}{\numberline {7}Anhang}{17}
 \contentsline {subsection}{\numberline {7.1}Text-Quellen}{17}
-\contentsline {subsection}{\numberline {7.2}Bild-Quellen}{18}
