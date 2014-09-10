@@ -13,17 +13,17 @@
 \contentsline {subsection}{\numberline {3.3}\IeC {\"U}bertragung von Sortieralgorithmen auf ein Sortiernetzwerk}{9}
 \contentsline {subsubsection}{\numberline {3.3.1}Bubblesort}{9}
 \contentsline {subsubsection}{\numberline {3.3.2}Quicksort , Mergesort}{11}
-\contentsline {subsection}{\numberline {3.4}Biton-Sortierer}{11}
+\contentsline {subsection}{\numberline {3.4}Biton-Sortierer}{12}
 \contentsline {subsubsection}{\numberline {3.4.1}Das Verfahren}{12}
 \contentsline {subsubsection}{\numberline {3.4.2}Korrektheit}{13}
 \contentsline {subsection}{\numberline {3.5}Odd-Even-Mergesort}{14}
 \contentsline {subsubsection}{\numberline {3.5.1}Merge-Verfahren}{14}
 \contentsline {subsubsection}{\numberline {3.5.2}Sortier-Verfahren}{14}
 \contentsline {subsubsection}{\numberline {3.5.3}Korrektheit}{15}
-\contentsline {section}{\numberline {4}Laufzeit}{17}
-\contentsline {subsection}{\numberline {4.1}Herleitung}{17}
-\contentsline {section}{\numberline {5}Vergleich der Laufzeit}{17}
-\contentsline {section}{\numberline {6}Abschlussbetrachtung}{18}
-\contentsline {section}{\numberline {7}Anhang}{18}
-\contentsline {subsection}{\numberline {7.1}Text-Quellen}{18}
+\contentsline {section}{\numberline {4}Laufzeit}{16}
+\contentsline {subsection}{\numberline {4.1}Herleitung}{16}
+\contentsline {section}{\numberline {5}Vergleich der Laufzeit}{16}
+\contentsline {section}{\numberline {6}Abschlussbetrachtung}{17}
+\contentsline {section}{\numberline {7}Anhang}{17}
+\contentsline {subsection}{\numberline {7.1}Text-Quellen}{17}
 \contentsline {subsection}{\numberline {7.2}Bild-Quellen}{18}

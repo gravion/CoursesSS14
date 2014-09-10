@@ -44,7 +44,7 @@ Der Anspruch an diese Relation ist, dass diese Transitivität beinhaltet.
 \end{equation}
 Würde eine dieser Voraussetzungen nicht erfüllt sein, so würde bei \eqref{eq:Ordnung} kein sortieren möglich sein, da keine Relation vorhanden ist, und bei \eqref{eq:transit} die Relation zweier Elemente untereinander keine Aussage über die Relation zu anderen Elementen aussagt. Daraus resultiert das das "sortierte" Ergebnis nur zu einem Element als sortiert betrachtet werden kann.
 \subsection{Komparator}
-Ein Komparator stellt den kleinsten Baustein dar, der eine zweielementige Menge entsprechend der auf ihr liegenden Ordnungsrelation sortiert ausgibt. Dieser ist wie folgt aufgebaut. Er besitzt zwei Eingangsleitungen auf dem die zu sortierenden 2-elementigen Mengen eingegeben werden, den vergleichenden Teil, der die Ordnungsrelation anwendet und die beiden Ausgangsleitungen, auf denen das sortierte Ergebnis ausgegeben wird. Beide werden in Abbildung \ref{fig:kompsoft} (Software, Seite \pageref{fig:kompsoft})) und Abbildung \ref{fig:komparator} (Hardware, Seite \pageref{fig:komparator}) dargestellt. Die Annahme für die folgenden Abbildungen ist, dass das sortierte Ergebnis von oben nach unten größer wird.
+Ein Komparator stellt den kleinsten Baustein dar, der eine zweielementige Menge entsprechend der auf ihr liegenden Ordnungsrelation sortiert ausgibt. Dieser ist wie folgt aufgebaut: Er besitzt zwei Eingangsleitungen auf dem die zu sortierenden 2-elementigen Mengen eingegeben werden, den vergleichenden Teil, der die Ordnungsrelation anwendet und die beiden Ausgangsleitungen, auf denen das sortierte Ergebnis ausgegeben wird. Beide werden in Abbildung \ref{fig:kompsoft} (Software, Seite \pageref{fig:kompsoft}) und Abbildung \ref{fig:komparator} (Hardware, Seite \pageref{fig:komparator}) dargestellt. Die Annahme für die folgenden Abbildungen ist, dass das sortierte Ergebnis von oben nach unten größer wird.
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.8]{Komparator1.eps}
@@ -109,7 +109,7 @@ Output
 \FloatBarrier
 \subsection{Korrektheit}
 \subsubsection{Betrachtung der Analyse}
-Problematisch bei der Überprüfung durch Beispiele ist die große Anzahl an der zu überprüfenden Fälle sehr groß ist. Im Beispiel in Abbildung \ref{fig:kompnetnumbex} (Seite \pageref{fig:kompnetnumbex}) bei einer Eingabemenge mit den Elementen 1 bis 8 wären dies 40320 unterschiedliche Fälle (diese Anzahl ist durch den Ausschluss, dass eine Zahl mehrfach vorkommt bereits reduziert worden) Allgemein ist die Anzahl $\nicefrac{n!}{(n-l)!}$, wobei n die möglichen Elemente und l die Anzahl der Datenleitungen ist. Nachfolgend wird nun eine einfachere Möglichkeit gezeigt, wie die Korrektheit überprüft werden kann.
+Problematisch bei der Überprüfung durch Beispiele ist die große Anzahl an zu überprüfenden Fälle. Im Beispiel in Abbildung \ref{fig:kompnetnumbex} (Seite \pageref{fig:kompnetnumbex}) bei einer Eingabemenge mit den Elementen 1 bis 8 wären dies 40320 unterschiedliche Fälle (diese Anzahl ist durch den Ausschluss, dass eine Zahl mehrfach vorkommt, bereits reduziert worden). Allgemein ist die Anzahl $\nicefrac{n!}{(n-l)!}$, wobei n die möglichen Elemente und l die Anzahl der Datenleitungen ist. Nachfolgend wird nun eine einfachere Möglichkeit gezeigt, wie die Korrektheit überprüft werden kann.
 \subsubsection{0,1-Prinzip}
 Das 0,1-Prinzip ist ein Werkzeug zur Überprüfung, ob ein Sortiernetzwerk alle Eingaben richtig sortiert. Dabei wird die Menge von Testfällen reduziert, indem man die Eingabemenge auf die Zeichen 0 und 1 beschränkt.
 \paragraph{Lemma}
@@ -149,14 +149,14 @@ $\Rightarrow$ Widerspruch zur Annahme
 n! \rightarrow 2^l
 \label{eq:fallred}
 \end{equation} 
-reduziert. Daraus resultiert ,das mit größerer Sicherheit und effektiver getestet werden kann.
+reduziert. Daraus resultiert, dass mit größerer Sicherheit und effektiver getestet werden kann.
 \FloatBarrier
-In einem Beispiel in Abbildung \ref{fig:01ex} (Seite \pageref{fig:01ex}) wird die Zuweisung mit $s_k = 6$ demonstriert und die anschließende Sortierung. 
+In einem Beispiel in Abbildung \ref{fig:01ex} (Seite \pageref{fig:01ex}) wird die Zuweisung mit $s_k = 6$ und die anschließende Sortierung demonstriert. 
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.75]{01beispiel.eps}
 \end{center}
-\caption{Beispiel für das 0,1-Prinzip. Folge wird auf das Beispiel aus Abbildung \ref{fig:kompnetnumbex} (Seite \pageref{fig:kompnetnumbex}) angewendet. Es zeigt, dass das Resultat für die gewählte Konstante sortiert ist. Genauso zeigt es auch das bis Schritt 5 die Folge nicht sortiert ist.}
+\caption{Beispiel für das 0,1-Prinzip. Folge wird auf das Beispiel aus Abbildung \ref{fig:kompnetnumbex} (Seite \pageref{fig:kompnetnumbex}) angewendet. Es zeigt, dass das Resultat für die gewählte Konstante sortiert ist. Genauso zeigt es auch, dass bis Schritt 5 die Folge nicht sortiert ist.}
 \label{fig:01ex}
 \end{figure}
 \subsection{Übertragung von Sortieralgorithmen auf ein Sortiernetzwerk}
@@ -172,7 +172,7 @@ Netzwerkimplementierung (Abbildung \ref{fig:bubblesort} Seite \pageref{fig:bubbl
 \end{figure}
 \FloatBarrier
 \subsubsection{Quicksort , Mergesort}
-Bei Versuch schnellere Algorithmen zu implementieren entstehen durch direkte Umwandlung Probleme. 
+Beim Versuch schnellere Algorithmen zu implementieren entstehen durch direkte Umwandlung Probleme. 
 \begin{description}
 \item[Quicksort] Bei Quicksort wird in jedem Schritt ein Pivotelement gewählt nach dem die übrigen Werte auf zwei Listen aufgeteilt werden. Dies stellt in einem starren Netzwerk ein Problem dar, da die Größen dieser Listen von der Eingabe abhängen, und somit nach dem ersten Vergleich die Position des Pivotelemnts nicht mehr festgelegt ist. 
 \item[Mergesort] Bei Mergesort wird die Eingabe in maximal 2-elementige Listen unterteilt, der danach dynamische merge-Prozess lässt sich nicht 1:1 auf ein starres Netzwerk übertragen
@@ -185,13 +185,14 @@ Dies wird in Abbildung \ref{fig:mergesort} (Seite \pageref{fig:mergesort}) verde
 \caption{Auf der linken Seite ist der Versuch Quicksort, auf der rechten Seite Mergesort zu implementieren zu sehen}
 \label{fig:mergesort}
 \end{figure}
+\FloatBarrier
 \subsection{Biton-Sortierer}
 Der Biton-Sortierer ist ein Sortierverfahren, welches mit dem Teile-und-Hersche-Prinzip eine Menge sortiert.
 \subsubsection{Das Verfahren}
 Zur Vereinfachung betrachten wir Eingabemengen M der Länge $2^x$.\\
 \begin{description}
 \item[Schritt 1] Teilen\\Zuerst wird Eingabemenge in die 2 Hälften $m_0, m_1, ..., m_{n/2-1}$ und $m_{n/2}, m_{n/2+1}, ..., m_{n-1}$ aufgeteilt. Diese werden rekursiv mit einem Biton-Sortierer sortiert.
-\item[Schritt 2] Herschen\\Vergleiche [$m_i$:$m_{2^x-i}$] i = $\{0, 1, ..., 2^{x-1}\}$\\Solange n $<$ 1:\\ Vergleiche [$m_i$:$m_{n/4+i}$] und [$m_{n/2+i}$:$m_{3n/4+i}$] i = $\{0, 1, ..., 2^{x-2}\}$\\Wiederhole für die Teilmengen $m_0$,$m_1$,...,$m_{n/2}$ und $m_{n/2}$,$m_{n/2+1}$,...,$m_{n}$
+\item[Schritt 2] Herschen\\Vergleiche [$m_i$:$m_{2^x-i}$] i = $\{0, 1, ..., 2^{x-1}\}$\\Solange n $<$ 1:\\ Vergleiche [$m_i$:$m_{n/4+i}$] und [$m_{n/2+i}$:$m_{3n/4+i}$] i = $\{0, 1, ..., 2^{x-2}\}$\\Wiederhole für die Teilmengen $m_0$,$m_1$,...,$m_{n/2}$ und $m_{n/2}$,$m_{n/2+1}$,...,$m_{n}$\\
 In einem Sortiertnetzwerk sieht das Herschen nun wie folgt aus:\\
 \begin{center}
 \includegraphics[scale=0.8]{bitonmischer.eps}
@@ -206,14 +207,14 @@ Seien ($a_1$, $a_2$, ..., $a_{n/2}$) und ($b_1$, $b_2$, ..., $b_{n_2}$) die 2 H�
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.4]{korrektheitBS.eps}
-\caption{•}
+\caption{Beispiel eines Sortierschrittes des Biton-Sortierers und die sortierte Folge}
 \end{center}
 \end{figure}
 \FloatBarrier
-Damit ist die Folge sortiert, wenn wir bei 1-elementigen Elementen angekommen sind. 
+Damit ist die Folge sortiert, wenn wir bei 1-elementigen Teilmengen angekommen sind. 
 \end{description}
 \subsection{Odd-Even-Mergesort}
-Das Odd-Even-Mergesort ist ein Sortierverfahren, welches dem Biton-Sortierer ähnelt. Da es datenunabhängig ist, eignet es sich perfekt für die Umsetzung in ein Sortiernetzwerk.
+Das Odd-Even-Mergesort ist ein Sortierverfahren, welches dem Biton-Sortierer ähnelt. Da es, wie der Biton-Sortierer, datenunabhängig ist, eignet es sich perfekt für die Umsetzung in ein Sortiernetzwerk.
 \subsubsection{Merge-Verfahren}
 Das Merge-Verfahren setzt vorraus, dass die beiden Hälften $m_0, m_1, ..., m_{n/2-1}$ und $m_{n/2}, m_{n/2+1}, ..., m_{n-1}$ der Eingabefolge $m_0, m_1, ..., m_n$ soriert sind.
 \begin{description}
@@ -221,11 +222,11 @@ Das Merge-Verfahren setzt vorraus, dass die beiden Hälften $m_0, m_1, ..., m_{n
 \item[sonst].\\Vergleiche $m_0$ und $m_1$
 \end{description}
 \subsubsection{Sortier-Verfahren}
-Das Merge Verfahren setzt sortierte Teillisten vorraus. Dies ist in der Praxis normalerweise nicht gegeben.
-Um diese Vorraussetzung zu umgehen, kann man das Odd-Even-Mergesort einfach rekursiv aus die Teillisten anwenden:
+Das Merge Verfahren setzt sortierte Teilmengen vorraus. Dies ist in der Praxis normalerweise nicht gegeben.
+Um diese Vorraussetzung zu umgehen, kann man das Odd-Even-Mergesort rekursiv auf die Teilmengen anwenden:
 \begin{description}
-\item[Wenn n $>$ 1].\\1. Wende Odd-Even-Mergesort rekursiv auf beiden Hälften $m_0, m_1, ..., m_{n/2-1}$ und $m_{n/2}, m_{n/2+1}, ..., m_{n-1}$ der Eingabefolge anwenden.\\2. Wende Odd-Even-Merge auf die Eingabefolge M an.
-\item[sonst].\\Eingabgefolge bereits sortiert
+\item[Wenn n $>$ 1].\\1. Wende Odd-Even-Mergesort rekursiv auf beiden Hälften $m_0, m_1, ..., m_{n/2-1}$ und $m_{n/2}, m_{n/2+1}, ..., m_{n-1}$ der Eingabemenge anwenden.\\2. Wende Odd-Even-Merge auf die Eingabemenge M an.
+\item[sonst].Eingabemenge bereits sortiert
 \end{description}
 \subsubsection{Korrektheit}
 Um die Korrektheit zu zeigen, beweisen wir das Merge-Verfahren für eine Eingabefolge M mit n Elementen. Die Zeichen der Eingabefolge beschränken wir auf 0 und 1.
@@ -234,7 +235,7 @@ Um die Korrektheit zu zeigen, beweisen wir das Merge-Verfahren für eine Eingabe
 \item[Induktionsanker] n = $2^1$\\ Es wird der Vergleich der "sonst"-Klausul ausgeführt. Damit ist die Folge offensichtlich sortiert.
 \item[Induktionsvoraussetzung (IV)] Das Sortierverfahren sei für n = $2^x$ korrekt
 \item[Induktionsschritt  $2^x \rightarrow 2^{x+1}$]
-In Schritt 1 des Sortierverfahrens wird die Eingabemenge in halbiert und die beiden Hälften mit Odd-Even-Mergesort sortiert. Nach Induktionsvoraussetzung sind die beiden Hälften danach korrekt sortiert. Nun wenden wir das Merge-verfahren auf diese Menge an.\\Um die Korrektheit des Mergeverfahrens zu zeigen, betrachten wir die Anzahl von 1'en und 0'en in den Mengen.\\Zuerst betrachten wir die beiden sortierten Hälften aus Schritt 1. 
+In Schritt 1 des Sortierverfahrens wird die Eingabemenge in halbiert und die beiden Hälften mit Odd-Even-Mergesort sortiert. Nach Induktionsvoraussetzung sind die beiden Hälften danach korrekt sortiert. Nun wenden wir das Merge-Verfahren auf die komplette Menge an.\\Um die Korrektheit des Mergeverfahrens zu zeigen, betrachten wir die Anzahl von 1'en und 0'en in den Mengen.\\Zuerst betrachten wir die beiden sortierten Hälften aus Schritt 1. 
 \begin{description}
 \item[Menge 1:] $|$1'en$|$ sei $n_0$ und $|$0'en$|$ sei $p_0$.
 \item[Menge 2:] $|$1'en$|$ sei $n_1$ und $|$0'en$|$ sei $p_1$.
@@ -244,28 +245,29 @@ $$M_0 \; = \; m_0, m_2, m_4, ..., m_{n-2}$$
 $$M_1 \; = \; m_1, m_3, m_5, ..., m_{n-1}$$ 
 Werden die 0'en und 1'en "gleichmäßig" aufgeteilt. 
 $$M_0 \; :\; | \text{1'en} | \; = \;\left\lfloor \frac{n_0}{2} \right\rfloor + \left\lfloor \frac{n_1}{2} \right\rfloor \text{und $|$0'en$|$} \;=\; \left\lceil \frac{p_0}{2} \right\rceil + \left\lceil \frac{p_1}{2} \right\rceil$$
-$$M_1 \;:\; \text{|1'en|}  = \left\lceil \frac{n_0}{2} \right\rceil + \left\lceil \frac{n_1}{2} \right\rceil  \text{und |0'en|} \;=\; \left\lfloor \frac{p_0}{2} \right\rfloor + \left\lfloor \frac{p_1}{2} \right\rfloor$$
+$$M_1 \; :\; | \text{1'en} | \; = \;\left\lceil \frac{n_0}{2} \right\rceil + \left\lceil \frac{n_1}{2} \right\rceil  \text{und $|$0'en$|$} \;=\; \left\lfloor \frac{p_0}{2} \right\rfloor + \left\lfloor \frac{p_1}{2} \right\rfloor$$
 Nun betrachten wir die Differenz von $|$1'en$|_{M_0}$ und $|$1'en$|_{M_1}$:
 \begin{description}
 \item[Fall 1:] Seien $n_0$ und $n_1$ gerade: $|$1'en$|_{M_0}$ = $|$1'en$|_{M_1}$.
 \item[Fall 2:] Sei $n_0$ oder $n_1$ ungerade: $|$1'en$|_{M_0}$ = $|$1'en$|_{M_1}$ - 1.
 \item[Fall 3:] Seien $n_0$ und $n_1$ ungerade: $|$1'en$|_{M_0}$ = $|$1'en$|_{M_1}$ - 2.
 \end{description}
-Die beiden Teilmengen $M_0$ und $M_1$ werden nun wieder sortiert (da die Länge wiederrum $2^x$ ist, gilt IV), danach ergibt sich eines der folgenden Schemata:
-\end{description}
-\begin{figure}[!hb]
+\begin{figure}[]
 \begin{center}
 \includegraphics[scale=0.4]{korrektheitOEM.eps}
-\caption{• uiae }
+\caption{Schematische Darstellung der Fälle 1 (links) bis 3 (rechts)}
 \end{center}
 \end{figure}
+Die beiden Teilmengen $M_0$ und $M_1$ werden nun wieder sortiert (da die Länge wiederrum $2^x$ ist, gilt IV), danach ergibt sich eines der folgenden Schemata:
+\end{description}
+\FloatBarrier
 Wenden wir nun Schritt 2 des Mergeverfahrens an, ist die Liste sortiert.
 \FloatBarrier
 \section{Laufzeit}
 Die Laufzeit von parallelen Algorithmen wird durch die Anzahl nacheinander ausgeführten Schritten bestimmt.
 \subsection{Herleitung}
 Die Laufzeit der beiden vorgestellten Sortieralgorithmen unterscheidet sich in O-Notation nicht, deshalb beschränken wir uns auf die Herleitung an einem Beispiel:\\
-\begin{table}[!hb]
+\begin{table}[!h]
 \begin{center}
 	\begin{tabular}{c | c}
 		Länge der Eingabe & Anzahl der Schritte \\ \hline
@@ -277,11 +279,12 @@ Die Laufzeit der beiden vorgestellten Sortieralgorithmen unterscheidet sich in O
 \end{center}
 \caption{Entwicklung der Laufzeit}
 \end{table}
+\FloatBarrier
 Damit ergibt sich eine Laufzeit von O($(log(n))^2$)
 \section{Vergleich der Laufzeit}
 Um die Laufzeit von parallelen Algorithmen mit der von sequentiellen zu Vergleichen, wir die Anzahl der Schritte in parallelen Algorithmen mit der maximalen Anzahl von Komponenten multipliziert.\\
 Damit ergibt sich eine normalisierte Laufzeit von O($n*log^2$) für die vorgestellten parallelen Algorithmen.
-\begin{table}[hb]
+\begin{table}[]
 \begin{center}
 	\begin{tabular}{c|c|c|c}
 		Algorithmus & \multicolumn{3}{|c}{Laufzeit} \\ \hline
@@ -296,7 +299,7 @@ Damit ergibt sich eine normalisierte Laufzeit von O($n*log^2$) für die vorgeste
 \end{table}
 \FloatBarrier
 \section{Abschlussbetrachtung}
-In diesem Bericht wurde unser Vortrag "Paralleles Sortieren" zusammengefasst. Wir zeigten aufbauend auf einem einfachen Komparator, wie ein Sortiernetzwerk erst naiv und dann an einen Algorithmus angelehnt aufgebaut werden kann. Dies war eine wichtige Erfahrung, da es abweichend vom Lehrplan der Grundvorlesung die reine Softwareanwendung eines bekannten Algorithmus um die Übertragung auf Systeme und Netzwerke erweitert und gleichzeitig den Verlauf der Entwicklung näher gebracht hat. Ein wichtiger Bestandteil ist das "0,1"-Prinzip, dass eine einfache und verlässliche Grundlage für die Überprüfung von Sortiernetzwerken darstellt. Wir haben außerdem gezeigt, dass das entstandene Netzwerk zwar schneller Arbeitet aber die Laufzeitverbesserung nur über einen Mehraufwand an Vergleichern erreicht wird.\\ Zur weiteren Vertiefung wären Hypercubes und AKS-Netzwerke, die entweder schneller oder flexibler als das gezeigte Netzwerk sind.
+In diesem Bericht wurde unser Vortrag "Paralleles Sortieren" zusammengefasst. Wir zeigten aufbauend auf einem einfachen Komparator, wie ein Sortiernetzwerk erst naiv und dann an einen Algorithmus angelehnt aufgebaut werden kann. Dies war eine wichtige Erfahrung, da es abweichend vom Lehrplan der Grundvorlesung die reine Softwareanwendung eines bekannten Algorithmus um die Übertragung auf Systeme und Netzwerke erweitert und gleichzeitig den Verlauf der Entwicklung näher gebracht hat. Ein wichtiger Bestandteil ist das "0,1"-Prinzip, dass eine einfache und verlässliche Grundlage für die Überprüfung von Sortiernetzwerken darstellt. Wir haben außerdem gezeigt, dass das entstandene Netzwerk zwar schneller arbeitet, aber die Laufzeitverbesserung nur über einen Mehraufwand an Komperatoren erreicht wird.\\ Zur weiteren Vertiefung wären die Betrachtung von Hypercubes und AKS-Netzwerke, die entweder schneller oder flexibler als das gezeigte Netzwerk sind, möglich.
  
 \section{Anhang}
 \subsection{Text-Quellen}
