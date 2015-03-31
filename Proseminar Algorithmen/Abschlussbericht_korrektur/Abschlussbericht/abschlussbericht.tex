@@ -307,7 +307,6 @@ Die Laufzeit der beiden vorgestellten Sortieralgorithmen unterscheidet sich in O
 Damit ergibt sich eine Laufzeit von $\Theta((log(n))^2$). 
 \section{Vergleich der Laufzeit}
 Um die Laufzeit von parallelen Algorithmen mit der von sequentiellen zu Vergleichen, wir die Anzahl der Schritte in parallelen Algorithmen mit der maximalen Anzahl von Komponenten multipliziert.\\
-Damit ergibt sich eine normalisierte Laufzeit von O($n*log^2$) für die vorgestellten parallelen Algorithmen.
 \begin{table}[]
 \begin{center}
 	\begin{tabular}{c|c|c|c}
@@ -321,7 +320,8 @@ Damit ergibt sich eine normalisierte Laufzeit von O($n*log^2$) für die vorgeste
 \end{center}
 \caption{Vergleich zu Softwaresortierung}
 \end{table}
-%\FloatBarrier
+\FloatBarrier
+Damit ergibt sich eine normalisierte Laufzeit von O($n*log^2$) für die vorgestellten parallelen Algorithmen.
 \section{Abschlussbetrachtung}
 In diesem Bericht wurde unser Vortrag \grqq Paralleles Sortieren\grqq{} zusammengefasst. Wir zeigten aufbauend auf einem einfachen Komparator, wie ein Sortiernetzwerk erst naiv und dann an einen Algorithmus angelehnt aufgebaut werden kann. Dies war eine wichtige Erfahrung, da es abweichend vom Lehrplan der Grundvorlesung die reine Softwareanwendung eines bekannten Algorithmus um die Übertragung auf Systeme und Netzwerke erweitert und gleichzeitig den Verlauf der Entwicklung näher gebracht hat. Ein wichtiger Bestandteil ist das \grqq 0,1\glqq -Prinzip, dass eine einfache und verlässliche Grundlage für die Überprüfung von Sortiernetzwerken darstellt. Wir haben außerdem gezeigt, dass das entstandene Netzwerk zwar schneller arbeitet, aber die Laufzeitverbesserung nur über einen Mehraufwand an Komperatoren erreicht wird.\\ Zur weiteren Vertiefung wären die Betrachtung von Hypercubes und AKS-Netzwerke, die entweder schneller oder flexibler als das gezeigte Netzwerk sind, möglich.
  
