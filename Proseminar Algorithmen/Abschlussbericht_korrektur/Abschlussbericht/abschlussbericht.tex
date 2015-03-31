@@ -27,7 +27,7 @@
 \listoffigures
 \listoftables
 \section{Einführung}
-Der Titel Paralleles Sortieren beschreibt zwei grundsätzliche Bestrebungen bei der Optimierung von Netzwerk- (hauptsächlich Routing) und Datenstrukturen (Listen, Wörterbücher, \dots). Somit ist die Motivation dieses Thema zu behandeln groß, da sie für jene Projekt die Basis für deren Geschwindigkeit legen kann. Separat betrachtet sind diese von folgender Bedeutung :
+Der Titel Paralleles Sortieren beschreibt zwei grundsätzliche Bestrebungen bei der Optimierung von Netzwerk- (hauptsächlich Routing) und Datenstrukturen (Listen, Wörterbücher, \dots). Somit ist die Motivation dieses Thema zu behandeln groß, da sie für jene Projekte die Basis für deren Geschwindigkeit legen kann. Separat betrachtet sind diese von folgender Bedeutung :
 
 \emph{Sortierung} ist die Basis für jede Suche auf Daten und Ressourcen. Wenn diese nicht wenigstens einer groben Ordnung unterliegen, können effiziente Algorithmen nicht angewendet werden, da keine Annahmen über den Zustand getroffen werden können.
 
@@ -37,9 +37,10 @@ Der Titel Paralleles Sortieren beschreibt zwei grundsätzliche Bestrebungen bei 
 
 \subsection{Sortieren}
 Als Grundlage um eine Menge M sortieren zu können muss eine totale Ordnungsrelation $R \subseteq MxM$ vorhanden sein, diese schreibt eine Ordnung zwischen zwei Elementen vor. 
-Der Anspruch an diese Relation ist, dass diese Reflexivitäte 
+Der Anspruch an diese Relation ist, dass diese Reflexivität 
 \begin{equation}
 \forall x \in M : x R x
+\label{eq:reflex}
 \end{equation}
 und Transitivität beinhaltet.
 \begin{equation}
@@ -49,13 +50,15 @@ und Transitivität beinhaltet.
 Des weiteren muss diese antisymmetrisch 
 \begin{equation}
 \forall x,y \in M :\; xRy \wedge yRx \; \Rightarrow \; x = y
+\label{eq:antisym}
 \end{equation}
 und total 
 \begin{equation}
 \forall x,y \in M : \; xRy \vee yRx
+\label{eq:total}
 \end{equation}
 sein.
-
+\FloatBarrier
 \subsection{Komparator}
 Ein Komparator stellt den kleinsten Baustein dar, der eine zweielementige Menge entsprechend der auf ihr liegenden Ordnungsrelation sortiert ausgibt. Dieser ist wie folgt aufgebaut: Er besitzt zwei Eingangsleitungen auf dem die zu sortierenden 2-elementigen Mengen eingegeben werden, den vergleichenden Teil, der die Ordnungsrelation anwendet und die beiden Ausgangsleitungen, auf denen das sortierte Ergebnis ausgegeben wird. Beide werden in Abbildung \ref{fig:kompsoft} (Software, Seite \pageref{fig:kompsoft}) und Abbildung \ref{fig:komparator} (Hardware, Seite \pageref{fig:komparator}) dargestellt. Die Annahme für die folgenden Abbildungen ist, dass das sortierte Ergebnis von oben nach unten größer wird.
 \begin{figure}
@@ -82,7 +85,7 @@ Ein Komparator stellt den kleinsten Baustein dar, der eine zweielementige Menge 
         return void
     }
 \end{lstlisting}
-\caption{Implementierung eines Komparators in Pseudocode (An Go angelehnt). inX entspricht den Eingangsleitungen, outX entspricht den Ausgangsleitungen, Comparer besagt, dass der Datentyp die beschriebenen Voraussetzungen (\eqref{eq:Ordnung} und \eqref{eq:transit}) erfüllt. \glqq return void\grqq{} zeigt, dass die Funktion nur die Ein- und Ausgänge verwendet.}
+\caption{Implementierung eines Komparators in Pseudocode (An Go angelehnt). inX entspricht den Eingangsleitungen, outX entspricht den Ausgangsleitungen, Comparer besagt, dass der Datentyp die beschriebenen Voraussetzungen (\eqref{eq:reflex} bis \eqref{eq:total}) erfüllt. \glqq return void\grqq{} zeigt, dass die Funktion nur die Ein- und Ausgänge verwendet.}
 \label{fig:kompsoft}
 \end{center}
 \end{figure}
@@ -117,7 +120,7 @@ Output
 \begin{figure}
 \begin{center}
 \includegraphics[scale=1]{bild2beispiel.eps}
-\caption{Beispiel mit acht Datenleitungen dass einen schrittweisen Verlauf des sortierens zeigt und eine vollständig sortierte Ausgabe.}
+\caption{Beispiel mit acht Datenleitungen, das einen schrittweisen Verlauf des Sortierens zeigt und eine vollständig sortierte Ausgabe.}
 \label{fig:kompnetnumbex}
 \end{center}
 \end{figure}
@@ -224,15 +227,16 @@ Seien ($a_1$, $a_2$, ..., $a_{n/2}$) und ($b_1$, $b_2$, ..., $b_{n_2}$) die 2 H�
 \begin{description}
 \item[Schritt 1] Vorsortierung\\Im 1. Schritt werden die kleinereren Elemente nach \glqq oben\grqq{} und die größeren Elemente nach \glqq unten\grqq{} sortiert. Bei einer Eingabemenge von \{0, 1\} besteht entweder die \glqq obere\grqq{} Hälfte nur aus 0'en oder die \grqq untere\grqq{} Hälfte nur aus 1'en.\\ Die unsortierte Hälfte hat nun die Form 0...01...10...0 (\glqq oben\grqq ) oder 1...10...01...1 (\glqq unten\grqq ).
 \item[Schritt 2] \glqq Rekursion\grqq{}\\Im 2. Schritt wird das Prinzip aus dem 1. Schritt für die immer kleiner werden Hälften angewendet, d.h. wir sortieren die kleineren Elemente nach \grqq oben\grqq{} und die größeren nach \grqq unten\grqq{}.\\
-\begin{figure}
+Damit ist die Folge sortiert, wenn wir bei 1-elementigen Teilmengen angekommen sind. 
+\end{description}
+\FloatBarrier
+\begin{figure}[!hb]
 \begin{center}
-\includegraphics[scale=0.4]{korrektheitBS.eps}
+\includegraphics[scale=0.45]{korrektheitBS.eps}
 \caption{Beispiel eines Sortierschrittes des Biton-Sortierers und die sortierte Folge}
 \end{center}
 \end{figure}
-%\FloatBarrier
-Damit ist die Folge sortiert, wenn wir bei 1-elementigen Teilmengen angekommen sind. 
-\end{description}
+\FloatBarrier
 \subsection{Odd-Even-Mergesort}
 Das Odd-Even-Mergesort ist ein Sortierverfahren, welches dem Biton-Sortierer ähnelt. Da es, wie der Biton-Sortierer, eingabeunabhängig ist, eignet es sich perfekt für die Umsetzung in ein Sortiernetzwerk.
 \subsubsection{Merge-Verfahren}
@@ -255,7 +259,7 @@ Um die Korrektheit zu zeigen verwenden wir das 0,1-Prinzip und beweisen, dass da
 \item[Induktionsanker] n = $2^1$\\ Es wird der Vergleich der \glqq sonst\grqq -Klausul ausgeführt. Damit ist die Folge offensichtlich sortiert.
 \item[Induktionsvoraussetzung (IV)] Das Sortierverfahren sei für n = $2^x$ korrekt
 \item[Induktionsschritt  $2^x \rightarrow 2^{x+1}$]
-In Schritt 1 des Sortierverfahrens wird die Eingabemenge in halbiert und die beiden Hälften mit Odd-Even-Mergesort sortiert. Nach In\-duk\-tions\-vor\-aus\-set\-zung sind die beiden Hälften danach korrekt sortiert. Nun wenden wir das Merge-Verfahren auf die komplette Menge an.\\Um die Korrektheit des Merge-Verfahrens zu zeigen, betrachten wir die Anzahl von 1'en und 0'en in den Mengen.\\Zuerst betrachten wir die beiden sortierten Hälften aus Schritt 1. 
+In Schritt 1 des Sortierverfahrens wird die Eingabemenge halbiert und die beiden Hälften mit Odd-Even-Mergesort sortiert. Nach In\-duk\-tions\-vor\-aus\-set\-zung sind die beiden Hälften danach korrekt sortiert. Nun wenden wir das Merge-Verfahren auf die komplette Menge an.\\Um die Korrektheit des Merge-Verfahrens zu zeigen, betrachten wir die Anzahl von 1'en und 0'en in den Mengen.\\Zuerst betrachten wir die beiden sortierten Hälften aus Schritt 1. 
 \begin{description}
 \item[Menge 1:] $|$1'en$|$ sei $n_0$ und $|$0'en$|$ sei $p_0$.
 \item[Menge 2:] $|$1'en$|$ sei $n_1$ und $|$0'en$|$ sei $p_1$.
